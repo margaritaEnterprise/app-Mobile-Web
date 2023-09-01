@@ -1,0 +1,28 @@
+El objetivo del proyecto es desarrollar una aplicación web responsiva, optimizada para ser accedida y
+ejecutada mediante cualquier tipo de dispositivo móvil.
+
+API: https://restcountries.com/ 
+
+Requerimientos funcionales
+❖ BUSQUEDA Y FILTROS (3)
+❖ MOSTRAR 10 PRIMEROS RESULTADOS Y ACCEDER AL RESTO 
+❖ INFORMACION PRINCIPAL 
+❖ CADA ITEM SE PUEDE COMPARTIR O AGREGAR A UN CARRITO (SE DEBEN PODER QUITAR)
+❖ Al hacer click sobre el botón “Compartir con un amigo” se debe redireccionar al usuario a una nueva
+página que permita efectuar de envío de los datos mostrados en el resultado a un amigo. En dicha
+página, se mostrará un formulario con los siguientes campos: 
+▪ Datos correspondientes al resultado compartido (autocompletado y requerido).
+▪ Correo emisor (requerido).
+▪ Correo destino (requerido).
+▪ Mensaje abierto al destinatario (opcional).
+▪ Botón Enviar mail.
+▪ Botón Cancelar.
+Una vez que efectuado el submit del formulario, si la validación de los campos es exitosa, se debe
+abrir el gestor de correo asociado al navegador del usuario, con el email listo para ser enviado.
+❖ HISTORIAL DE PRODUCTOS (visualización simil a la del resultado de búsqueda).
+❖ PAGINA DE CONTACTO (datos básicos del desarrollador del sitio web y ubicación de la oficina en un mapa - CATEDRAL LA PLATA).
+❖ WEB VERSION (3) DE ESCRITORIO, TABLET, CELULAR. La versión de escritorio de debe mostrar en
+la pantalla una sección publicitaria a gusto, que no debe mostrarse en la versión mobile.
+
+VALIDACION DE DATOS
+SEPARAR ESTRUCTURA

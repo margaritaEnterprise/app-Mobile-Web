@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Loca</title>
+    <!-- css-->
+    <link rel="stylesheet" href="../../src/css/styles.css">    
+    <!-- icons ww3-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- contacts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/> 
 </head>
 <body>
-    <h1>PAGINA LOCA</h1>
     <!-- Futuro Layout -->
+    <header class="header">
+        <h1 id="up" class="title">PAGINA LOCA</h1> 
+        <nav class="nav">
+            <!-- meter en componente -->
+            <a href="#">
+                <ul  id="navList">
+                    <li title="Inicio" id="home" class="home"><i class="material-icons">home</i></li>
+                    <li title="Buscar" id="search" class="search"><i class="material-icons">search</i></li>
+                    <li title="Favoritos" class="selectedProduct"><i class="material-icons">shopping_cart</i><p id="counter">(0)</p></li>            
+                    <li title="Comandas del dia" id="commands" class="commands"><i class="material-icons">settings</i></li>
+                </ul>
+            </a>
+        </nav>
+    </header>
+    <aside id="aside_search">
+        <!-- aside del buscador -->
+    </aside>    
+    <main id="main">
+        <section id="all" class="all">
+            <!-- SPA: Renderiza cuando se carga la pagina -->
+        </section>
+    </main>
+    <footer id='foot'>
+        <!-- agregar footer -->
+    </footer>    
+    <!-- js -->
+    <script src="./js/init.js" type="module"></script>
 </body>
 </html>
