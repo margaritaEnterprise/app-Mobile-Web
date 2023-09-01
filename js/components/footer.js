@@ -1,6 +1,8 @@
+
 const Footer = () => {
 
     return  `
+    
     <div class="footer__body">
         <div class="hour">
             <h3>Horarios de atencion: </h3>

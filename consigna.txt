@@ -7,7 +7,7 @@ Requerimientos funcionales
 ❖ BUSQUEDA Y FILTROS (3)
 ❖ MOSTRAR 10 PRIMEROS RESULTADOS Y ACCEDER AL RESTO 
 ❖ INFORMACION PRINCIPAL 
-❖ CADA ITEM SE PUEDE COMPARTIR O AGREGAR A UN CARRITO (SE DEBEN PODER QUITAR)
+❖ CADA ITEM SE PUEDE COMPARTIR O AGREGAR A FAVORITOS (SE DEBEN PODER QUITAR)
 ❖ Al hacer click sobre el botón “Compartir con un amigo” se debe redireccionar al usuario a una nueva
 página que permita efectuar de envío de los datos mostrados en el resultado a un amigo. En dicha
 página, se mostrará un formulario con los siguientes campos: 

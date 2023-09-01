@@ -1,5 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+/* Defino variables */
+:root {
+    --color-negro: #272525;
+    --color-blanco: #F2F2F2;
+    --color-blanco-azulado: #E6E6FA;
+    --color-grey: #5b5757;
+    --color-ok: #C5E1A5;
+    --color-blu: #c8daf4;
+    --color-shadow: #cbcbcc;
+
+    --header-title: var(--color-negro);
+    --nav-icons:var(--color-negro);
+
+    --body-background:var(--color-blanco);
+    --nav-icons-hover: var(--color-blanco);
+
+    --footer:var(--color-blanco-azulado);
+    --nav-counter:var(--color-blanco-azulado);
+
+    --color-font: var(--color-grey);
+    --success: var(--color-ok);
+}
+
+
 *{
     box-sizing: border-box;
-    margin: 0;
+    margin:0;
     font-size: 16px;
+    
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color:var(--color-font);
 }
