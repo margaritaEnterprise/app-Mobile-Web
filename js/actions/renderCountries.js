@@ -1,9 +1,13 @@
 import { getCountries } from '../services/countries.js';
 import Card from '../components/card.js';
+import renderPaginator from './renderPaginator.js';
+import { setPage, getPage } from './page.js';
 
 const renderCountries = async () => {
     let countries = await getCountries();
+    let total = countries.length;
     console.log(countries);
+
     //countries.slice(x, x+10); --> 0-10, 10-20
     //almaceno el indice x
     //o la pagina
@@ -14,13 +18,19 @@ const renderCountries = async () => {
     page 3:    20    -   ...
     page X: 10*(x-1) -  10*x
     */
-   
-   let section = document.getElementById('all');
-   section.innerHTML="";
-   for (let i = 0; i < 10; i++) {
-        section.innerHTML += Card(countries[i]);
+    if(getPage() < 0) {
+        setPage(1);
     }
-   
+
+    let start = 10*(getPage()-1);
+    let end = 10*getPage();
+    alert(`start ${start} \nend ${end}`)
+    let section = document.getElementById('all');
+    section.innerHTML="";
+    for (start; start < end; start++) {
+        section.innerHTML += Card(countries[start]);
+    }
+    renderPaginator(total);
     //onListItemClick --> agregar cosas de la card
 }
 

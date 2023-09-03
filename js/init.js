@@ -1,13 +1,13 @@
-import onListItemClick from "./actions/onListItemClick.js"
-import renderCountries from "./actions/renderCountries.js";
-import renderFooter from "./actions/renderFooter.js";
 import renderHeader from "./actions/renderHeader.js";
 import renderSearcher from "./actions/renderSearcher.js";
+import renderCountries from "./actions/renderCountries.js";
+import renderFooter from "./actions/renderFooter.js";
+import onListItemClick from "./actions/onListItemClick.js"
 
 const init = async () => {
-    renderCountries();
     renderHeader("home");
     renderSearcher();
+    renderCountries();
     renderFooter();
     onListItemClick(document.querySelectorAll('.home'))
 }
