@@ -14,20 +14,34 @@
 <body>
     <!-- Futuro Layout -->
     <header class="header">
-        <h1 id="up" class="title">PAGINA LOCA</h1> 
-        <nav class="nav">
-            <!-- meter en componente -->
-            <a href="#">
-                <ul  id="navList">
-                    <li title="Inicio" id="home" class="home"><i class="material-icons">home</i></li>
-                    <li title="Buscar" id="search" class="search"></li>
-                    <li title="Favoritos" id="star" class="star"><i class="material-icons">star</i><p id="counter">(0)</p></li>            
-                    <li title="Historial" id="history" class="history"><i class="material-icons">history</i></li>
-                    <li title="Juegos" id="game" class="game"><i class="material-icons">sports_esports</i></li>
-                </ul>
-            </a>
+        <nav class="header__nav">
+            <img class="header__logo" src="" alt="logo">
+            <ul class="header__navList" id="navList">
+                <li class="header__navItem" title="Inicio" id="home">
+                    <a href="">
+                        <i class="material-icons">home</i>
+                    </a>
+                </li>
+                <li class="header__navItem " title="Favoritos" id="star">
+                    <a href="">
+                        <i class="material-icons">star</i>
+                        <!-- <i class="header__counter">(0)</i> -->
+                    </a>
+                </li>
+                <li class="header__navItem " title="Historial" id="history">
+                    <a href="">
+                        <i class="material-icons">history</i>
+                    </a>
+                </li>
+                <li class="header__navItem" title="Juegos" id="game">
+                    <a href="">
+                        <i class="material-icons">sports_esports</i>
+                    </a>
+                </li>    
+            </ul>
         </nav>
     </header>
+    
     <aside id="aside_search">
         <i class="material-icons">search</i>
         <!-- aside del buscador -->
