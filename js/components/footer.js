@@ -19,10 +19,10 @@ const Footer = () => {
     
     <div class="footer__hour">
         <p>
-            <a href="./../index.html" style="display: inline-block;">Inicio</a> |
-            <a href="./../index.html" style="display: inline-block;">Favoritos</a> |
-            <a href="./../index.html" style="display: inline-block;">Historial</a> |
-            <a href="./../index.html" style="display: inline-block;">Juegos</a> |
+            <a href="./../pages/index.html" style="display: inline-block;">Inicio</a> |
+            <a href="./../pages/index.html" style="display: inline-block;">Favoritos</a> |
+            <a href="./../pages/index.html" style="display: inline-block;">Historial</a> |
+            <a href="./../pages/index.html" style="display: inline-block;">Juegos</a> |
             <a href="./../pages/aboutUs.html" style="display: inline-block;">Nosotros</a> 
         </p>
         <p class="footer__title">© 2023 | Aplicaciones Moviles </p>

@@ -1,10 +1,10 @@
 import onListItemClick from "./actions/onListItemClick.js"
 import renderFooter from "./actions/renderFooter.js";
+import renderHeader from "./actions/renderHeader.js";
 
 const initAboutUs = async () => {
+    renderHeader("");
     renderFooter();
-    
-    // alert("init");
     onListItemClick(document.querySelectorAll('.home'))
 }
 
