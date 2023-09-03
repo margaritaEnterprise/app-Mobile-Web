@@ -3,7 +3,7 @@ import renderFooter from "./actions/renderFooter.js";
 import renderHeader from "./actions/renderHeader.js";
 
 const initAboutUs = async () => {
-    renderHeader("");
+    renderHeader("aboutUs");
     renderFooter();
     onListItemClick(document.querySelectorAll('.home'))
 }
