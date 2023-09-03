@@ -39,7 +39,6 @@
     color:var(--color-font);
 }
 
-/* Estilos para el bloque header */
 .header {
     background-color: var(--color-blu);
     color: #fff;
@@ -58,33 +57,29 @@
     align-content: center;
 }
 
-/* Estilos para la lista de navegación */
+
 .header__navList {
     list-style: none;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
-/* Estilos para los elementos de la lista de navegación */
+
 .header__navItem {
     display: inline-block;
     margin-right: 20px;
     font-size: 20px;
     cursor: pointer;
+    
 }
 
-/* Estilos para el ícono dentro de los elementos de la lista de navegación */
-.header__navItem i.material-icons {
-    font-size: 24px;
+.header__navItem--selected i.material-icons{
+    font-size: 30px;
+    color: black;
 }
 
-/* Estilos para el contador dentro del elemento de la lista de navegación con la clase "star" */
-.header__navItem--star .header__counter {
-    font-size: 16px;
-    margin-left: 5px;
-    color: gold; /* Puedes elegir tu propio color */
-}
 
-/* Estilos para el bloque footer__body */
 
 .footer{
     background-color: var(--color-blu);
@@ -97,7 +92,6 @@
     
 }
 
-/* Estilos para las columnas dentro del bloque footer__body */
 .footer__hour,
 .footer__contact,
 .footer__icons {
@@ -105,43 +99,37 @@
     padding: 20px;
 }
 
-/* Estilos para los títulos dentro de las columnas */
 .footer__title {
     font-size: 18px;
 }
 
-/* Estilos para las listas dentro de las columnas */
 .footer__list {
     list-style: none;
     padding: 0;
 }
 
-/* Estilos para los elementos de las listas */
 .footer__item {
     margin-bottom: 5px;
 }
 
-/* Estilos para los enlaces dentro de las columnas de contacto */
 .footer__link {
     display: block;
     margin-top: 10px;
     text-decoration: none;
-    color: #0077FF; /* Puedes elegir tu propio color */
+    color: #0077FF; 
 }
 
-/* Estilos para los íconos de redes sociales */
+
 .footer__icon {
     font-size: 24px;
     margin-right: 10px;
-    color: #0077FF; /* Puedes elegir tu propio color */
+    color: #0077FF; 
 }
 
-/* Estilos para el bloque footer__footer */
 .footer__footer {
     text-align: center;
 }
 
-/* Estilos para el texto de derechos de autor en el footer__footer */
 .footer__text {
     font-size: 14px;
 }
