@@ -38,3 +38,48 @@
     font-family: 'Poppins', sans-serif;
     color:var(--color-font);
 }
+
+/* Estilos para el bloque header */
+.header {
+    background-color: var(--color-blu);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    min-height: 50px;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.header__nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+/* Estilos para la lista de navegación */
+.header__navList {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para los elementos de la lista de navegación */
+.header__navItem {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para el ícono dentro de los elementos de la lista de navegación */
+.header__navItem i.material-icons {
+    font-size: 24px;
+}
+
+/* Estilos para el contador dentro del elemento de la lista de navegación con la clase "star" */
+.header__navItem--star .header__counter {
+    font-size: 16px;
+    margin-left: 5px;
+    color: gold; /* Puedes elegir tu propio color */
+}
