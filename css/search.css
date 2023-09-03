@@ -1,0 +1,77 @@
+/* Estilos generales */
+.material-icons {
+    font-family: "Material Icons";
+    vertical-align: middle;
+  }
+  
+  /* Estilos para el componente Searcher */
+  .searcher {
+    background-color: #f0f0f0;
+    padding: 20px;
+
+  }
+
+  .search__header{
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para el formulario */
+  .searcher__form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .searcher__input,
+  .searcher__select,
+  .searcher__range {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+  
+  .searcher__input--inline{
+    width: 90%;
+    display: inline-block;
+  }
+
+  .searcher__button {
+    background-color: white;
+    width: 10%;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Estilos para el rango y la etiqueta de salida */
+  .searcher__label {
+    font-weight: bold;
+  }
+  
+  .searcher__output {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  
+.material-icons.searcher__icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .searcher__input-container {
+    position: relative;
+  }
+  
+  .searcher__input {
+    padding: 10px 30px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  

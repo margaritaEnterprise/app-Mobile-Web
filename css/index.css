@@ -137,14 +137,14 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: .5fr 2fr; 
     gap: 20px; 
 }
 
 
 #aside_search {
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 5px;
 }
 
 
