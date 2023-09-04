@@ -2,6 +2,7 @@ import { getCountries } from '../services/countries.js';
 import Card from '../components/card.js';
 import renderPaginator from './renderPaginator.js';
 import { setPage, getPage } from './page.js';
+import onListItemClick from './onListItemClick.js';
 
 const renderCountries = async () => {
     let countries = await getCountries();
@@ -24,14 +25,15 @@ const renderCountries = async () => {
 
     let start = 10*(getPage()-1);
     let end = 10*getPage();
-    alert(`start ${start} \nend ${end}`)
+    console.log(`start ${start} \nend ${end}`)
     let section = document.getElementById('all');
     section.innerHTML="";
     for (start; start < end; start++) {
         section.innerHTML += Card(countries[start]);
     }
     renderPaginator(total);
-    //onListItemClick --> agregar cosas de la card
+    onListItemClick(document.querySelectorAll(".open_detail"));
+    
 }
 
 export default renderCountries; 

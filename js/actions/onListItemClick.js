@@ -1,4 +1,6 @@
-import clear from './clear.js'
+import clear from './clear.js';
+import openCountry from './openCountry.js';
+
 
 //CLICK
 const onListItemClick = (elements) => {
@@ -6,7 +8,11 @@ const onListItemClick = (elements) => {
     //nav icons o functions
         if (element.classList.contains('home')) { 
             element.addEventListener('click', () => clear()) 
-        }
+        } else if (element.classList.contains('open_detail')) {
+            element.addEventListener('click', () => openCountry([element.id]))
+        } 
+
+
     });
 }
 

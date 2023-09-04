@@ -19,4 +19,21 @@ const getCountry = async (name) => {
     return result
 }
 
-export { getCountries, getCountry }
+//https://restcountries.com/v3.1/alpha?codes={code1},{code2} ...
+//Traer el detalle de un pais [ccn3]
+//O traer la lista de favoritos [ccn3, ccn3, ... ccn3]
+const getCountriesByCodes = async (arrayCodes) => { 
+    console.log(arrayCodes)
+    let stringCode = "";
+    arrayCodes.map(code => {
+        stringCode += code;
+    });
+    let result = []
+    let response = await fetch(`${URL}/alpha?codes=${stringCode}`)
+    if(response.ok){
+        result = await response.json()
+    }
+    return result
+}
+
+export { getCountries, getCountry, getCountriesByCodes }
