@@ -2,10 +2,10 @@ import { getCountriesByCodes } from "../services/countries.js";
 import { getCodes } from "./storageCodes.js";
 import Detail from "../components/detail.js";
 
-const openCountry = async () => {  
+//spinner o enviar por parametro el arraycodes
+const renderDetail = async () => {  
     let section = document.getElementById('detailCountry');
     section.innerHTML="";
-    //spinner
     let arrayCodes = await getCodes();
     let response = await getCountriesByCodes(arrayCodes);
     response.map(country => {
@@ -13,4 +13,4 @@ const openCountry = async () => {
     });
 }
 
-export default openCountry;
+export default renderDetail;

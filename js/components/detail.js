@@ -3,11 +3,11 @@ const Detail = (country) => {  //ccn3 es el codigo numerico del pais
                                     
     return  `
     <div class="card">
-        <h3>Detalle</h3>
         <img src="${country.flags.png}" alt="Bandera de ${country.flags.alt}" class="card__image">
         <h2 class="card__title">${country.name.common}</h2>
         <p class="card__info">Continente: ${country.region}</p>
         <div class="card__links">
+        <a href="./../pages/detail.html" class="open_detail" id=${country.ccn3}><i class="material-icons">visibility</i></a>
         ${country.ccn3%3 == 0 ? 
             `<a class="card__link"><i class="material-icons">stars</i></a>`
             :

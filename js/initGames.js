@@ -1,13 +1,11 @@
 import onListItemClick from "./actions/onListItemClick.js"
 import renderFooter from "./actions/renderFooter.js";
 import renderHeader from "./actions/renderHeader.js";
-import renderDetail from "./actions/renderDetail.js";
 
-const initDetail = async () => {
-    renderHeader("");
+const initSend = async () => {
+    renderHeader("games");
     renderFooter();
-    renderDetail();
     onListItemClick(document.querySelectorAll('.home'))
 }
 
-window.onload = initDetail; 
+window.onload = initSend; 

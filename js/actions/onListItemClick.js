@@ -10,6 +10,8 @@ const onListItemClick = (elements) => {
             element.addEventListener('click', () => clear()) 
         } else if (element.classList.contains('open_detail')) {
             element.addEventListener('click', () => setCodes([element.id]))
+        } else if (element.classList.contains('open_detail')) {
+            element.addEventListener('click', () => setCodes([element.id]))
         } 
     });
 }
