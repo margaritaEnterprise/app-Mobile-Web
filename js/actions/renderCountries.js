@@ -1,7 +1,7 @@
 import { getCountries } from '../services/countries.js';
 import Card from '../components/card.js';
 import renderPaginator from './renderPaginator.js';
-import { setPage, getPage } from './page.js';
+import { setPage, getPage } from './storagePage.js';
 import onListItemClick from './onListItemClick.js';
 
 const renderCountries = async () => {

@@ -1,5 +1,5 @@
 import clear from './clear.js';
-import openCountry from './openCountry.js';
+import { setCodes } from './storageCodes.js';
 
 
 //CLICK
@@ -9,10 +9,8 @@ const onListItemClick = (elements) => {
         if (element.classList.contains('home')) { 
             element.addEventListener('click', () => clear()) 
         } else if (element.classList.contains('open_detail')) {
-            element.addEventListener('click', () => openCountry([element.id]))
+            element.addEventListener('click', () => setCodes([element.id]))
         } 
-
-
     });
 }
 
