@@ -11,20 +11,18 @@ const Footer = () => {
         <a href="#" title="Instagram" class="footer__icon"><i class="fab fa-instagram"></i></a>
         <a href="#" title="Youtube" class="footer__icon"><i class="fab fa-youtube"></i></a>
         <br>
-        <a href="#" title="WebApp" style="display: inline-block;"> 
+        <a href="#" title="WebApp"> 
             <i class="material-icons">language</i>
         </a>
         <h3 class="footer__title">WebApp</h3>
     </div>
     
     <div class="footer__hour">
-        <p>
-            <a href="./../pages/index.html" style="display: inline-block;">Inicio</a> |
-            <a href="./../pages/index.html" style="display: inline-block;">Favoritos</a> |
-            <a href="./../pages/index.html" style="display: inline-block;">Historial</a> |
-            <a href="./../pages/index.html" style="display: inline-block;">Juegos</a> |
-            <a href="./../pages/aboutUs.html" style="display: inline-block;">Nosotros</a> 
-        </p>
+            <a href="./../pages/index.html">Inicio</a> |
+            <a href="./../pages/index.html">Favoritos</a> |
+            <a href="./../pages/index.html">Historial</a> |
+            <a href="./../pages/index.html">Juegos</a> |
+            <a href="./../pages/aboutUs.html">Nosotros</a> 
         <p class="footer__title">© 2023 | Aplicaciones Moviles </p>
     </div>
     <div class="footer__contact">

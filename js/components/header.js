@@ -2,10 +2,12 @@
 const Header = (page) =>{
     return `
     <nav class="header__nav">
-        <img class="header__logo" src="" alt="logo">
-        <ul class="header__navList" id="navList">
+<div class="logo">
+        <i class="material-icons header__logo">language</i>
+        <h1>WebApp</h1>
+</div>        <ul class="header__navList" id="navList">
             <li class="header__navItem ${page === "home"? "header__navItem--selected" : ""}" title="Inicio" id="home">
-                <a href="index.html">
+                <a href="./../pages/index.html">
                     <i class="material-icons">home</i>
                 </a>
             </li>

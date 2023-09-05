@@ -8,6 +8,7 @@ const renderDetail = async () => {
     section.innerHTML="";
     let arrayCodes = await getCodes();
     let response = await getCountriesByCodes(arrayCodes);
+    console.log(response);
     response.map(country => {
         section.innerHTML += Detail(country);
     });
