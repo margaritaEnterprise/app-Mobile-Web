@@ -1,14 +1,12 @@
-/* Estilos generales */
-.material-icons {
-    font-family: "Material Icons";
-    vertical-align: middle;
-  }
+
 
   .container {
     display: grid;
-    grid-template-columns: .5fr 2fr; 
-    gap: 20px; 
+    grid-template-columns: .25fr 1fr; 
+
+    gap: 1rem; 
 }
+
 
 
 #aside_search {
@@ -16,10 +14,16 @@
     padding: 5px;
 }
 
+#main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #all {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  /*  */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /*  */
     gap: 20px;
     padding: 1rem;
   
@@ -91,11 +95,11 @@
   background-color: white;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .searcher__header:focus{
-  border: #333;
-  outline: bold solid black;
+  outline: 2px solid black;
 }
 
 .searcher__form {
@@ -138,11 +142,11 @@
   margin-top: 5px;
 }
 
-
-
 .paginator{
-  width: 25%;
-  margin: 0 auto;
   display: flex;
- 
+  margin: 1rem;
+}
+
+.paginator__arrow{
+  cursor: pointer;
 }
