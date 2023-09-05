@@ -39,6 +39,14 @@
     color:var(--color-font);
 }
 
+/* !Para que la pagina ocupe toda la pantalla */
+/* body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
 .header {
     background-color: var(--color-blu);
     color: #fff;

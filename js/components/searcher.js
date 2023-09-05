@@ -9,15 +9,36 @@ const Searcher = () => {
       { value: "Oceania", name: "Oceanía" }, // Corregido "Cceania" a "Oceania"
     ];
   
+    
     const regions = [
       { value: null, name: "" },
-      { value: "Africa", name: "África" },
-      { value: "Americas", name: "América" },
-      { value: "Antarctica", name: "Antártida" },
-      { value: "Asia", name: "Asia" },
-      { value: "Europe", name: "Europa" },
-      { value: "Oceania", name: "Oceanía" }
-    ]
+      { name: 'Western Africa', continent: 'Africa' },
+      { name: 'Eastern Africa', continent: 'Africa' },
+      { name: 'Caribbean', continent: 'Americas' },
+      { name: 'Southeast Europe', continent: 'Europe' },
+      { name: 'Australia and New Zealand', continent: 'Oceania' },
+      { name: 'South America', continent: 'Americas' },
+      { name: 'Southern Europe', continent: 'Europe' },
+      { name: 'Southern Africa', continent: 'Africa' },
+      { name: 'Middle Africa', continent: 'Africa' },
+      { name: 'Western Asia', continent: 'Asia' },
+      { name: 'Northern Europe', continent: 'Europe' },
+      { name: 'South-Eastern Asia', continent: 'Asia' },
+      { name: 'Eastern Asia', continent: 'Asia' },
+      { name: undefined, continent: 'Antarctic' },
+      { name: 'Micronesia', continent: 'Oceania' },
+      { name: 'Southern Asia', continent: 'Asia' },
+      { name: 'Western Europe', continent: 'Europe' },
+      { name: 'Central Asia', continent: 'Asia' },
+      { name: 'Northern Africa', continent: 'Africa' },
+      { name: 'North America', continent: 'Americas' },
+      { name: 'Central Europe', continent: 'Europe' },
+      { name: 'Polynesia', continent: 'Oceania' },
+      { name: 'Melanesia', continent: 'Oceania' },
+      { name: 'Eastern Europe', continent: 'Europe' },
+      { name: 'Central America', continent: 'Americas' }
+    ];
+
 
     return `
       <div class="searcher">
@@ -25,7 +46,7 @@ const Searcher = () => {
         <div class="search__header">
         <input
         type="search"
-        class="searcher__input searcher__input--inline"
+        class="searcher__input searcher__input--BorderNone"
         placeholder="Ingrese un nombre . . ."
         />
         <button type="submit" class="searcher__button">
