@@ -131,6 +131,9 @@
   width: 10%;
   cursor: pointer;
   border: none;
+  height: 100%;
+  display: flex;
+  
 }
 
 .searcher__label {
