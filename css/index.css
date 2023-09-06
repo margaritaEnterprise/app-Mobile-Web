@@ -145,13 +145,13 @@
     font-size: 14px;
 }  */
 
-
+/* 
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
 .header {
     width: 100vw;

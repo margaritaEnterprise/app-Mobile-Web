@@ -1,5 +1,4 @@
 /*
-
   .container {
     display: grid;
     grid-template-columns: .25fr 1fr; 
@@ -154,3 +153,47 @@
   cursor: pointer;
 }
 */
+
+body{
+  display: grid;
+  grid-template-areas: "head" 
+                        "searcher" 
+                        "main" 
+                        "footer";
+
+}
+
+body > header {
+  grid-area: head;
+}
+
+body > aside.searcher {
+  grid-area: searcher;
+}
+
+body > aside.adversiting{
+  grid-area: ads;
+}
+
+body > main {
+  grid-area: main;
+}
+
+body > footer {
+  grid-area: footer;
+}
+
+
+
+
+/** Desktop Design */
+
+@media ( width  >= 1023px) {
+  body{
+    display: grid;
+    grid-template-areas: "head head head " 
+                          "searcher main ads"  
+                          "footer footer footer";
+  
+  }
+}
