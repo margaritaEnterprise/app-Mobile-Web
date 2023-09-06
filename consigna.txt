@@ -26,3 +26,16 @@ la pantalla una sección publicitaria a gusto, que no debe mostrarse en la versi
 
 VALIDACION DE DATOS
 SEPARAR ESTRUCTURA
+
+
+Antes de comenzar la implementación de la aplicación web integradora, se deberá presentar por este medio, una propuesta de desarrollo. En ella, se deben abordar los siguientes tópicos:
+Tema de la aplicación. Breve resumen del carácter del sitio web.
+Descripción de la/s API/s utilizadas, mediante las cuales se obtendrán los datos a mostrar al usuario.
+Cómo será la interacción con la/s API/s. Servicios consumidos, qué tipo de contenido devuelve cada uno, y cómo se presentará al usuario.
+Enumerar qué datos se mostrarán en cada resultado de búsqueda, y cuáles se mostraran en el detalle .
+Navegación del sitio. Describir las pantallas con las que contará el sitio, y cómo será la navegación entre ellas.
+Comentar cómo se utilizarán en la aplicación las siguientes herramientas:
+Localstorage
+Envío del mail
+Geolocalización
+La propuesta se puede presentar en un documento word como ppt. Es a libre elección del alumno.

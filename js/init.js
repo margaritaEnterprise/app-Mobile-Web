@@ -13,3 +13,4 @@ const init = async () => {
 }
 
 window.onload = init; 
+//onload el dom ya se creo en el navegador
