@@ -1,0 +1,1 @@
+window.location = "./pages/index.html";
