@@ -28,15 +28,6 @@
 }
 
 
-*{
-    box-sizing: border-box;
-    margin:0;
-    font-size: 16px;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    color:var(--color-font);
-}
 /* 
 /* !Para que la pagina ocupe toda la pantalla */
 /* body{
@@ -146,12 +137,25 @@
 }  */
 
 /* 
+*/
+
+/** =======================================================================================================================================================*/
+*{
+    box-sizing: border-box;
+    margin:0;
+    font-size: 16px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color:var(--color-font);
+}
+
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-} */
+} 
 
 .header {
     width: 100vw;
@@ -207,8 +211,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0;
-    
+    gap: 0;   
 }
 
 .footer__hour,
@@ -254,3 +257,14 @@ body{
     font-size: 14px;
 } 
 
+/** =======================================================================================================================================================*/
+
+
+@media (width >= 1024px) {
+    .footer__body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;   
+    }
+}
