@@ -32,13 +32,12 @@
     box-sizing: border-box;
     margin:0;
     font-size: 16px;
-    
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color:var(--color-font);
 }
-
+/* 
 /* !Para que la pagina ocupe toda la pantalla */
 /* body{
     min-height: 100vh;
@@ -47,7 +46,7 @@
     justify-content: space-between;
 } */
 
-.header {
+/* .header {
     background-color: var(--color-blu);
     color: #fff;
     padding: 10px;
@@ -144,4 +143,114 @@
 
 .footer__text {
     font-size: 14px;
+}  */
+
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.header {
+    width: 100vw;
+    background-color: var(--color-blu);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    min-height: 50px;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+
+.header__nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.header__logo{
+    display: flex;
+    gap: 1rem;
+}
+
+.header__navList{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.header__navItem {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header__navItem--selected i.material-icons{
+    font-size: 30px;
+    color: black;
+}
+
+
+.footer{
+    background-color: var(--color-blu);
+} 
+
+.footer__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    
+}
+
+.footer__hour,
+.footer__contact,
+.footer__icons {
+    flex: 1;
+    padding: 20px;
+}
+.footer__hour a {
+    display: inline-block;
+}
+.footer__title {
+    font-size: 18px;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__item {
+    margin-bottom: 5px;
+}
+
+.footer__link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0077FF; 
+}
+
+.footer__icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #0077FF; 
+}
+
+.footer__footer {
+    text-align: center;
+}
+
+.footer__text {
+    font-size: 14px;
+} 
+
