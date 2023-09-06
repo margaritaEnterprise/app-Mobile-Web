@@ -41,7 +41,6 @@ const Searcher = () => {
 
 
     return `
-      <div class="searcher">
       <form class="searcher__form">
         <div class="search__header">
         <input
@@ -69,7 +68,7 @@ const Searcher = () => {
             ${regions
               .map(
                 (regions) =>
-                  `<option value="${regions.value}">${regions.name}</option>`
+                  `<option value="${regions.name}">${regions.name}</option>`
               )
               .join("")}
           </select>
@@ -86,7 +85,6 @@ const Searcher = () => {
           />
           <output class="searcher__output">1</output>
         </form>
-      </div>
     `;
   };
   

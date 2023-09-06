@@ -1,6 +1,21 @@
+/** =======================================================================================================================================================*/
+
 .share {
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap: 10px;
-    padding: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/** =======================================================================================================================================================*/
+
+@media (width >= 480px) {
+    .share {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
 }
