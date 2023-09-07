@@ -26,8 +26,9 @@ const getCountriesByCodes = async (arrayCodes) => {
     console.log(arrayCodes)
     let stringCode = "";
     arrayCodes.map(code => {
-        stringCode += code;
+        stringCode += code+",";
     });
+    console.log(stringCode);
     let result = []
     let response = await fetch(`${URL}/alpha?codes=${stringCode}`)
     if(response.ok){
