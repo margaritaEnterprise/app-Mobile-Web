@@ -91,9 +91,60 @@ body{
 
 /** FOOTER =======================================================================================================================================================*/
 .footer{
-    background-color: var(--color-blu);
-} 
+    background-color: var(--color-blanco-azulado);
+    display: grid;
+    grid-template-areas:    "footer__body" 
+                            "footer__footer";
+    grid-template-rows: 4fr 0.7fr; /*sino queda espacio debajo*/
+    place-items:center; 
+    
+}
+.footer > .footer__body {
+    grid-area: footer__body;
+    display: grid;
+    grid-template-areas:  "footer__aboutUs" 
+    "footer__site"
+    "footer__network"
+    "footer__logo"
+    ;
+    grid-template-rows: repeat(2, 2fr 1fr);
+    place-items:center; 
+    
+}
+.footer__body > .footer__aboutUs {
+    grid-area: footer__aboutUs;
+    margin: 5px;
+}
+.footer__body > .footer__site {
+    grid-area: footer__site;
+    letter-spacing: 2px;
+}
+.footer__body > .footer__logo {
+    grid-area: footer__logo;
+    display: flex;
+}
 
+.footer > .footer__footer {
+    background-color:#272525;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items:center; 
+    width: 100%;
+    color:white;
+}
+
+/*
+.footer__body{
+    display: grid;
+    grid-template-areas:  "footer__aboutUs" 
+                          "footer__site"
+                          "footer__network";
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+
+*/
+/*
 .footer__body {
     display: flex;
     flex-direction: column;
@@ -143,7 +194,7 @@ body{
 .footer__text {
     font-size: 14px;
 } 
-
+*/
 /*#endregion*/
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/
