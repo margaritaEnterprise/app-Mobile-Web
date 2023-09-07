@@ -65,6 +65,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__logo{
@@ -75,24 +76,29 @@ body{
 .header__navList{
     list-style: none;
     display: flex;
-    align-items: center;
     gap: .7rem;
+    
 }
 
 .header__navItem {
-    font-size: 20px;
-    cursor: pointer;
 }
-
+.header__navList li a button {
+    font-size: 0;
+    border:none;
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+}
 .header__navItem--selected i.material-icons{
     font-size: 30px;
     color: black;
+    
 }
 /*#endregion HEADER*/
 /**=======================================================================================================================================================*/
 /*#region FOOTER*/
 .footer{
-    margin-top: 10px;
     background-color: var(--color-blanco-azulado);
     display: grid;
     grid-template-areas:    
@@ -135,19 +141,23 @@ body{
     color:white;
 }
 /*#endregion FOOTER*/
-
 /*#endregion MOBILE*/
 
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/
-@media (480px <= width < 768px) {
-
+@media (480px <= width ) { /*< 768px*/
+    .header__logo h1 {
+        font-size: 20px;
+    }
+    .header__navList li a button {
+        font-size: 16px;
+    }
 }
 /*#endregion*/
 
 /** =======================================================================================================================================================*/
 /*#region TABLET*/
-@media (768px <= width < 1024px) {
+@media (768px <= width) { /* < 1024px*/
 
 }
 /*#endregion*/
