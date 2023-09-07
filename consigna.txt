@@ -2,6 +2,12 @@ El objetivo del proyecto es desarrollar una aplicación web responsiva, optimiza
 ejecutada mediante cualquier tipo de dispositivo móvil.
 
 API: https://restcountries.com/ 
+// cca3
+        "DZA", // argelia
+        "MLI", // mali
+        "SEN", // senegal
+        "ESH" // sahara occidental
+https://restcountries.com/v3.1/alpha?codes=DZA,MLI,SEN,ESH*
 
 Requerimientos funcionales
 ❖ BUSQUEDA Y FILTROS (3)
