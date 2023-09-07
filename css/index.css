@@ -46,14 +46,14 @@ body{
     flex-direction: column;
     justify-content: space-between;
 } 
-
+/*#region HEADER*/
 .header {
-    background-color: var(--color-blu);
+    background-color: var(--color-blanco-azulado);
     color: #fff;
     padding: 10px;
     text-align: center;
     min-height: 50px;
-    height: 10vh;
+    height: 15vh;
     display: flex;
     align-items: center;
     position: sticky;
@@ -88,16 +88,19 @@ body{
     font-size: 30px;
     color: black;
 }
-
-/** FOOTER =======================================================================================================================================================*/
+/*#endregion HEADER*/
+/**=======================================================================================================================================================*/
+/*#region FOOTER*/
 .footer{
+    margin-top: 10px;
     background-color: var(--color-blanco-azulado);
     display: grid;
-    grid-template-areas:    "footer__body" 
-                            "footer__footer";
+    grid-template-areas:    
+    "footer__body" 
+    "footer__footer"
+    ;
     grid-template-rows: 4fr 0.7fr; /*sino queda espacio debajo*/
     place-items:center; 
-    
 }
 .footer > .footer__body {
     grid-area: footer__body;
@@ -109,11 +112,11 @@ body{
     ;
     grid-template-rows: repeat(2, 2fr 1fr);
     place-items:center; 
-    
 }
 .footer__body > .footer__aboutUs {
     grid-area: footer__aboutUs;
-    margin: 5px;
+    margin: 15px;
+    text-align: justify;
 }
 .footer__body > .footer__site {
     grid-area: footer__site;
@@ -123,7 +126,6 @@ body{
     grid-area: footer__logo;
     display: flex;
 }
-
 .footer > .footer__footer {
     background-color:#272525;
     display: grid;
@@ -132,91 +134,52 @@ body{
     width: 100%;
     color:white;
 }
+/*#endregion FOOTER*/
 
-/*
-.footer__body{
-    display: grid;
-    grid-template-areas:  "footer__aboutUs" 
-                          "footer__site"
-                          "footer__network";
-    grid-template-columns: 1fr 1fr 1fr ;
-}
+/*#endregion MOBILE*/
 
-
-*/
-/*
-.footer__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0;   
-}
-
-.footer__hour,
-.footer__contact,
-.footer__icons {
-    flex: 1;
-    padding: 20px;
-}
-.footer__hour a {
-    display: inline-block;
-}
-.footer__title {
-    font-size: 18px;
-}
-
-.footer__list {
-    list-style: none;
-    padding: 0;
-}
-
-.footer__item {
-    margin-bottom: 5px;
-}
-
-.footer__link {
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #0077FF; 
-}
-
-.footer__icon {
-    font-size: 24px;
-    margin-right: 10px;
-    color: #0077FF; 
-}
-
-.footer__footer {
-    text-align: center;
-}
-
-.footer__text {
-    font-size: 14px;
-} 
-*/
-/*#endregion*/
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/
 @media (480px <= width < 768px) {
+
 }
 /*#endregion*/
 
 /** =======================================================================================================================================================*/
 /*#region TABLET*/
-@media (768 <= width < 1024px) {
+@media (768px <= width < 1024px) {
+
 }
 /*#endregion*/
 
 /** =======================================================================================================================================================*/
 /*#region TABLET HORIZONTAL o DESKTOP*/
 @media (width >= 1024px) {
+    /*#region FOOTER*/
+    .footer{
+        grid-template-rows: 1fr;
+    }
+    .footer > .footer__body {
+        padding: 30px;
+        display: grid;
+        grid-template-areas:  
+        "footer__aboutUs footer__site footer__site footer__network "
+        "footer__aboutUs footer__site footer__site footer__logo"
+        ;
+        grid-template-rows: none;
+        grid-template-columns: repeat(4, 1fr);
+        /*align-items: self-end;*/
+    }  
+
+    /*
     .footer__body {
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 0;   
     }
+    */
+    /*#endregion FOOTER*/
 }
 
 /*#endregion*/
