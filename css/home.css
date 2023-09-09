@@ -123,9 +123,8 @@ body > footer {
 }
 
 .card__image {
-    height: 50%;
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
+    max-height: 100px;
     margin-bottom: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
@@ -143,7 +142,8 @@ body > footer {
 
 .card__links{
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
 }
 
 .card__link {
