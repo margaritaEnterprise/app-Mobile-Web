@@ -82,9 +82,16 @@ body{
     
 }
 
-.header__navItem {
-    
+
+
+.header__Navlink{
+    text-decoration: none;
 }
+
+.header__Navlink > p{
+    display: none;
+}
+
 .header__navList li a button {
     font-size: 0px;
     border:none;
@@ -96,10 +103,14 @@ body{
     align-items: center;*/
 }
 .header__navItem--selected i.material-icons{
-    font-size: 30px;
     color: black;
-    
 }
+
+.header__navItem--selected p{
+    font-weight: bold;
+    color: black;
+}
+
 /*#endregion HEADER*/
 /**=======================================================================================================================================================*/
 /*#region FOOTER*/
@@ -159,12 +170,19 @@ body{
         letter-spacing: 0px;
         font-size: 1rem;
     }
+
+    .header__Navlink > p{
+        display: block ;
+    }
 }
 /*#endregion*/
 
 /** =======================================================================================================================================================*/
 /*#region TABLET*/
 @media (768px <= width) { /* < 1024px*/
+    .header__Navlink > p{
+        display: block ;
+    }
 
 }
 /*#endregion*/
@@ -188,14 +206,11 @@ body{
         /*align-items: self-end;*/
     }  
 
-    /*
-    .footer__body {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 0;   
+    .header__Navlink > p{
+        display: block ;
     }
-    */
+    
+    
     /*#endregion FOOTER*/
 }
 

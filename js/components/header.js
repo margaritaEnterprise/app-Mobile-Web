@@ -8,28 +8,34 @@ const Header = (page) =>{
         </div>       
         <ul class="header__navList" id="navList">
             <li class="header__navItem ${page === "home"? "header__navItem--selected" : ""}" title="Inicio" id="home">
-                <a href="./../pages/index.html"><button><i class="material-icons">home</i>Inicio</button></a>
+                <a class="header__Navlink" href="./../pages/index.html">
+                  <i class="material-icons">home</i>
+                  <p>Inicio</p>
+                </a>
             </li>
             <li class="header__navItem ${page === "favorites"? "header__navItem--selected" : ""}" title="Favoritos" id="star">
-                <a href="./../pages/favorites.html"><button>
+                <a class="header__Navlink" href="./../pages/favorites.html">
                     <i class="material-icons">star</i>
-                    <!-- <i class="header__counter">(0)</i> -->
-                Favoritos</button></a>
+                    <p>Favoritos</p>
+                </a>
             </li>
             <li class="header__navItem ${page === "history"? "header__navItem--selected" : ""}" title="Historial" id="history">
-                <a href="./../pages/history.html"><button> 
+                <a  class="header__Navlink" href="./../pages/history.html"> 
                     <i class="material-icons">history</i>
-                Historial</button></a>
+                    <p>Historial</p>
+                </a>
             </li>
             <li class="header__navItem ${page === "games"? "header__navItem--selected" : ""}" title="Juegos" id="game">
-                <a href="./../pages/games.html"><button>
+                <a  class="header__Navlink" href="./../pages/games.html">
                     <i class="material-icons">sports_esports</i>
-                Juegos</button></a>
+                    <p>Juegos</p>
+                </a>
             </li>
             <li class="header__navItem ${page === "aboutUs"? "header__navItem--selected" : ""}" title="Nosotros" id="game">
-                <a href="./../pages/aboutUs.html"><button href="./../pages/aboutUs.html">
+                <a class="header__Navlink" href="./../pages/aboutUs.html">
                     <i class="material-icons">diversity_3</i>
-                Nosotros</button></a>
+                    <p class="">Nosotros</p>
+                </a>
             </li>    
         </ul>
     </nav>
