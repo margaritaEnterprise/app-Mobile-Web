@@ -34,6 +34,7 @@ const getCountriesByCodes = async (arrayCodes) => {
     if(response.ok){
         result = await response.json()
     }
+
     return result
 }
 

@@ -14,7 +14,7 @@ const Card = (country) => {  //ccn3 es el codigo numerico del pais
                 :
                 `<a class="card__link"><i class="card__link material-icons">star_rate</i></a>`
             }
-            <a href="./../pages/share.html" class="card__link open_detail" id=${country.ccn3}><i class="material-icons">share</i></a>
+            <a href="./../pages/share.html?code=${country.ccn3}" class="card__link open_detail" id=${country.ccn3}><i class="material-icons">share</i></a>
         </div>
     </div>
 

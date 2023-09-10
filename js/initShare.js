@@ -5,6 +5,7 @@ import renderDetail from "./actions/renderDetail.js";
 import renderShare from "./actions/renderShare.js";
 
 const initShare = async () => {
+    
     renderHeader("");
     renderFooter();
     renderDetail();
