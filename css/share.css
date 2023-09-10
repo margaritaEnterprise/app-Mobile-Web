@@ -5,11 +5,100 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
+
+#detailCountry{
+    width: 100%;
+    height: 100%;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+.card__image {
+    max-width: 90%;
+    max-height: 200px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+}
+
+.card__title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.card__info {
+    margin: 0;
+    font-size: 1rem;
+    color: #888;
+}
+
+.card__links{
+    display: none;
+
+}
+
+.email-form {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.email-form__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-form__field {
+    margin-bottom: 15px;
+}
+
+.email-form__label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.email-form__input,
+.email-form__textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.email-form__submit {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+
 
 /** =======================================================================================================================================================*/
 
 @media (width >= 480px) {
+ 
+
     .share {
         padding: 1rem;
         display: flex;
@@ -18,4 +107,15 @@
         align-items: center;
         gap: 2rem;
     }
+
+
+    #detailCountry{
+        width: 50%;
+        height: 100%;
+    }
+
+    .card{
+        max-width: 400px;
+    }
+
 }

@@ -1,5 +1,5 @@
 import { getCountriesByCodes } from "../services/countries.js";
-import { getCodes } from "./storageCodes.js";
+import { getCodes } from "../storage/storageCodes.js";
 import Detail from "../components/detail.js";
 
 //spinner o enviar por parametro el arraycodes

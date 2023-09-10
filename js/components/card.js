@@ -2,7 +2,6 @@
 const Card = (country) => {  //ccn3 es el codigo numerico del pais
     //<a href="./../pages/detail.html" class="open_detail" id=${}>          </a>       
 
-           
     return  `
     <div class="card">
         <img src="${country.flags.png}" alt="Bandera de ${country.flags.alt}" class="card__image"/>
