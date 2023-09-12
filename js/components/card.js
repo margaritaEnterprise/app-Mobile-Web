@@ -2,10 +2,14 @@
 const Card = (country) => {  //ccn3 es el codigo numerico del pais
     //<a href="./../pages/detail.html" class="open_detail" id=${}>          </a>       
 
+    let code = country.cca3;
+
+    console.log(code);
+
     return  `
     <div class="card">
-        <img onclick="viewDetail(${country.ccn3})" src="${country.flags.png}" alt="Bandera de ${country.flags.alt}" class="card__image"/>
-        <h2 onclick="viewDetail(${country.ccn3})" class="card__title">${country.translations.spa.common}</h2>
+        <img onclick="viewDetail('${code}')" src="${country.flags.png}" alt="Bandera de ${country.flags.alt}" class="card__image"/>
+        <h2 onclick="viewDetail('${code}')" class="card__title">${country.translations.spa.common}</h2>
         <p class="card__info">Continente: ${country.region}</p>
         <div class="card__links">
             ${country.ccn3%3 == 0 ? 
@@ -22,6 +26,7 @@ const Card = (country) => {  //ccn3 es el codigo numerico del pais
 
 
 const viewDetail = (code) =>{
+    
     window.location.href = `../../pages/detail.html?code=${code}`
 }
 
