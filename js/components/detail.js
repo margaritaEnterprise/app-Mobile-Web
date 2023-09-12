@@ -12,6 +12,7 @@ const Detail = (country) => {  //ccn3 es el codigo numerico del pais
             symbol: country.currencies[currencyCode].symbol
         };
     });
+
     let capitals = country.capital;
 
     let continent = country.region;
@@ -113,8 +114,8 @@ const Detail = (country) => {  //ccn3 es el codigo numerico del pais
             </section>
 
             <section class="country__details">
+            <h2>Escudo de Armas:</h2>
                 <article class="country__coat">
-                    <h2>Escudo de Armas:</h2>
                     <img class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
                 </article>
             </section>
