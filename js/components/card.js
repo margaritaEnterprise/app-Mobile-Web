@@ -26,7 +26,6 @@ const Card = (country) => {  //ccn3 es el codigo numerico del pais
 
 
 const viewDetail = (code) =>{
-    
     window.location.href = `../../pages/detail.html?code=${code}`
 }
 

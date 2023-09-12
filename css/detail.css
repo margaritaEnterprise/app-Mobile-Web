@@ -60,14 +60,11 @@ h2 {
     margin-top: 10px;
 }
 
-.country__flag > img {
- 
 
+.country__coat > img{
+    width: 100%;
+    height: 100%;
 }
-
-
-
-
 
 .country__borders {
     overflow: hidden;
