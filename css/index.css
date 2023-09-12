@@ -102,6 +102,11 @@ body{
 /*    display: flex;
     align-items: center;*/
 }
+
+.header__navItem i.material-icons{
+    font-size: 2rem;
+}
+
 .header__navItem--selected i.material-icons{
     color: black;
 }
