@@ -1,16 +1,6 @@
-const Share = (country) => {
-    console.log(country);
-    let name = country.translations.spa.common;
-    let flag = country.flags.png;
+const Share = () => {
 
     return `
-    <section class="share-header">
-        <article class="country__flag">
-            <img class="country__img" src="${flag}" alt=${name}>
-        </article>
-        <h1 class="" >${name}</h1>
-
-    </section>
     <form class="email-form__form">
         <div class="email-form__field">
             <label for="email" class="email-form__label">Email:</label>

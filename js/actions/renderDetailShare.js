@@ -1,5 +1,6 @@
 import detailShare from "../components/detailShare.js";
 import { getCountriesByCodes } from "../services/countries.js";
+import NotFound from "../components/notFound.js";
 
 //spinner o enviar por parametro el arraycodes
 const renderDetailShare = async () => {  
@@ -13,7 +14,7 @@ const renderDetailShare = async () => {
     let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
-        response = await getCountriesByCodes(["032"]);
+        section.innerHTML += NotFound();
     }
 
     response.map(country => {

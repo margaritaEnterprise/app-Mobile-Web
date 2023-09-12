@@ -13,7 +13,6 @@ const renderShare = async () => {
 
     let country = await getCountriesByCodes([code]);
     if(country.length == 0) {
-        //response = await getCountriesByCodes(["032"]);
         aside.innerHTML += NotFound();
     }
     aside.innerHTML = Share(country[0]);
