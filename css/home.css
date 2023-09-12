@@ -183,6 +183,11 @@ body > footer {
         padding: 0; 
     }
 
+    .card__image{
+        max-width: 90%;
+        max-height: 100px;
+    }
+
     .adversiting{
         display: block;
         background-color: #ff7011;
