@@ -8,7 +8,6 @@ const initShare = async () => {
     
     renderHeader("");
     renderFooter();
-    renderDetail();
     renderShare();
     onListItemClick(document.querySelectorAll('.home'))
 }

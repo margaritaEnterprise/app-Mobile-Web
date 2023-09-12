@@ -1,5 +1,6 @@
 import { getCountriesByCodes } from "../services/countries.js";
 import Detail from "../components/detail.js";
+import NotFound from "../components/notFound.js";
 
 //spinner o enviar por parametro el arraycodes
 const renderDetail = async () => {  
@@ -11,9 +12,8 @@ const renderDetail = async () => {
 
     let response = await getCountriesByCodes([code]);
 
-
     if(response.length == 0) {
-        response = await getCountriesByCodes(["032"]);
+        section.innerHTML += NotFound();
     }
     response.map(country => {
         section.innerHTML += Detail(country);
