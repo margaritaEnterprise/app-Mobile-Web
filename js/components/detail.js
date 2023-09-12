@@ -1,10 +1,9 @@
 
-const Detail = (country) => {  //ccn3 es el codigo numerico del pais
+
+const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     let name = country.translations.spa.common;
-
     let officialName = country.translations.spa.official;
-
     const currenciesArray = Object.keys(country.currencies).map(currencyCode => {
         return {
             code: currencyCode,
@@ -12,37 +11,27 @@ const Detail = (country) => {  //ccn3 es el codigo numerico del pais
             symbol: country.currencies[currencyCode].symbol
         };
     });
-
     let capitals = country.capital;
-
     let continent = country.region;
-
     let region = country.subregion;
-
     const languagesArray = Object.keys(country.languages).map(languageCode => {
         return {
             name: country.languages[languageCode]
         };
     });
-
-    let lat = country.latlng[0];
-
-    let long = country.latlng[1];
-
-    let borders = country.borders;
-
+    let lat = country.latlng[0]; let long = country.latlng[1];
     let area = country.area;
-
     let population = country.population;
-
     let timezones = country.timezones;
-
     let flag = country.flags.png;
-
     let coatOfArms = country.coatOfArms.png;
 
     let HTMLCurrenciesArray = currenciesArray.map(currency => `
     <p>⚫ ${currency.name} ${currency.symbol} (${currency.code})</p>`)
+
+    let HTMLBordersArray = borders.map(border => `
+        <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
+    `);
 
     return  `
         <section class="country">
@@ -51,7 +40,7 @@ const Detail = (country) => {  //ccn3 es el codigo numerico del pais
                     <h1 class="" >${name}</h1>
                 </div>
                 <article class="country__flag">
-                    <img class="country__img" src="${flag}" alt="Bandera de Mauritania">
+                    <img class="country__img" src="${flag}" alt="Bandera de ${name}">
                 </article>
                 <article class="country-nameOfficial">
                     <h2>Nombre Oficial:</h2>
@@ -123,12 +112,24 @@ const Detail = (country) => {  //ccn3 es el codigo numerico del pais
             <section class="country__details">
                 <article class="country__borders">
                     <h2>Países Limítrofes:</h2>
-                    <p>${borders ?  borders.join(', '): "No tiene"}</p>
+                    <div class="country__bordersFlag">
+                    ${HTMLBordersArray.length > 0 ?  HTMLBordersArray.join(''): "<p>No tiene</p>"}
+                    </div>
+
+                    
                 </article>
             </section>
 
         </section>
     `
 }
+
+const viewDetail = (code) =>{
+    window.location.href = `../../pages/detail.html?code=${code}`
+}
+
+
+
+window.viewDetail = viewDetail;
         
 export default Detail; 

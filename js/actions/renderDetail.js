@@ -15,8 +15,23 @@ const renderDetail = async () => {
     if(response.length == 0) {
         response = await getCountriesByCodes(["032"]);
     }
+
+    let borders = [];
+
+    if(response[0].borders){
+        borders = await getCountriesByCodes(response[0].borders);
+        borders = borders.map(country => {
+            return {
+                name : country.translations.spa.common,
+                code : country.cca3,
+                flag : country.flags.png
+            }
+        });
+
+    }
+
     response.map(country => {
-        section.innerHTML += Detail(country);
+        section.innerHTML += Detail(country, borders);
     });
 }
 
