@@ -11,7 +11,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
             symbol: country.currencies[currencyCode].symbol
         };
     });
-    let capitals = country.capital;
+    let capitals = country.capital ? country.capital : ["No tiene"];
     let continent = country.region;
     let region = country.subregion;
     const languagesArray = Object.keys(country.languages).map(languageCode => {
