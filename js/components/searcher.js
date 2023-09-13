@@ -93,12 +93,3 @@ const Searcher = () => {
   
   export default Searcher;
   
-
-  // <select id="region" class="searcher__select">
-  //           ${continents
-  //             .map(
-  //               (continent) =>
-  //                 `<option value="${continent.value}">${continent.name}</option>`
-  //             )
-  //             .join("")}
-  //         </select>
