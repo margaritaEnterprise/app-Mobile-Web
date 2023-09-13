@@ -4,7 +4,6 @@ const Card = (country) => {  //ccn3 es el codigo numerico del pais
 
     let code = country.cca3;
 
-    console.log(code);
 
     return  `
     <div class="card">
