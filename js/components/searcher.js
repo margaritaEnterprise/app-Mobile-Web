@@ -1,6 +1,6 @@
 const Searcher = () => {
     const continents = [
-      { value: null, name: "" },
+      //{ value: null, name: "" },
       { value: "Africa", name: "África" },
       { value: "Americas", name: "América" },
       { value: "Antarctica", name: "Antártida" },
@@ -40,6 +40,14 @@ const Searcher = () => {
     ];
 
 
+    let HTMLcontinentsArray =  continents.map(continent => `
+      <button class="searcher__buttonFilter" id="continent--${continent.value}">
+        <img class="searcher__img" src="../../assets/${continent.value}-outline.png">
+        <p>${continent.name}</p>
+      </button>
+    `);
+
+
     return `
       <form class="searcher__form">
         <div class="search__header">
@@ -54,14 +62,9 @@ const Searcher = () => {
         </div>  
           <br />
           <label for="region" class="searcher__label">Continente:</label>
-          <select id="region" class="searcher__select">
-            ${continents
-              .map(
-                (continent) =>
-                  `<option value="${continent.value}">${continent.name}</option>`
-              )
-              .join("")}
-          </select>
+          <article class="searcher__filters">
+            ${HTMLcontinentsArray.join("")}
+          </article>
           <br />
           <label for="subregion" class="searcher__label">Region: </label>
           <select id="subregion" class="searcher__select">
@@ -90,3 +93,12 @@ const Searcher = () => {
   
   export default Searcher;
   
+
+  // <select id="region" class="searcher__select">
+  //           ${continents
+  //             .map(
+  //               (continent) =>
+  //                 `<option value="${continent.value}">${continent.name}</option>`
+  //             )
+  //             .join("")}
+  //         </select>
