@@ -5,7 +5,7 @@ const Card = (country) => {
     
 
     return  `
-    <div class="card">
+    <div class="card" id="card${code}">
         <img onclick="viewDetail('${code}')" src="${country.flags.png}" alt="Bandera de ${country.flags.alt}" class="card__image"/>
         <h2 onclick="viewDetail('${code}')" class="card__title">${country.translations.spa.common}</h2>
         <p class="card__info">Continente: ${country.region}</p>
