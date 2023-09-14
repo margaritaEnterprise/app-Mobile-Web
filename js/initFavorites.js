@@ -17,17 +17,19 @@ const initFavorites = async () => {
     renderCountries(section, countries); 
 }
 
+document.addEventListener("DOMContentLoaded", async () => {
+  initFavorites();
 
-window.onload = initFavorites();
+});
 
 window.onload = () => {
-  $(document).ready(function() {
-      console.log("h");
-      $(".addFavorites").click(function() {
-        console.log(this.id);
-      });
+  $(".addFavorites").click(function() {
+    alert(this.id);
   });
 }
+
+
+
 
 
 
