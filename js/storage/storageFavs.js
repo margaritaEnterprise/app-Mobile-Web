@@ -1,6 +1,7 @@
 const initFavs = () => { 
     console.log("init Fav")
-    let initArrayFavs = ['232', '630', '642', '028'];
+    let initArrayFavs = ["PSE", "KWT", "GIN", "TKL", "AFG", "VGB", "CAN"];
+
     localStorage.setItem('favs', JSON.stringify(initArrayFavs));
 }
 
@@ -28,5 +29,9 @@ const setFavs = (fav) => {
     return arrayFavs.filter(item => item != indexOf(fav));
 }
 
+const statusFavs = (code) => {
+    return false;
+}
 
-export { initFavs, setFavs, getFavs };
+
+export { initFavs, setFavs, getFavs, statusFavs };

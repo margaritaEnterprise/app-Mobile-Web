@@ -190,12 +190,14 @@ body > footer {
 }
 
 .card__link i:hover {
+    cursor: pointer;
     color: #ff7011;
 }
-
-.paginator{
-    display: flex;
+.card__link__selected {
+    color: #ff7011;
+    cursor: pointer;
 }
+
 /** =======================================================================================================================================================*/
 /** Desktop Design */
 

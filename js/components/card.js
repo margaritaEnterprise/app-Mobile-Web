@@ -1,9 +1,10 @@
+import { statusFavs } from "../storage/storageFavs.js";
 
-const Card = (country) => {  //ccn3 es el codigo numerico del pais
-    //<a href="./../pages/detail.html" class="open_detail" id=${}>          </a>       
+const Card = (country) => {       
 
     let code = country.cca3;
-
+    let isFav = statusFavs(code);
+    
 
     return  `
     <div class="card">
@@ -11,10 +12,10 @@ const Card = (country) => {  //ccn3 es el codigo numerico del pais
         <h2 onclick="viewDetail('${code}')" class="card__title">${country.translations.spa.common}</h2>
         <p class="card__info">Continente: ${country.region}</p>
         <div class="card__links">
-            ${country.ccn3%3 == 0 ? 
-                `<a class="card__link"><i class="card__link material-icons">stars</i></a>`
+            ${isFav ? 
+                `<i class="addFavorites card__link__selected material-icons">star_rate</i>`
                 :
-                `<a class="card__link"><i class="card__link material-icons">star_rate</i></a>`
+                `<i class="addFavorites card__link material-icons">star_rate</i>`
             }
             <a href="./../pages/share.html?code=${code}" class="card__link"><i class="card__link material-icons">share</i></a>
         </div>

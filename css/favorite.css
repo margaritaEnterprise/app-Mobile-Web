@@ -72,8 +72,13 @@
 
 }
 
-.card__link i:hover {
+.card__link:hover {
+    cursor: pointer;
     color: #ff7011;
+}
+.card__link__selected {
+    color: #ff7011;
+    cursor: pointer;
 }
 
 .paginator{

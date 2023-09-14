@@ -14,9 +14,19 @@ const initFavorites = async () => {
     console.log("codes: " + codes)
     let countries = await getCountriesByCodes(codes);
     let section = document.getElementById('all')
-    renderCountries(section, countries); //usar constantes
+    renderCountries(section, countries); 
+  
+
+
     onListItemClick(document.querySelectorAll('.home'))
 }
 
 window.onload = initFavorites; 
 //onload el dom ya se creo en el navegador
+
+$(document).ready(function() {
+    $(".addFavorites").click(function() {
+      // Tu función JavaScript aquí
+      alert("¡Hiciste clic en el botón!");
+    });
+  });
