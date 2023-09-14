@@ -1,37 +1,28 @@
-const initFavs = () => { 
-    console.log("init Fav")
-    let initArrayFavs = ["PSE", "KWT", "GIN", "TKL", "AFG", "VGB", "CAN"];
-
-    localStorage.setItem('favs', JSON.stringify(initArrayFavs));
-}
-
-const getFavs = async  () => { 
-    console.log("get Fav")
-
+const getFavs = () => { 
     if(localStorage.getItem('favs')) {
         let arrayFavs = localStorage.getItem('favs');
         return JSON.parse(arrayFavs);
     }
-    initFavs();
-    return [];
+    return []
 }
 
 const setFavs = (fav) => { 
-    console.log("set Fav")
-
     let arrayFavs = getFavs(); //[1, 2, 3] o []
-    //si fav pertenece al array, lo saco
-    console.log(arrayFavs);
-    if (arrayFavs.indexOf(fav) != -1) {
-        arrayFavs.push(fav);
-        localStorage.setItem('favs', JSON.stringify(arrayFavs));
-    } 
-    return arrayFavs.filter(item => item != indexOf(fav));
+    if(arrayFavs.includes(fav)) {
+        let pos = arrayFavs.indexOf(fav);
+        arrayFavs.splice(pos, 1)
+    } else {
+        arrayFavs.unshift(fav); //agregar al principio
+    }
+    localStorage.setItem('favs', JSON.stringify(arrayFavs));
+    return;
 }
 
-const statusFavs = (code) => {
+const isFav = (code) => {
+    let arrayFavs = getFavs(); //[1, 2, 3] o []
+    if(arrayFavs.indexOf(code) != -1) return true;
     return false;
 }
 
 
-export { initFavs, setFavs, getFavs, statusFavs };
+export { setFavs, getFavs, isFav };

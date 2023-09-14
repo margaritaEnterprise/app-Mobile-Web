@@ -19,7 +19,7 @@ const getCountry = async (name) => {
     return result
 }
 
-//https://restcountries.com/v3.1/alpha?codes={code1},{code2} ...
+//https://restcountries.com/v3.1/alpha?codes=PSE,KWT,GIN,TKL,AFG,VGB,CAN
 //Traer el detalle de un pais [ccn3]
 //O traer la lista de favoritos [ccn3, ccn3, ... ccn3]
 const getCountriesByCodes = async (arrayCodes) => { 

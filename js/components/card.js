@@ -1,12 +1,7 @@
-import { statusFavs } from "../storage/storageFavs.js";
+import { isFav } from "../storage/storageFavs.js";
 
 const Card = (country) => {       
-
-    if(country){
-        console.log(country);
-    }
     let code = country.cca3;
-    let isFav = statusFavs(code);
     
 
     return  `
@@ -15,7 +10,7 @@ const Card = (country) => {
         <h2 onclick="viewDetail('${code}')" class="card__title">${country.translations.spa.common}</h2>
         <p class="card__info">Continente: ${country.region}</p>
         <div class="card__links">
-            ${isFav ? 
+            ${isFav(code) ? 
                 `<i id='${code}' class="addFavorites card__link__selected material-icons">star_rate</i>`
                 :
                 `<i id='${code}' class="addFavorites card__link material-icons">star_rate</i>`
@@ -26,7 +21,6 @@ const Card = (country) => {
 
     `
 }
-
 
 const viewDetail = (code) =>{
     window.location.href = `../../pages/detail.html?code=${code}`

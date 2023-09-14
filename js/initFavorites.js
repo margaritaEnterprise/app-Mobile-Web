@@ -1,38 +1,25 @@
 import renderHeader from "./actions/renderHeader.js";
 import renderFooter from "./actions/renderFooter.js";
-import { initFavs, getFavs } from "./storage/storageFavs.js";
+import { getFavs } from "./storage/storageFavs.js";
 import { getCountriesByCodes } from "./services/countries.js";
 import renderCountries from "./actions/renderCountries.js";
+import { setFavs } from "./storage/storageFavs.js";
 
 
 const initFavorites = async () => {
     renderHeader("favorites");
     renderFooter();
 
-    initFavs(); //let initArrayFavs = ['232', '630', '642', '028'];
-    let codes = await getFavs();
+    let codes = getFavs();
     console.log("codes: " + codes)
     let countries = await getCountriesByCodes(codes);
     let section = document.getElementById('all')
-    renderCountries(section, countries); 
+    if(countries.length == 0){
+        section.textContent = "aqui se guardaran tus paises favoritos"
+    } else {   
+        renderCountries(section, countries); 
+    }
+
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  initFavorites();
-
-});
-
-window.onload = () => {
-  $(".addFavorites").click(function() {
-    alert(this.id);
-  });
-}
-
-
-
-
-
-
-// //onload el dom ya se creo en el navegador
-
-
+window.onload = initFavorites;
