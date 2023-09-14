@@ -92,18 +92,7 @@
 .card__link__selected {
     color: #ff7011;
     cursor: pointer;
-    transform-origin: center;
-    animation: rotar 2s linear infinite;
-  }
-  
-  @keyframes rotar {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+}
 /** =======================================================================================================================================================*/
 /** Desktop Design */
 

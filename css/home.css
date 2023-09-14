@@ -206,6 +206,17 @@ body > footer {
 .card__link:hover {
     cursor: pointer;
     color: #ff7011;
+    transform-origin: center;
+    animation: rotar 5s linear infinite;
+}
+  
+@keyframes rotar {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
 }
 .card__link__selected {
     color: #ff7011;
