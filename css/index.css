@@ -190,6 +190,11 @@
 /** =======================================================================================================================================================*/
 /*#region TABLET HORIZONTAL o DESKTOP*/
 @media (width >= 1024px) {
+
+    body{
+        min-height: 100vh;
+    }
+
     /*#region FOOTER*/
     .footer{
         grid-template-rows: 1fr;

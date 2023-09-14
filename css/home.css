@@ -84,7 +84,6 @@ body > footer {
     display: flex;
     flex-direction: row;
     gap: .5rem;
-    
 }
 
 .searcher__buttonFilter{
