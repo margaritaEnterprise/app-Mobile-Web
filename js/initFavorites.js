@@ -15,18 +15,22 @@ const initFavorites = async () => {
     let countries = await getCountriesByCodes(codes);
     let section = document.getElementById('all')
     renderCountries(section, countries); 
-  
-
-
-    onListItemClick(document.querySelectorAll('.home'))
 }
 
-window.onload = initFavorites; 
-//onload el dom ya se creo en el navegador
 
-$(document).ready(function() {
-    $(".addFavorites").click(function() {
-      // Tu función JavaScript aquí
-      alert("¡Hiciste clic en el botón!");
-    });
+window.onload = initFavorites();
+
+window.onload = () => {
+  $(document).ready(function() {
+      console.log("h");
+      $(".addFavorites").click(function() {
+        console.log(this.id);
+      });
   });
+}
+
+
+
+// //onload el dom ya se creo en el navegador
+
+

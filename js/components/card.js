@@ -2,6 +2,9 @@ import { statusFavs } from "../storage/storageFavs.js";
 
 const Card = (country) => {       
 
+    if(country){
+        console.log(country);
+    }
     let code = country.cca3;
     let isFav = statusFavs(code);
     
@@ -13,9 +16,9 @@ const Card = (country) => {
         <p class="card__info">Continente: ${country.region}</p>
         <div class="card__links">
             ${isFav ? 
-                `<i class="addFavorites card__link__selected material-icons">star_rate</i>`
+                `<i id='${code}' class="addFavorites card__link__selected material-icons">star_rate</i>`
                 :
-                `<i class="addFavorites card__link material-icons">star_rate</i>`
+                `<i id='${code}' class="addFavorites card__link material-icons">star_rate</i>`
             }
             <a href="./../pages/share.html?code=${code}" class="card__link"><i class="card__link material-icons">share</i></a>
         </div>
