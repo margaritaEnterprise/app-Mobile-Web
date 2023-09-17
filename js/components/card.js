@@ -15,11 +15,15 @@ const Card = (country) => {
                 :
                 `<i id='${code}' class="addFavorites card__link material-icons">star_rate</i>`
             }
-            <a href="./../pages/share.html?code=${code}" class="card__link"><i class="card__link material-icons">share</i></a>
+            <i onclick="shareCountry('${code}')" class="card__link material-icons">share</i>
         </div>
     </div>
 
     `
+}
+
+const shareCountry = (code) =>{
+    window.location.href = `../../pages/share.html?code=${code}`
 }
 
 const viewDetail = (code) =>{
@@ -27,5 +31,6 @@ const viewDetail = (code) =>{
 }
 
 window.viewDetail = viewDetail;
+window.shareCountry = shareCountry;
 
 export default Card; 

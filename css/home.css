@@ -191,22 +191,17 @@ body > footer {
     display: flex;
     align-items: start;
     justify-content: center;
+    gap: 1rem;
 }
 
 .card__link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.25rem;
-    margin: 5px;
-
+    font-size: 4rem;
 }
 
 .card__link:hover {
     cursor: pointer;
     color: #ff7011;
-    transform-origin: center;
+    
     animation: rotar 5s linear infinite;
 }
   
@@ -253,7 +248,7 @@ body > footer {
     }
 
     .searcher__filters{
-        max-width: 30vw;
+        max-width: 20vw;
     }
 }
 
