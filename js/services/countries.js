@@ -40,7 +40,6 @@ const getCountriesByCodes = async (arrayCodes) => {
 
 const getAllCountryCodes = async () => {
     
-    console.log(stringCode);
     let result = []
     let response = await fetch(`${URL}/all?fields=cca3`)
     if(response.ok){
@@ -50,4 +49,4 @@ const getAllCountryCodes = async () => {
     return result
 }
 
-export { getCountries, getCountry, getCountriesByCodes }
+export { getCountries, getCountry, getCountriesByCodes, getAllCountryCodes }

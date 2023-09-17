@@ -3,7 +3,6 @@ import { isFav } from "../storage/storageFavs.js";
 const Card = (country) => {       
     let code = country.cca3;
     
-
     return  `
     <div class="card" id="card${code}">
         <img onclick="viewDetail('${code}')" src="${country.flags.png}" alt="Bandera de ${country.flags.alt}" class="card__image"/>

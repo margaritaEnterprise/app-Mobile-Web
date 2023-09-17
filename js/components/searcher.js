@@ -39,7 +39,6 @@ const Searcher = () => {
       { name: 'Central America', continent: 'Americas' }
     ];
 
-
     let HTMLcontinentsArray =  continents.map(continent => `
       <button class="searcher__buttonFilter" id="continent--${continent.value}">
         <img class="searcher__img" src="../../assets/${continent.value}-outline.png">
@@ -89,7 +88,7 @@ const Searcher = () => {
           <output class="searcher__output">1</output>
         </form>
     `;
-  };
-  
-  export default Searcher;
-  
+};
+
+export default Searcher;
+
