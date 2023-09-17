@@ -37,11 +37,11 @@ await init();
 function actions() {
     $(document).ready(function () {
         $(".paginator__button").click(async function (event) {
+            let section = document.getElementById('all');
+            section.innerHTML = "";
             $("#loader-container").css("display", "block");
             let page = $(this).data("page") - 1
             let countries = await getCountriesByCodes(countriesCode.slice((page)*10,(page*10)+10).map(x => x.cca3));
-            let section = document.getElementById('all');
-            console.log(page*10,(page*10)+10);
             renderCountries(section, countries);
             $("#loader-container").css("display", "none");
             renderPaginator(countriesCode.length, page+1);
