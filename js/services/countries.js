@@ -12,7 +12,10 @@ const getCountries = async () => {
 //https://restcountries.com/v3.1/all?fields=name,capital,currencies
 const getCountry = async (name) => { 
     let result = []
-    let response = await fetch(`${URL}/${name}`)
+    let fields = "?fields=cca3,name,region,subregion,population,flags,translations"
+    let fetchUrl = name ? `${URL}/name/${name}${fields}` : 
+                          `${URL}/all${fields}`
+    let response = await fetch(fetchUrl)
     if(response.ok){
         result = await response.json()
     }
@@ -39,7 +42,6 @@ const getCountriesByCodes = async (arrayCodes) => {
 }
 
 const getAllCountryCodes = async () => {
-    
     let result = []
     let response = await fetch(`${URL}/all?fields=cca3`)
     if(response.ok){

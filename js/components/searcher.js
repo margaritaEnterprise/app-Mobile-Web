@@ -3,7 +3,7 @@ const Searcher = () => {
       //{ value: null, name: "" },
       { value: "Africa", name: "África" },
       { value: "Americas", name: "América" },
-      { value: "Antarctica", name: "Antártida" },
+      { value: "Antarctic", name: "Antártida" },
       { value: "Asia", name: "Asia" },
       { value: "Europe", name: "Europa" },
       { value: "Oceania", name: "Oceanía" }, // Corregido "Cceania" a "Oceania"
@@ -40,7 +40,7 @@ const Searcher = () => {
     ];
 
     let HTMLcontinentsArray =  continents.map(continent => `
-      <button class="searcher__buttonFilter" id="continent--${continent.value}">
+      <button class="searcher__buttonFilter" id="continent--${continent.value}" data-value="${continent.value}">
         <img class="searcher__img" src="../../assets/${continent.value}-outline.png">
         <p>${continent.name}</p>
       </button>
@@ -54,6 +54,7 @@ const Searcher = () => {
         type="search"
         class="searcher__input searcher__input--BorderNone"
         placeholder="Ingrese un nombre . . ."
+        id="searcher_input"
         />
         <button type="submit" class="searcher__button">
             <i class="material-icons">search</i>
@@ -65,16 +66,7 @@ const Searcher = () => {
             ${HTMLcontinentsArray.join("")}
           </article>
           <br />
-          <label for="subregion" class="searcher__label">Region: </label>
-          <select id="subregion" class="searcher__select">
-            ${regions
-              .map(
-                (regions) =>
-                  `<option value="${regions.name}">${regions.name}</option>`
-              )
-              .join("")}
-          </select>
-          <br />
+
           <label for="population" class="searcher__label">
             Cantidad mínima de habitantes (1-1 400 000 000):
           </label>
@@ -89,6 +81,18 @@ const Searcher = () => {
         </form>
     `;
 };
+
+
+{/* <label for="subregion" class="searcher__label">Region: </label>
+<select id="subregion" class="searcher__select">
+  ${regions
+    .map(
+      (regions) =>
+        `<option value="${regions.name}">${regions.name}</option>`
+    )
+    .join("")}
+</select>
+<br /> */}
 
 export default Searcher;
 
