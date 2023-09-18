@@ -45,8 +45,6 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
     let flag = country.flags.png;
     let coatOfArms = country.coatOfArms.png;
 
-    
-
     let HTMLBordersArray = borders.map(border => `
         <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
     `);
@@ -128,6 +126,17 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
             </section>
 
             <section class="country__details">
+                <article class="country__map">
+                    <h2>Mapa</h2>
+                    <div id="map" class="country__bordersFlag">
+                    
+                    </div>
+
+                    
+                </article>
+            </section>
+
+            <section class="country__details">
                 <article class="country__borders">
                     <h2>Países Limítrofes:</h2>
                     <div class="country__bordersFlag">
@@ -145,6 +154,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 const viewDetail = (code) =>{
     window.location.href = `../../pages/detail.html?code=${code}`
 }
+
 
 
 
