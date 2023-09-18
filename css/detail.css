@@ -1,4 +1,7 @@
 
+body{
+    min-height: 100vh;
+}
 
 .country__flag{
     width: 100%;

@@ -4,21 +4,40 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     let name = country.translations.spa.common;
     let officialName = country.translations.spa.official;
-    const currenciesArray = Object.keys(country.currencies).map(currencyCode => {
-        return {
-            code: currencyCode,
-            name: country.currencies[currencyCode].name,
-            symbol: country.currencies[currencyCode].symbol
-        };
-    });
+
+    let currenciesArray = [];
+    let HTMLCurrenciesArray ;
+    if(country.currencies){
+        currenciesArray = Object.keys(country.currencies).map(currencyCode => {
+            return {
+                code: currencyCode,
+                name: country.currencies[currencyCode].name,
+                symbol: country.currencies[currencyCode].symbol
+            };
+        });
+
+        HTMLCurrenciesArray = currenciesArray.map(currency => `
+        <p>⚫ ${currency.name} ${currency.symbol} (${currency.code})</p>`)
+    }else{
+        currenciesArray.push("No tiene");
+        HTMLCurrenciesArray = currenciesArray.map(currency => `
+        <p>${currency}</p>`)
+    }
+
+  
     let capitals = country.capital ? country.capital : ["No tiene"];
     let continent = country.region;
-    let region = country.subregion;
-    const languagesArray = Object.keys(country.languages).map(languageCode => {
-        return {
-            name: country.languages[languageCode]
-        };
-    });
+    let region = country.subregion ? country.subregion : "No pertenece a ninguna";
+    let languagesArray = [];
+    if(country.languages){
+        languagesArray = Object.keys(country.languages).map(languageCode => {
+            return {
+                name: country.languages[languageCode]
+            };
+        });
+    }else{
+        languagesArray.push("No tiene");
+    }
     let lat = country.latlng[0]; let long = country.latlng[1];
     let area = country.area;
     let population = country.population;
@@ -26,8 +45,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
     let flag = country.flags.png;
     let coatOfArms = country.coatOfArms.png;
 
-    let HTMLCurrenciesArray = currenciesArray.map(currency => `
-    <p>⚫ ${currency.name} ${currency.symbol} (${currency.code})</p>`)
+    
 
     let HTMLBordersArray = borders.map(border => `
         <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
