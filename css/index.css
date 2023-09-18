@@ -160,6 +160,67 @@
 /*#endregion FOOTER*/
 /*#endregion MOBILE*/
 
+.loader-container{
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px solid black;
+    animation: spin 1.5s linear infinite; /* Hacemos la animación más rápida (de 2s a 1s) */
+    display: flex ;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    align-self: end;
+    justify-self: end;
+}
+
+.paginator__button {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Estilos CSS para los iconos de flechas */
+.paginator__button i.material-icons {
+    font-size: 16px; /* Establece el tamaño de fuente deseado */
+    vertical-align: middle; /* Alinea verticalmente los iconos */
+}
+
+.paginator__button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.paginator__button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/
 @media (510px <= width ) { /*480px <=width< 768px*/
@@ -192,6 +253,9 @@
 /*#region TABLET HORIZONTAL o DESKTOP*/
 
 @media (width >= 1024px) {
+    body{
+        min-height: 100vh; 
+    }
     /*#region FOOTER*/
     .footer{
         grid-template-rows: 1fr;
@@ -217,62 +281,3 @@
 }
 
 /*#endregion*/
-
-.loader-container{
-    width: 100%;
-    height: 50px;
-}
-
-.loader {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 5px solid transparent;
-    border-top: 5px solid black;
-    animation: spin 1.5s linear infinite; /* Hacemos la animación más rápida (de 2s a 1s) */
-    display: flex ;
-    align-self: center;
-    justify-self: center;
-    margin: 0 auto;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .paginator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-.paginator__button {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 0 4px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #333;
-    background-color: #f7f7f7;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-/* Estilos CSS para los iconos de flechas */
-.paginator__button i.material-icons {
-    font-size: 16px; /* Establece el tamaño de fuente deseado */
-    vertical-align: middle; /* Alinea verticalmente los iconos */
-}
-
-.paginator__button.active {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.paginator__button:hover {
-    background-color: #007bff;
-    color: #fff;
-}
