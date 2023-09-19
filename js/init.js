@@ -44,6 +44,7 @@ function changeFilters(){
     $(".searcher__buttonFilter").click(function (event) {
         event.preventDefault();
         $(this).toggleClass("searcher__buttonFilter--selected");
+
         // Obtener todos los elementos dentro del contenedor padre y ordenarlos
         var container = $(".searcher__filters");
         var elements = container.find(".searcher__buttonFilter");
@@ -54,30 +55,47 @@ function changeFilters(){
             var isSelectedB = $(b).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
             return isSelectedA - isSelectedB;
         });
+
+        $("#filtersNotApplied").text("Hay filtros no aplicados.");
         
         // Limpiar el contenedor y volver a agregar los elementos ordenados
         container.empty().append(elements);
 
         changeFilters();
     });
+
+    $(".searcher__input__population").keyup(function (event){
+        $("#filtersNotApplied").text("Hay filtros no aplicados.");
+    });
 }
 
 function search(){
     $(".searcher__form").submit(async function (event) {
-       
         event.preventDefault();
+
+        $("#filtersNotApplied").empty();
+
+        const appliedFilters = $(".searcher__applied-filters");
+        $(appliedFilters).empty();
+
         let section = document.getElementById('all');
         section.innerHTML = "";
         $("#loader-container").css("display", "block");
         let valueInput = $("#searcher_input").val();
         let countries  = await getCountry(valueInput);
 
-        // Obtener los elementos seleccionados
         let continentFilters = $(".searcher__buttonFilter--selected");
+
         // Obtener los valores de datos de los elementos seleccionados
         let selectedValues = continentFilters.map(function() {
             return $(this).data("value");
         }).get(); // Con .get(), convertimos el resultado en un array de JavaScript
+
+        const minPopulation = $("#minPopulation").val();
+        
+        const maxPopulation = $("#maxPopulation").val();
+
+        console.log(`Population ${minPopulation}, ${maxPopulation}`);
         
         let filteredCountries = countries.filter(country => selectedValues.includes(country.region));
 
@@ -86,6 +104,36 @@ function search(){
         }
 
         countriesCode = filteredCountries.map(country => {return {"cca3" : country.cca3}});
+
+        if (minPopulation || maxPopulation || selectedValues.length > 0) {
+            
+            const filterPill = [];
+            if (minPopulation) {
+                filterPill.push("<p>Población mínima: " + minPopulation + "</p>");
+            }
+    
+            if (maxPopulation) {
+                filterPill.push("<p>Población máxima: " + maxPopulation + "</p>");
+            }
+    
+            if (selectedValues) {
+                selectedValues.forEach(value => {
+                    filterPill.push(`<p>${value}</p>`);
+                });
+            }
+        
+            filterPill.forEach( pill => appliedFilters.append(pill));
+        } else {
+            $(".filters-not-applied").html("<p>No se han aplicado filtros</p>");
+        }
+        
+        if(minPopulation) {
+            filteredCountries = filteredCountries.filter(country => country.population >= minPopulation);
+        }
+
+        if(maxPopulation){
+            filteredCountries = filteredCountries.filter(country => country.population <= maxPopulation);
+        }
 
         renderCountries(section, filteredCountries.slice(0, 10));
         renderPaginator(countriesCode.length,1);
