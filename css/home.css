@@ -132,6 +132,50 @@ body > footer {
     margin-top: 5px;
 }
 
+/* Estilos para la sección de información de filtros no aplicados */
+.searcher__info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .searcher__info-text {
+    font-size: 16px;
+    color: #ff0000; /* Color rojo para destacar */
+  }
+  
+  /* Estilos para el botón de búsqueda */
+  .searcher__actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .searcher__search-button {
+    background-color: #0074d9; /* Color azul para el botón */
+    color: white;
+    padding: .5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Estilos para las píldoras de filtros aplicados */
+  .searcher__applied-filters {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .searcher__applied-filters .searcher__pill {
+    display: inline-block;
+    background-color: #0074d9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+  }
+  
+
 .main{
     display: flex;
     flex-direction: column;
