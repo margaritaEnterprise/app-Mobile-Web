@@ -1,14 +1,16 @@
 import renderHeader from "./actions/renderHeader.js";
 import renderFooter from "./actions/renderFooter.js";
+import { renderLoader }  from "./actions/renderLoader.js";
+import renderCountries from "./actions/renderCountries.js";
 import { isFav, setFavs, getFavs } from "./storage/storageFavs.js";
 import { getCountriesByCodes } from "./services/countries.js";
-import renderCountries from "./actions/renderCountries.js";
 import noFavorites from "./components/noFavorites.js";
 
 const initFavorites = async () => {
     renderHeader("favorites");
     renderFooter();
-
+    renderLoader($("#loader-container"));
+    $("#loader-container").show();
     let codes = getFavs();
     console.log("codes: " + codes)
     let countries = await getCountriesByCodes(codes);
@@ -32,6 +34,8 @@ const initFavorites = async () => {
             }
         });
     }
+
+    $("#loader-container").hide();
 }
 
 window.onload = initFavorites;
