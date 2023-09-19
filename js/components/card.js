@@ -1,4 +1,5 @@
 import { isFav } from "../storage/storageFavs.js";
+import { getHistory, setHistory } from "../storage/storageHistory.js";
 
 const Card = (country) => {       
     let code = country.cca3;
@@ -26,7 +27,10 @@ const shareCountry = (code) =>{
 }
 
 const viewDetail = (code) =>{
-    window.location.href = `../../pages/detail.html?code=${code}`
+    setHistory(code)
+    let get = getHistory(code)
+console.log(get)
+    //window.location.href = `../../pages/detail.html?code=${code}`
 }
 
 window.viewDetail = viewDetail;

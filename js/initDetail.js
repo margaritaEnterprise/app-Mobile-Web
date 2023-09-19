@@ -14,11 +14,7 @@ const initDetail = async () => {
     let response = await getCountriesByCodes([code]);
     
     await renderDetail(response);
-    onListItemClick(document.querySelectorAll('.home'))
+    //onListItemClick(document.querySelectorAll('.home'))
 }
 
 await initDetail();
-
-
-
-

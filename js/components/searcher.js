@@ -6,7 +6,7 @@ const Searcher = () => {
       { value: "Antarctic", name: "Antártida" },
       { value: "Asia", name: "Asia" },
       { value: "Europe", name: "Europa" },
-      { value: "Oceania", name: "Oceanía" }, // Corregido "Cceania" a "Oceania"
+      { value: "Oceania", name: "Oceanía" }, 
     ];
   
     

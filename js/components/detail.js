@@ -128,11 +128,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
             <section class="country__details">
                 <article class="country__map">
                     <h2>Mapa</h2>
-                    <div id="map" class="country__bordersFlag">
-                    
-                    </div>
-
-                    
+                    <div id="map" class="country__bordersFlag"></div>
                 </article>
             </section>
 
@@ -142,8 +138,6 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
                     <div class="country__bordersFlag">
                     ${HTMLBordersArray.length > 0 ?  HTMLBordersArray.join(''): "<p>No tiene</p>"}
                     </div>
-
-                    
                 </article>
             </section>
 
@@ -154,9 +148,6 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 const viewDetail = (code) =>{
     window.location.href = `../../pages/detail.html?code=${code}`
 }
-
-
-
 
 window.viewDetail = viewDetail;
         

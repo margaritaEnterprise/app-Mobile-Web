@@ -1,0 +1,41 @@
+
+
+/** =======================================================================================================================================================*/
+
+body{
+    min-height: 100vh;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.stats__flag {
+    max-height: 20px; /* Establece la altura máxima */
+    width: 40px;
+}
+
+.stats__bar {
+    flex-grow: 1; /*?*/
+    height: 27px; /* Altura de la barra */
+    background-color: #b3e1c5; /* Color de la barra */
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.stats__views {
+    height: 100%;
+    background-color: #545878; /* Color de la parte pintada de la barra */
+}
+.stats__percent {
+    text-align: end;
+    margin-right: 0.2rem;
+    color: rgb(255, 255, 255);
+}
+
+/** =======================================================================================================================================================*/
+/** Desktop Design */
+

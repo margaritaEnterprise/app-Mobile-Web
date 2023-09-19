@@ -1,5 +1,5 @@
 import Loader from "../components/loader.js";
 
-export const renderLoader = async (element) => {
+export const renderLoader = (element) => {
     element.innerHTML = Loader();
 }

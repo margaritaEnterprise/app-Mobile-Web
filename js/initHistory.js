@@ -1,11 +1,12 @@
-import onListItemClick from "./actions/onListItemClick.js"
-import renderFooter from "./actions/renderFooter.js";
 import renderHeader from "./actions/renderHeader.js";
+import renderFooter from "./actions/renderFooter.js";
+import { getCountriesByCodes } from "./services/countries.js";
+import renderHistory from "./actions/renderHistory.js";
 
-const initSend = async () => {
+const initFavorites = async () => {
     renderHeader("history");
     renderFooter();
-    onListItemClick(document.querySelectorAll('.home'))
+    await renderHistory();
 }
 
-window.onload = initSend; 
+window.onload = initFavorites;
