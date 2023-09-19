@@ -4,9 +4,10 @@ import { getFavs, setFavs, isFav } from '../storage/storageFavs.js';
 
 const renderCountries = (section, countries) => { 
     
-    section.innerHTML = '';
+    $(section).empty();
+
     for (let i =0 ; i < countries.length; i++) {
-        section.innerHTML += Card(countries[i]);
+         $(section).append(Card(countries[i]));
     }
     //renderPaginator(total);
 

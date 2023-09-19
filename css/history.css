@@ -13,14 +13,14 @@ body{
 }
 
 .stats__flag {
-    max-height: 20px; /* Establece la altura máxima */
+    max-height: 20px; 
     width: 40px;
 }
 
 .stats__bar {
     flex-grow: 1; /*?*/
-    height: 27px; /* Altura de la barra */
-    background-color: #b3e1c5; /* Color de la barra */
+    height: 27px; 
+    background-color: #b3e1c5; 
     display: flex;
     align-items: center;
     margin-left: 1rem;
@@ -28,7 +28,7 @@ body{
 
 .stats__views {
     height: 100%;
-    background-color: #545878; /* Color de la parte pintada de la barra */
+    background-color: #545878; 
 }
 .stats__percent {
     text-align: end;

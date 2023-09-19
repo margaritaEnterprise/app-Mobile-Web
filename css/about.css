@@ -17,9 +17,9 @@ body{
 
 
 section {
-    width: 100%; /* Ocupar todo el ancho disponible */
-    text-align: center; /* Centrar el contenido dentro de las secciones */
-    margin: 10px 0; /* Agregar margen entre las secciones */
+    width: 100%;
+    text-align: center; 
+    margin: 10px 0; 
 }
 
 

@@ -3,11 +3,10 @@ import { getCountriesByCodes } from "../services/countries.js";
 import NotFound from "../components/notFound.js";
 import renderShare from "./renderShare.js";
 
-//spinner o enviar por parametro el arraycodes
-const renderDetailShare = async () => {  
-    let section = document.getElementById('detailCountry');
 
-    section.innerHTML="";
+const renderDetailShare = async () => {  
+    let section = $("#detailCountry").empty();
+
     const urlActual = window.location.href;
     const params = new URLSearchParams(new URL(urlActual).search);
     const code = params.get('code');
@@ -15,11 +14,11 @@ const renderDetailShare = async () => {
     let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
-        section.innerHTML += NotFound();
+        $(section).html(NotFound());
     }
 
     response.map(country => {
-        section.innerHTML = detailShare(country);
+        $(section).html(detailShare(country));
         renderShare();
     });
 
