@@ -1,6 +1,6 @@
 import renderHeader from "./actions/renderHeader.js";
 import renderFooter from "./actions/renderFooter.js";
-import { isFav, setFavs, getFavs } from "./storage/storageFavs.js";
+import { isFav, getFavs } from "./storage/storageFavs.js";
 import { getCountriesByCodes } from "./services/countries.js";
 import renderCountries from "./actions/renderCountries.js";
 import noFavorites from "./components/noFavorites.js";

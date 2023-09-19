@@ -1,5 +1,5 @@
 import { isFav } from "../storage/storageFavs.js";
-import { getHistory, setHistory } from "../storage/storageHistory.js";
+import { setHistory } from "../storage/storageHistory.js";
 
 const Card = (country) => {       
     let code = country.cca3;

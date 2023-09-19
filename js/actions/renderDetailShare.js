@@ -21,8 +21,10 @@ const renderDetailShare = async () => {
     response.map(country => {
         section.innerHTML = detailShare(country);
         renderShare();
-
     });
+
+    
+
 }
 
 export default renderDetailShare;

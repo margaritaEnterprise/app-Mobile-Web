@@ -9,7 +9,7 @@ const Stats = (country, views, total) => {
     //title="${name} \n  Visitas recibidas: ${views}\n  Total: ${total}" 
     //title="${name} ha recibido ${views} de ${total} visitas."
     return  `
-    <article title="${name} ha recibido ${views} de ${total} visitas." class="stats" id="stats${code}">
+    <article title="${name} ha recibido ${views} de ${total} visitas." class="stats" id="stats${code} orderBy">
         <img src="${flag}" alt="${name}" class="stats__flag" />
         <div class="stats__bar">
             <div class="stats__views" style="width: ${width}%;">
