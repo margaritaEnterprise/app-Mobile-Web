@@ -28,9 +28,7 @@ const shareCountry = (code) =>{
 
 const viewDetail = (code) =>{
     setHistory(code)
-    let get = getHistory(code)
-console.log(get)
-    //window.location.href = `../../pages/detail.html?code=${code}`
+    window.location.href = `../../pages/detail.html?code=${code}`
 }
 
 window.viewDetail = viewDetail;
