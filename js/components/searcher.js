@@ -48,9 +48,6 @@ const Searcher = () => {
 
 
     return `
-      <div class="searcher__info">
-        <p class="searcher__info-text" id="filtersNotApplied"></p>
-      </div>
       <form class="searcher__form">
         <div class="search__header">
           <input
@@ -75,7 +72,7 @@ const Searcher = () => {
         <input
           type="number"
           id="minPopulation"
-          class="searcher__input"
+          class="searcher__input searcher__input__population"
           min="1"
           max="1399999999"
           placeholder="Mínimo"
@@ -87,19 +84,22 @@ const Searcher = () => {
         <input
           type="number"
           id="maxPopulation"
-          class="searcher__input"
+          class="searcher__input searcher__input__population"
           min="1"
           max="1400000000"
           placeholder="Máximo"
         />
+        <div class="searcher__actions">
+          <button type="submit" class="searcher__search-button" id="searchButton">Buscar</button>
+        </div>
       </form>
-      <div class="searcher__actions">
-        <button class="searcher__search-button" id="searchButton">Buscar</button>
-      </div>
-      <div class="searcher__applied-filters">
-        <!-- Aquí se mostrarán las píldoras de filtros aplicados -->
-      </div>
-    `;
+      <section class="searcher__applied-filters">
+      
+      </section>
+      <section class="searcher__info">
+        <p class="searcher__info-text" id="filtersNotApplied"></p>
+      </section>
+      `;
 };
 
 

@@ -94,7 +94,6 @@ body > footer {
     background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 1rem;
-    transition: transform 0.5s ease; /* Transición suave */ 
 }
 .searcher__buttonFilter > p{
     font-weight: bold;
@@ -135,20 +134,21 @@ body > footer {
 .searcher__info {
     text-align: center;
     margin-top: 20px;
-  }
+    height: 1ch;
+}
   
-  .searcher__info-text {
+.searcher__info-text {
     font-size: 16px;
     color: #ff0000; /* Color rojo para destacar */
-  }
-  
-  /* Estilos para el botón de búsqueda */
-  .searcher__actions {
+}
+
+/* Estilos para el botón de búsqueda */
+.searcher__actions {
     text-align: center;
     margin-top: 20px;
-  }
-  
-  .searcher__search-button {
+}
+
+.searcher__search-button {
     background-color: #0074d9; /* Color azul para el botón */
     color: white;
     padding: .5rem 2rem;
@@ -156,24 +156,29 @@ body > footer {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-  }
-  
-  /* Estilos para las píldoras de filtros aplicados */
-  .searcher__applied-filters {
+}
+
+.searcher__applied-filters {
     margin-top: 20px;
-    text-align: center;
-  }
-  
-  .searcher__applied-filters .searcher__pill {
-    display: inline-block;
-    background-color: #0074d9;
+    display: flex;
+    flex-wrap: wrap;
     color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin: 5px;
+    display: flex;
+    align-items: start;
+    gap: .35rem;
+}
+
+.searcher__applied-filters > p {
+    background-color: #007BFF;
+    border: none;
+    color: white;
     font-size: 14px;
-  }
-  
+    margin-left: 5px;
+    cursor: pointer;
+    padding: .25rem .25rem;
+    border-radius: .5rem;
+}
+
 
 .main{
     display: flex;
