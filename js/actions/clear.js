@@ -4,4 +4,6 @@ const clear = async () => {
     alert("limpiando");
 }
 
+$(document).read
+
 export default clear;

@@ -13,8 +13,8 @@ const initDetail = async () => {
     const code = params.get('code');
     let response = await getCountriesByCodes([code]);
     
-    renderDetail(response);
-    onListItemClick(document.querySelectorAll('.home'))
+    await renderDetail(response);
+    //onListItemClick(document.querySelectorAll('.home'))
 }
 
-window.onload = initDetail; 
+await initDetail();

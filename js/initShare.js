@@ -10,7 +10,7 @@ const initShare = async () => {
     renderFooter();
     renderDetailShare();
 //    renderShare();
-    onListItemClick(document.querySelectorAll('.home'))
+    //onListItemClick(document.querySelectorAll('.home'))
 }
 
 window.onload = initShare; 

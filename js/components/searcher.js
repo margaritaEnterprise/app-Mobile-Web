@@ -3,10 +3,10 @@ const Searcher = () => {
       //{ value: null, name: "" },
       { value: "Africa", name: "África" },
       { value: "Americas", name: "América" },
-      { value: "Antarctica", name: "Antártida" },
+      { value: "Antarctic", name: "Antártida" },
       { value: "Asia", name: "Asia" },
       { value: "Europe", name: "Europa" },
-      { value: "Oceania", name: "Oceanía" }, // Corregido "Cceania" a "Oceania"
+      { value: "Oceania", name: "Oceanía" }, 
     ];
   
     
@@ -39,9 +39,8 @@ const Searcher = () => {
       { name: 'Central America', continent: 'Americas' }
     ];
 
-
     let HTMLcontinentsArray =  continents.map(continent => `
-      <button class="searcher__buttonFilter" id="continent--${continent.value}">
+      <button class="searcher__buttonFilter" id="continent--${continent.value}" data-value="${continent.value}">
         <img class="searcher__img" src="../../assets/${continent.value}-outline.png">
         <p>${continent.name}</p>
       </button>
@@ -49,16 +48,20 @@ const Searcher = () => {
 
 
     return `
+      <div class="searcher__info">
+        <p class="searcher__info-text" id="filtersNotApplied"></p>
+      </div>
       <form class="searcher__form">
         <div class="search__header">
-        <input
-        type="search"
-        class="searcher__input searcher__input--BorderNone"
-        placeholder="Ingrese un nombre . . ."
-        />
-        <button type="submit" class="searcher__button">
-            <i class="material-icons">search</i>
-        </button>
+          <input
+          type="search"
+          class="searcher__input searcher__input--BorderNone"
+          placeholder="Ingrese un nombre . . ."
+          id="searcher_input"
+          />
+          <button type="submit" class="searcher__button">
+              <i class="material-icons">search</i>
+          </button>
         </div>  
           <br />
           <label for="region" class="searcher__label">Continente:</label>
@@ -66,17 +69,52 @@ const Searcher = () => {
             ${HTMLcontinentsArray.join("")}
           </article>
           <br />
-          <label for="subregion" class="searcher__label">Region: </label>
-          <select id="subregion" class="searcher__select">
-            ${regions
-              .map(
-                (regions) =>
-                  `<option value="${regions.name}">${regions.name}</option>`
-              )
-              .join("")}
-          </select>
-          <br />
-          <label for="population" class="searcher__label">
+          <label for="minPopulation" class="searcher__label">
+          Cantidad mínima de habitantes:
+        </label>
+        <input
+          type="number"
+          id="minPopulation"
+          class="searcher__input"
+          min="1"
+          max="1399999999"
+          placeholder="Mínimo"
+        />
+        
+        <label for="maxPopulation" class="searcher__label">
+          Cantidad máxima de habitantes:
+        </label>
+        <input
+          type="number"
+          id="maxPopulation"
+          class="searcher__input"
+          min="1"
+          max="1400000000"
+          placeholder="Máximo"
+        />
+      </form>
+      <div class="searcher__actions">
+        <button class="searcher__search-button" id="searchButton">Buscar</button>
+      </div>
+      <div class="searcher__applied-filters">
+        <!-- Aquí se mostrarán las píldoras de filtros aplicados -->
+      </div>
+    `;
+};
+
+
+{/* <label for="subregion" class="searcher__label">Region: </label>
+<select id="subregion" class="searcher__select">
+  ${regions
+    .map(
+      (regions) =>
+        `<option value="${regions.name}">${regions.name}</option>`
+    )
+    .join("")}
+</select>
+<br /> */}
+
+{/* <label for="population" class="searcher__label">
             Cantidad mínima de habitantes (1-1 400 000 000):
           </label>
           <input
@@ -85,20 +123,7 @@ const Searcher = () => {
             class="searcher__range"
             min="1"
             max="1400000000"
-          />
-          <output class="searcher__output">1</output>
-        </form>
-    `;
-  };
-  
-  export default Searcher;
-  
+          /> */}
 
-  // <select id="region" class="searcher__select">
-  //           ${continents
-  //             .map(
-  //               (continent) =>
-  //                 `<option value="${continent.value}">${continent.name}</option>`
-  //             )
-  //             .join("")}
-  //         </select>
+export default Searcher;
+

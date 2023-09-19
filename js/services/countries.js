@@ -12,14 +12,17 @@ const getCountries = async () => {
 //https://restcountries.com/v3.1/all?fields=name,capital,currencies
 const getCountry = async (name) => { 
     let result = []
-    let response = await fetch(`${URL}/${name}`)
+    let fields = "?fields=cca3,name,region,subregion,population,flags,translations"
+    let fetchUrl = name ? `${URL}/name/${name}${fields}` : 
+                          `${URL}/all${fields}`
+    let response = await fetch(fetchUrl)
     if(response.ok){
         result = await response.json()
     }
     return result
 }
 
-//https://restcountries.com/v3.1/alpha?codes={code1},{code2} ...
+//https://restcountries.com/v3.1/alpha?codes=PSE,KWT,GIN,TKL,AFG,VGB,CAN
 //Traer el detalle de un pais [ccn3]
 //O traer la lista de favoritos [ccn3, ccn3, ... ccn3]
 const getCountriesByCodes = async (arrayCodes) => { 
@@ -38,4 +41,14 @@ const getCountriesByCodes = async (arrayCodes) => {
     return result
 }
 
-export { getCountries, getCountry, getCountriesByCodes }
+const getAllCountryCodes = async () => {
+    let result = []
+    let response = await fetch(`${URL}/all?fields=cca3`)
+    if(response.ok){
+        result = await response.json()
+    }
+    console.log(result);
+    return result
+}
+
+export { getCountries, getCountry, getCountriesByCodes, getAllCountryCodes }

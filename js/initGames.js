@@ -5,7 +5,7 @@ import renderHeader from "./actions/renderHeader.js";
 const initSend = async () => {
     renderHeader("games");
     renderFooter();
-    onListItemClick(document.querySelectorAll('.home'))
+    //onListItemClick(document.querySelectorAll('.home'))
 }
 
 window.onload = initSend; 
