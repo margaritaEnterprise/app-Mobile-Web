@@ -3,7 +3,7 @@ import Detail from "../components/detail.js";
 import NotFound from "../components/notFound.js";
 import initMap from "../actions/initMap.js";
 
-//spinner o enviar por parametro el arraycodes
+
 const renderDetail = async () => {  
 
     let section = document.getElementById('detailCountry');

@@ -45,11 +45,9 @@ function changeFilters(){
         event.preventDefault();
         $(this).toggleClass("searcher__buttonFilter--selected");
 
-        // Obtener todos los elementos dentro del contenedor padre y ordenarlos
         var container = $(".searcher__filters");
         var elements = container.find(".searcher__buttonFilter");
-        
-        // Ordenar los elementos
+
         elements.sort(function (a, b) {
             var isSelectedA = $(a).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
             var isSelectedB = $(b).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
@@ -57,8 +55,7 @@ function changeFilters(){
         });
 
         $("#filtersNotApplied").text("Hay filtros no aplicados.");
-        
-        // Limpiar el contenedor y volver a agregar los elementos ordenados
+
         container.empty().append(elements);
 
         changeFilters();
@@ -86,10 +83,9 @@ function search(){
 
         let continentFilters = $(".searcher__buttonFilter--selected");
 
-        // Obtener los valores de datos de los elementos seleccionados
         let selectedValues = continentFilters.map(function() {
             return $(this).data("value");
-        }).get(); // Con .get(), convertimos el resultado en un array de JavaScript
+        }).get(); 
 
         const minPopulation = $("#minPopulation").val();
         

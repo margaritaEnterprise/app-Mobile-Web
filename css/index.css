@@ -122,7 +122,7 @@
     "footer__body" 
     "footer__footer"
     ;
-    grid-template-rows: 4fr 0.7fr; /*sino queda espacio debajo*/
+    grid-template-rows: 4fr 0.7fr;
     place-items:center; 
 }
 .footer > .footer__body {
@@ -171,19 +171,19 @@
     border-radius: 50%;
     border: 5px solid transparent;
     border-top: 5px solid black;
-    animation: spin 1.5s linear infinite; /* Hacemos la animación más rápida (de 2s a 1s) */
+    animation: spin 1.5s linear infinite;
     display: flex ;
     align-self: center;
     justify-self: center;
     margin: 0 auto;
-  }
+}
   
-  @keyframes spin {
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
 
-  .paginator {
+.paginator {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,10 +205,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Estilos CSS para los iconos de flechas */
+
+
 .paginator__button i.material-icons {
-    font-size: 16px; /* Establece el tamaño de fuente deseado */
-    vertical-align: middle; /* Alinea verticalmente los iconos */
+    font-size: 16px; 
+    vertical-align: middle; 
 }
 
 .paginator__button.active {

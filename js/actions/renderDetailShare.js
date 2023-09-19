@@ -3,7 +3,7 @@ import { getCountriesByCodes } from "../services/countries.js";
 import NotFound from "../components/notFound.js";
 import renderShare from "./renderShare.js";
 
-//spinner o enviar por parametro el arraycodes
+
 const renderDetailShare = async () => {  
     let section = document.getElementById('detailCountry');
 

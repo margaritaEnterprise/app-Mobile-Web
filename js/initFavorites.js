@@ -24,7 +24,7 @@ const initFavorites = async () => {
             console.log(favStorage);
             if(!isFav(this.id)) {
                 setTimeout(() => {
-                    $(`#card${this.id}`).remove(); //podemos poner un transition antes del rm
+                    $(`#card${this.id}`).remove(); 
                 }, 100)
                 if(getFavs().length == 0) {
                     section.innerHTML = noFavorites()
