@@ -1,4 +1,4 @@
-import { setHistory } from "../storage/storageHistory";
+import { setHistory } from "../storage/storageHistory.js";
 
 
 const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais

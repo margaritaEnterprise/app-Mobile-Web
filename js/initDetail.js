@@ -1,4 +1,3 @@
-import onListItemClick from "./actions/onListItemClick.js"
 import renderFooter from "./actions/renderFooter.js";
 import renderHeader from "./actions/renderHeader.js";
 import renderDetail from "./actions/renderDetail.js";

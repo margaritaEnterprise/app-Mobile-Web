@@ -3,7 +3,7 @@ import renderFooter from "./actions/renderFooter.js";
 import { renderLoader } from "./actions/renderLoader.js";
 import renderHistory from "./actions/renderHistory.js";
 
-const initFavorites = async () => {
+const initHistory = async () => {
     renderHeader("history");
     renderFooter();
     renderLoader($("#loader-container"));
@@ -12,4 +12,4 @@ const initFavorites = async () => {
     $("#loader-container").hide();
 }
 
-window.onload = initFavorites;
+window.onload = initHistory;

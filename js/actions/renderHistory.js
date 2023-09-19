@@ -25,7 +25,16 @@ const renderHistory = async () => {
             //console.log(history[code])
             $(section).append(Stats(countries[i], history[code], total));
         }
+        let stats = $(section).find(".stats");
+        stats.sort((a,b) => {
+            let valueA = $(a).data("value");
+            let valueB = $(b).data("value");
+            return valueB - valueA;
+        })
+        section.empty().append(stats);
+
     }
+    
 }
 
 export default renderHistory; 

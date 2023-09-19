@@ -2,8 +2,6 @@ import Share from "../components/share.js";
 import { getCountriesByCodes } from "../services/countries.js";
 import NotFound from "../components/notFound.js";
 
-
-
 const renderShare = async () => {
     let share = $("#share");
 
