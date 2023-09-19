@@ -44,12 +44,12 @@ function changeFilters(){
         event.preventDefault();
         $(this).toggleClass("searcher__buttonFilter--selected");
 
-        var container = $(".searcher__filters");
-        var elements = container.find(".searcher__buttonFilter");
+        let container = $(".searcher__filters");
+        let elements = container.find(".searcher__buttonFilter");
 
         elements.sort(function (a, b) {
-            var isSelectedA = $(a).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
-            var isSelectedB = $(b).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
+            let isSelectedA = $(a).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
+            let isSelectedB = $(b).hasClass("searcher__buttonFilter--selected") ? -1 : 1;
             return isSelectedA - isSelectedB;
         });
 
@@ -98,8 +98,6 @@ function search(){
             filteredCountries = countries;
         }
 
-        countriesCode = filteredCountries.map(country => {return {"cca3" : country.cca3}});
-
         if (minPopulation || maxPopulation || selectedValues.length > 0) {
             const filterPill = [];
             if (minPopulation) {
@@ -123,6 +121,8 @@ function search(){
         if(maxPopulation){
             filteredCountries = filteredCountries.filter(country => country.population <= maxPopulation);
         }
+
+        countriesCode = filteredCountries.map(country => {return {"cca3" : country.cca3}});
 
         renderCountries(section, filteredCountries.slice(0, 10));
         renderPaginator(countriesCode.length,1);
