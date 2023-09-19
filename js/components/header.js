@@ -1,11 +1,11 @@
 
 const Header = (page) =>{
     return `
+    <div class="header__logo">
+        <i class="material-icons header__logoIcon">language</i>
+        <h1>WebApp</h1>
+    </div>  
     <nav class="header__nav">
-        <div class="header__logo">
-            <i class="material-icons header__logoIcon">language</i>
-            <h1>WebApp</h1>
-        </div>       
         <ul class="header__navList" id="navList">
             <li class="header__navItem ${page === "home"? "header__navItem--selected" : ""}" title="Inicio" id="home">
                 <a class="header__Navlink" href="./../pages/index.html">
