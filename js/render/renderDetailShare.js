@@ -1,7 +1,7 @@
 import detailShare from "../components/detailShare.js";
 import { getCountriesByCodes } from "../services/countries.js";
 import NotFound from "../components/notFound.js";
-import renderShare from "./renderShare.js";
+import Share from "../components/share.js";
 
 
 const renderDetailShare = async () => {  
@@ -14,13 +14,15 @@ const renderDetailShare = async () => {
     let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
-        $(section).html(NotFound());
+        alert("ACAaaaaaaaaaaaaaaa")
+        //$(section).html(NotFound());
     }
 
     response.map(country => {
         $(section).html(detailShare(country));
-        renderShare();
-    });
+        let share = $("#share");
+        share.html(Share());
+        });
 
     
 

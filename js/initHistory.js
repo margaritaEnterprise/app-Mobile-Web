@@ -1,7 +1,7 @@
-import renderHeader from "./actions/renderHeader.js";
-import renderFooter from "./actions/renderFooter.js";
-import { renderLoader } from "./actions/renderLoader.js";
-import renderHistory from "./actions/renderHistory.js";
+import renderHeader from "./render/renderHeader.js";
+import renderFooter from "./render/renderFooter.js";
+import { renderLoader } from "./render/renderLoader.js";
+import renderHistory from "./render/renderHistory.js";
 
 const initHistory = async () => {
     renderHeader("history");

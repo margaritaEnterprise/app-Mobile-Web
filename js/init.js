@@ -1,10 +1,10 @@
-import renderHeader from "./actions/renderHeader.js";
-import renderSearcher from "./actions/renderSearcher.js";
-import renderCountries from "./actions/renderCountries.js";
-import renderFooter from "./actions/renderFooter.js";
+import renderHeader from "./render/renderHeader.js";
+import renderSearcher from "./render/renderSearcher.js";
+import renderCountries from "./render/renderCountries.js";
+import renderFooter from "./render/renderFooter.js";
 import { getAllCountryCodes, getCountriesByCodes, getCountry } from "./services/countries.js";
-import { renderLoader } from "./actions/renderLoader.js";
-import renderPaginator from "./actions/renderPaginator.js";
+import { renderLoader } from "./render/renderLoader.js";
+import renderPaginator from "./render/renderPaginator.js";
 
 let countriesCode;
 

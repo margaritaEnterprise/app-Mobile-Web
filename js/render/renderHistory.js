@@ -6,12 +6,12 @@ const renderHistory = async () => {
     let section = $("#all").empty();
     let history = getHistory(); //local storage {"cod": 5}
     let codes = Object.keys(history);
-    let values = Object.values(history);
+    let values = Object.values(history); //{views: 1, date: x}
     let total = 0;
-    values.forEach((int) => {
-        total += int;
+    values.forEach((obj) => {
+        total += obj.views;
     });
-    console.log(history);
+    console.log(values);
     console.log(codes);
     
     if(codes.length == 0){

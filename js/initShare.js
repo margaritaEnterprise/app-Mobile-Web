@@ -1,13 +1,18 @@
-import renderFooter from "./actions/renderFooter.js";
-import renderHeader from "./actions/renderHeader.js";
-import renderDetailShare from "./actions/renderDetailShare.js";
+import renderFooter from "./render/renderFooter.js";
+import renderHeader from "./render/renderHeader.js";
+import renderDetailShare from "./render/renderDetailShare.js";
+import { renderLoader } from "./render/renderLoader.js";
+import submitShare from "./events/submitShare.js";
 
 const initShare = async () => {
     
     renderHeader("");
     renderFooter();
-    await renderDetailShare();    
-      
-}
+    renderLoader($("#loader-container"));
+    $("#loader-container").show();
+    await renderDetailShare();
+    $("#loader-container").hide();
 
-window.onload = initShare; 
+    submitShare();
+}
+await initShare(); 

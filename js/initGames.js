@@ -1,11 +1,9 @@
-import onListItemClick from "./actions/onListItemClick.js"
-import renderFooter from "./actions/renderFooter.js";
-import renderHeader from "./actions/renderHeader.js";
+import renderFooter from "./render/renderFooter.js";
+import renderHeader from "./render/renderHeader.js";
 
 const initSend = async () => {
     renderHeader("games");
     renderFooter();
-    //onListItemClick(document.querySelectorAll('.home'))
 }
 
 window.onload = initSend; 

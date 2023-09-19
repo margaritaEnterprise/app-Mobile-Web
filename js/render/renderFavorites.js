@@ -1,8 +1,5 @@
-import { getCountries, getCountriesByCodes } from '../services/countries.js';
-import Card from '../components/card.js';
-import renderPaginator from './renderPaginator.js';
-import { initFavs, getFavs, setFavs } from './storageFavs.js';
-import onListItemClick from './onListItemClick.js';
+import { getCountriesByCodes } from '../services/countries.js';
+import { initFavs, getFavs } from './storageFavs.js';
 
 const renderFavorites = async (section) => {
     initFavs(); //    let initArrayFavs = ['232', '630', '642', '028'];

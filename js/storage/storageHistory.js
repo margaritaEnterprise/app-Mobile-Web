@@ -7,19 +7,21 @@ const getHistory = () => {
 }
 
 const setHistory = (view) => { 
-    let dicc = getHistory(); //{ 'PAN': 5, 'VGB':2, 'PSE': 4, 'FSM': 1 } o {}
+    let dicc = getHistory(); //{ 'PAN': {view:5,date:x }, 'VGB':2, 'PSE': 4, 'FSM': 1 } o {}
     console.log(dicc)
     console.log(dicc[view])
-    if(dicc[view] > 0) { //existe --> sumar 1
+    if(dicc[view] && dicc[view].views > 0) { //existe --> sumar 1
         console.log("if existe en el dicc")
-        let value = dicc[view];
-        dicc[view] = value + 1;
+        let value = dicc[view].views;
+        dicc[view].views = value + 1;
+        dicc[view].date = Date.now();
     } else {
         console.log("if no existe en el dicc")
-
+        
         //no existe --> iniciar en 1
-        dicc[view] = 1;
+        dicc[view] = {views: 1, date: Date.now()};
     }
+    debugger;
     localStorage.setItem('history', JSON.stringify(dicc));
     return;
 }

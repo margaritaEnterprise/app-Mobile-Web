@@ -1,7 +1,7 @@
-import renderFooter from "./actions/renderFooter.js";
-import renderHeader from "./actions/renderHeader.js";
-import renderDetail from "./actions/renderDetail.js";
-import { renderLoader } from "./actions/renderLoader.js";
+import renderFooter from "./render/renderFooter.js";
+import renderHeader from "./render/renderHeader.js";
+import renderDetail from "./render/renderDetail.js";
+import { renderLoader } from "./render/renderLoader.js";
 import { getCountriesByCodes } from "./services/countries.js";
 
 const initDetail = async () => {
@@ -17,7 +17,6 @@ const initDetail = async () => {
     let response = await getCountriesByCodes([code]);
     
     await renderDetail(response);
-    //onListItemClick(document.querySelectorAll('.home'))
     $("#loader-container").hide();
 }
 

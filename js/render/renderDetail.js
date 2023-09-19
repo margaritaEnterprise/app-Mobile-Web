@@ -1,7 +1,7 @@
 import { getCountriesByCodes } from "../services/countries.js";
 import Detail from "../components/detail.js";
 import NotFound from "../components/notFound.js";
-import initMap from "../actions/initMap.js";
+import initMap from "../render/initMap.js";
 
 
 const renderDetail = async () => {  
