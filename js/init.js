@@ -14,9 +14,8 @@ const init = async () => {
     renderSearcher();
     renderFooter();
 
-    let section = document.getElementById('all');
-
-    let loaderContainer = document.getElementById('loader-container');
+    let section = $("#all");
+    let loaderContainer = $("#loader-container");
 
     renderLoader(loaderContainer);
     countriesCode = await getAllCountryCodes();
@@ -24,17 +23,17 @@ const init = async () => {
     let countries = await getCountriesByCodes(countriesCode.slice(0,10).map(x => x.cca3));
     renderCountries(section, countries); 
 
-    $("#loader-container").css("display", "none");
+    $("#loader-container").hide();
 
     renderPaginator(countriesCode.length,1);
 
-    await actions();
+    actions();
 
 }
 
 await init();
 
-async function actions() {
+function actions() {
     pag();
     search();
     changeFilters();
@@ -72,12 +71,15 @@ function search(){
 
         $("#filtersNotApplied").empty();
 
+       $(".paginator").empty();
+
         const appliedFilters = $(".searcher__applied-filters");
         $(appliedFilters).empty();
 
-        let section = document.getElementById('all');
-        section.innerHTML = "";
-        $("#loader-container").css("display", "block");
+        let section = $("#all").empty();
+
+        $("#loader-container").show();
+
         let valueInput = $("#searcher_input").val();
         let countries  = await getCountry(valueInput);
 
@@ -88,10 +90,7 @@ function search(){
         }).get(); 
 
         const minPopulation = $("#minPopulation").val();
-        
         const maxPopulation = $("#maxPopulation").val();
-
-        console.log(`Population ${minPopulation}, ${maxPopulation}`);
         
         let filteredCountries = countries.filter(country => selectedValues.includes(country.region));
 
@@ -102,25 +101,19 @@ function search(){
         countriesCode = filteredCountries.map(country => {return {"cca3" : country.cca3}});
 
         if (minPopulation || maxPopulation || selectedValues.length > 0) {
-            
             const filterPill = [];
             if (minPopulation) {
                 filterPill.push("<p>Población mínima: " + minPopulation + "</p>");
             }
-    
             if (maxPopulation) {
                 filterPill.push("<p>Población máxima: " + maxPopulation + "</p>");
             }
-    
-            if (selectedValues) {
+            if (selectedValues.length > 0) {
                 selectedValues.forEach(value => {
                     filterPill.push(`<p>${value}</p>`);
                 });
             }
-        
             filterPill.forEach( pill => appliedFilters.append(pill));
-        } else {
-            $(".filters-not-applied").html("<p>No se han aplicado filtros</p>");
         }
         
         if(minPopulation) {
@@ -134,7 +127,7 @@ function search(){
         renderCountries(section, filteredCountries.slice(0, 10));
         renderPaginator(countriesCode.length,1);
 
-        $("#loader-container").css("display", "none");
+        $("#loader-container").hide();
 
         pag();
     });
@@ -142,13 +135,12 @@ function search(){
 
 function pag(){
     $(".paginator__button").click(async function (event) {
-        let section = document.getElementById('all');
-        section.innerHTML = "";
+        let section = $("#all").empty();
         $("#loader-container").css("display", "block");
         let page = $(this).data("page") - 1
         let countries = await getCountriesByCodes(countriesCode.slice((page)*10,(page*10)+10).map(x => x.cca3));
         renderCountries(section, countries);
-        $("#loader-container").css("display", "none");
+        $("#loader-container").hide();
         renderPaginator(countriesCode.length, page+1);
         pag();
     });

@@ -5,7 +5,7 @@ import NotFound from "../components/notFound.js";
 
 
 const renderShare = async () => {
-    let aside = document.getElementById('share');
+    let share = $("#share");
 
     const urlActual = window.location.href;
     const params = new URLSearchParams(new URL(urlActual).search);
@@ -13,9 +13,9 @@ const renderShare = async () => {
 
     let country = await getCountriesByCodes([code]);
     if(country.length == 0) {
-        aside.innerHTML += NotFound();
+        share.html(NotFound());
     }
-    aside.innerHTML = Share(country[0]);
+    share.html(Share(country[0]));
 }
 
 export default renderShare;

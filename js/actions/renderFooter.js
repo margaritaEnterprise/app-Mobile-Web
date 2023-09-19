@@ -1,8 +1,7 @@
 import Footer from '../components/footer.js';
 
 const renderFooter = () => {
-    let foot = document.getElementById('foot');
-    foot.innerHTML = Footer();
+    $("#foot").html(Footer());
 }
 
 export default renderFooter;

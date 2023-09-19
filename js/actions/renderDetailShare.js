@@ -5,9 +5,8 @@ import renderShare from "./renderShare.js";
 
 
 const renderDetailShare = async () => {  
-    let section = document.getElementById('detailCountry');
+    let section = $("#detailCountry").empty();
 
-    section.innerHTML="";
     const urlActual = window.location.href;
     const params = new URLSearchParams(new URL(urlActual).search);
     const code = params.get('code');
@@ -15,13 +14,12 @@ const renderDetailShare = async () => {
     let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
-        section.innerHTML += NotFound();
+        $(section).html(NotFound());
     }
 
     response.map(country => {
-        section.innerHTML = detailShare(country);
+        $(section).html(detailShare(country));
         renderShare();
-
     });
 }
 

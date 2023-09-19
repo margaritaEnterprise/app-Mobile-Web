@@ -12,13 +12,12 @@ const initFavorites = async () => {
     let codes = getFavs();
     console.log("codes: " + codes)
     let countries = await getCountriesByCodes(codes);
-    let section = document.getElementById('all')
+    let section = $("#all");
     if(countries.length == 0){
-        section.innerHTML = noFavorites()
+        $(section).html(noFavorites()); 
     } 
     else {   
         renderCountries(section, countries); 
-        
         $(".addFavorites").click(function() {
             let favStorage = getFavs();
             console.log(favStorage);
@@ -27,9 +26,9 @@ const initFavorites = async () => {
                     $(`#card${this.id}`).remove(); 
                 }, 100)
                 if(getFavs().length == 0) {
-                    section.innerHTML = noFavorites()
+                    $(section).html(noFavorites());
                 }
-                    //alert("quitar");
+                //alert("quitar");
             }
         });
     }

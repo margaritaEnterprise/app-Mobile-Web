@@ -6,8 +6,7 @@ import initMap from "../actions/initMap.js";
 
 const renderDetail = async () => {  
 
-    let section = document.getElementById('detailCountry');
-    section.innerHTML="";
+    let section = $("#detailCountry").empty();
 
     const urlActual = window.location.href;
     const params = new URLSearchParams(new URL(urlActual).search);
@@ -16,7 +15,7 @@ const renderDetail = async () => {
     let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
-        section.innerHTML += NotFound();
+        $(section).html(NotFound());
     }
 
     let borders = [];
@@ -32,7 +31,7 @@ const renderDetail = async () => {
         });
     }
     response.map(country => {
-        section.innerHTML += Detail(country, borders);
+        $(section).append(Detail(country, borders))
     });
 
     initMap(response[0].latlng[0],response[0].latlng[1], response[0].area);

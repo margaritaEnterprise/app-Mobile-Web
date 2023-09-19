@@ -11,6 +11,7 @@ const initDetail = async () => {
     const urlActual = window.location.href;
     const params = new URLSearchParams(new URL(urlActual).search);
     const code = params.get('code');
+    
     let response = await getCountriesByCodes([code]);
     
     await renderDetail(response);
