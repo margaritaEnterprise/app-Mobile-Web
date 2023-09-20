@@ -18,6 +18,7 @@ const init = async () => {
     let loaderContainer = $("#loader-container");
 
     renderLoader(loaderContainer);
+
     countriesCode = await getAllCountryCodes();
 
     let countries = await getCountriesByCodes(countriesCode.slice(0,10).map(x => x.cca3));
@@ -136,7 +137,7 @@ function search(){
 function pag(){
     $(".paginator__button").click(async function (event) {
         let section = $("#all").empty();
-        $("#loader-container").css("display", "block");
+        $("#loader-container").show();
         let page = $(this).data("page") - 1
         let countries = await getCountriesByCodes(countriesCode.slice((page)*10,(page*10)+10).map(x => x.cca3));
         renderCountries(section, countries);

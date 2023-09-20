@@ -93,11 +93,11 @@ const Searcher = () => {
           <button type="submit" class="searcher__search-button" id="searchButton">Buscar</button>
         </div>
       </form>
-      <section class="searcher__applied-filters">
-      
-      </section>
       <section class="searcher__info">
         <p class="searcher__info-text" id="filtersNotApplied"></p>
+      </section>
+      <section class="searcher__applied-filters">
+      
       </section>
       `;
 };
