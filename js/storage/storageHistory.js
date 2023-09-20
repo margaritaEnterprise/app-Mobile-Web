@@ -21,9 +21,12 @@ const setHistory = (view) => {
         //no existe --> iniciar en 1
         dicc[view] = {views: 1, date: Date.now()};
     }
-    debugger;
     localStorage.setItem('history', JSON.stringify(dicc));
     return;
 }
 
-export { setHistory, getHistory };
+const cleanHistory = () => { 
+    localStorage.setItem('history', JSON.stringify({}));
+}
+
+export { setHistory, getHistory, cleanHistory };

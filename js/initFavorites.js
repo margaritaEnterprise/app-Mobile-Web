@@ -13,12 +13,14 @@ const initFavorites = async () => {
     $("#loader-container").show();
     let codes = getFavs();
     console.log("codes: " + codes)
-    let countries = await getCountriesByCodes(codes);
     let section = $("#all");
-    if(countries.length == 0){
+    
+    if(codes.length == 0){
+        $("#loader-container").hide();
         $(section).html(noFavorites()); 
     } 
     else {   
+        let countries = await getCountriesByCodes(codes);
         renderCountries(section, countries); 
         $(".addFavorites").click(function() {
             let favStorage = getFavs();
