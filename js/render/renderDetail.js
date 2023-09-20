@@ -4,15 +4,9 @@ import NotFound from "../components/notFound.js";
 import initMap from "../render/initMap.js";
 
 
-const renderDetail = async () => {  
+const renderDetail = async (response) => {  
 
     let section = $("#detailCountry").empty();
-
-    const urlActual = window.location.href;
-    const params = new URLSearchParams(new URL(urlActual).search);
-    const code = params.get('code');
-
-    let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
         $(section).html(NotFound());
