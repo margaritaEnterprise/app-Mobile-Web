@@ -30,10 +30,14 @@ const Paginator = (total, currentPage, perPage) => {
         pageButtons.push('<a href="#" class="paginator__button" data-page="' + totalPages + '"><i class="material-icons">keyboard_double_arrow_right</i></a>');
     }
 
-    if(currentPage > 1 && currentPage < totalPages){
+    if(currentPage > 1){
         if(indexPages.includes(1)){
             pageButtons.shift();
         }
+    }
+
+    if( currentPage < totalPages){
+
         if(indexPages.includes(totalPages)){
             pageButtons.pop();
         }
