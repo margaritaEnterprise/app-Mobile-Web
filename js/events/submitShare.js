@@ -55,10 +55,7 @@ const submitShare = () => {
                                         <h2>${country[0].translations.spa.common}</h2>
                                         <p>Continente: ${country[0].region}</p>
                                     </div>`*/
-                    let body = `Hola ${name.val()}! 
-                        ${message ? message.val() : ''}
-                        Haz click en el siguiente link para ver la información del país 
-                        ${encodeURIComponent(link)}`
+                    let body = `Hola ${name.val()}! ${message ? message.val() : ''} ¡Haz click en el siguiente link para ver la información del país! ${encodeURIComponent(link)}`
                     let send = `mailto:${emailYou.val()}?subject=Tienes un mensaje de Country Web&body=${body}`
                     window.location.href = send;                   
                 });
