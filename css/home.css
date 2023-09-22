@@ -388,18 +388,20 @@ body > footer {
     }
 
     .adversiting{
-        display: block;
+        display: flex;
         padding: 10px;
         height: 100%;
         padding-right: 0;
+        align-items: start;
     }
 
     .adversiting > .adversiting__vertical{
-        display: block;
+        display: flex;
         position: sticky;
         top: 16%;
         max-width: 15.5vw;
         height: 83vh;
+        align-self: self-start;
     }
     .adversiting > .adversiting__horizontal{
         display: none
