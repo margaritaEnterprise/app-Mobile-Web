@@ -18,6 +18,7 @@ body > header {
 
 body > aside.adversiting{
     grid-area: ads;
+    
 }
 
 body > main {
@@ -270,7 +271,41 @@ body > footer {
     cursor: pointer;
 }
 
+.adversiting{
+    display: none;
+}
+
 /** =======================================================================================================================================================*/
+/** Desktop Design */
+@media ( 480px <=  width <= 1023px) {
+    body{
+
+        display: grid;
+        grid-template-areas:  "head" 
+                              "main"
+                              "ads" 
+                              "footer";
+    
+        grid-template-columns: 1fr;
+    }
+    
+    .adversiting{
+        padding: 0 20px 20px;
+        display: block;
+        max-height: 250px;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: none
+    }
+
+    .adversiting > .adversiting__horizontal{
+        display: block;
+        max-height: 100%;
+        width: 100%;
+    }
+}
+
 /** Desktop Design */
 
 @media ( width  >= 1023px) {
@@ -345,8 +380,20 @@ body > footer {
 
     .adversiting{
         display: block;
-        background-color: #ff7011;
-        padding: 1rem;
+        padding: 10px;
+        height: 100%;
+        padding-right: 0;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: block;
+        position: sticky;
+        top: 16%;
+        max-width: 15.5vw;
+        height: 83vh;
+    }
+    .adversiting > .adversiting__horizontal{
+        display: none
     }
 
     .searcher__filters{
