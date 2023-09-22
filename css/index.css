@@ -45,6 +45,30 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+}
+
+body::-webkit-scrollbar {
+    position: absolute;
+    left: 5rem;
+    background-color: transparent !important;
+    width: .5rem; /* Altura de la barra de desplazamiento horizontal */
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Color del fondo del riel */
+    border-radius: .5rem;
+    height: 25vh;
+    padding: .5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Color del pulgar (barra de desplazamiento) */
+    border-radius: .5rem;
+    height: 25vh;
+    padding: .5rem;
 }
 
 /*#region HEADER*/
@@ -128,13 +152,8 @@ body{
 /*#region FOOTER*/
 .footer{
     background-color: var(--color-blanco-azulado);
-    display: grid;
-    grid-template-areas:    
-    "footer__body" 
-    "footer__footer"
-    ;
-    grid-template-rows: 4fr 0.7fr;
-    place-items:center; 
+    display: flex;
+    flex-direction: column;
 }
 .footer > .footer__body {
     grid-area: footer__body;
@@ -154,8 +173,14 @@ body{
 }
 .footer__body > .footer__site {
     grid-area: footer__site;
-    letter-spacing: 2px;
+    display: flex;
+    flex-wrap: wrap; /* Permite el ajuste automático a la siguiente fila */
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 10px; /* Espacio entre elementos */
+    text-align: center; /* Centrar el texto */
+
 }
+
 .footer__body > .footer__logo {
     grid-area: footer__logo;
     display: flex;
