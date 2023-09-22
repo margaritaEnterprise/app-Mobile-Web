@@ -2,8 +2,7 @@
 const Header = (page) =>{
     return `
     <div class="header__logo">
-        <i class="material-icons header__logoIcon">language</i>
-        <h1>WebApp</h1>
+        <a href="../pages/index.html" ><img class="header__logoImg" src="../assets/logo2.png" alt="logo"></a>
     </div>  
     <nav class="header__nav">
         <ul class="header__navList" id="navList">
@@ -23,12 +22,6 @@ const Header = (page) =>{
                 <a  class="header__Navlink" href="./../pages/history.html"> 
                     <i class="material-icons">history</i>
                     <p>Historial</p>
-                </a>
-            </li>
-            <li class="header__navItem ${page === "games"? "header__navItem--selected" : ""}" title="Juegos" id="game">
-                <a  class="header__Navlink" href="./../pages/games.html">
-                    <i class="material-icons">sports_esports</i>
-                    <p>Juegos</p>
                 </a>
             </li>
             <li class="header__navItem ${page === "aboutUs"? "header__navItem--selected" : ""}" title="Nosotros" id="game">

@@ -17,7 +17,6 @@ const Footer = () => {
             <a href="./../pages/index.html">Inicio</a> 
             <a href="./../pages/favorites.html">Favoritos</a> 
             <a href="./../pages/history.html">Historial</a> 
-            <a href="./../pages/games.html">Juegos</a> 
             <a href="./../pages/aboutUs.html">Nosotros</a> 
         </div>
 
@@ -29,10 +28,7 @@ const Footer = () => {
             <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="footer__logo">
-            <a href="#" title="WebApp"> 
-                <i class="material-icons">language</i>
-            </a>
-            <h3>WebApp</h3>
+                <a href="../pages/index.html" ><img class="header__logoImg" src="../assets/logo2.png" alt="logo"></a>
         </div>
     </div>
     

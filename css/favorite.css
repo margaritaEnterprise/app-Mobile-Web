@@ -96,6 +96,112 @@ body{
     color: #ff7011;
     cursor: pointer;
 }
+
+.adversiting{
+    display: none;
+}
+
+
 /** =======================================================================================================================================================*/
 /** Desktop Design */
 
+@media ( 480px <=  width <= 1023px) {
+
+    body > header {
+        grid-area: head;
+    }
+    
+    body > aside.adversiting{
+        grid-area: ads;
+        
+    }
+    
+    body > main {
+        grid-area: main;
+    }
+    
+    body > footer {
+        grid-area: footer;
+    }
+
+    body{
+        display: grid;
+        grid-template-areas:  "head"
+                              "main"
+                              "ads" 
+                              "footer";
+    
+        grid-template-columns: 1fr;
+    }
+
+    .adversiting{
+        
+        padding: 0 20px 20px;
+        display: block;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: none
+    }
+
+    .adversiting > .adversiting__horizontal{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+@media (width >= 1024px){
+    body > header {
+        grid-area: head;
+    }
+    
+    body > aside.adversiting{
+        grid-area: ads;
+        
+    }
+    
+    body > main {
+        grid-area: main;
+    }
+    
+    body > footer {
+        grid-area: footer;
+    }
+
+    body{
+        display: grid;
+        grid-template-areas:  "head head"
+                              "main ads"
+                              "footer footer";
+    
+        grid-template-columns: 1fr;
+    }
+
+    .adversiting{
+        
+        padding: 20px 20px;
+        display: block;
+    }
+
+    .main{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #loader-container {
+        height: 100%;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: block;
+        position: sticky;
+        top: 16%;
+
+    }
+
+    .adversiting > .adversiting__horizontal{
+        display: none;
+    }
+}
