@@ -1,5 +1,4 @@
 import {validateEmail, validateText} from "../utils/validate.js"
-import { getCountriesByCodes } from "../services/countries.js";
 
 const showInfo = (formSection, infoSection, validate) => {
     return new Promise((resolve) => {
@@ -48,13 +47,7 @@ const submitShare = () => {
                     const urlActual = window.location.href;
                     const params = new URLSearchParams(new URL(urlActual).search);
                     const code = params.get('code');
-                    let country = await getCountriesByCodes([code]);
-                    const link = `https://app-mobile-web-sxwq.vercel.app/pages/detail.html?code=${code}`
-                    /*const html = `<div>
-                                        <img src="${country[0].flags.png}" alt="Bandera de ${country[0].flags.alt}"/>
-                                        <h2>${country[0].translations.spa.common}</h2>
-                                        <p>Continente: ${country[0].region}</p>
-                                    </div>`*/
+                    const link = `https://app-mobile-web-sxwq-git-main-margarita.vercel.app/pages/detail.html?code=${code}`
                     let body = `Hola ${name.val()}! ${message ? message.val() : ''} ¡Haz click en el siguiente link para ver la información del país! ${encodeURIComponent(link)}`
                     let send = `mailto:${emailYou.val()}?subject=Tienes un mensaje de Country Web&body=${body}`
                     window.location.href = send;                   

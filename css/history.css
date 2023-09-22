@@ -5,6 +5,18 @@
 body{
     min-height: 100vh;
 }
+.clean__history__text {
+    width: 50%; /* Ancho deseado para la sección */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+    margin-bottom:10px;
+}
 
 .stats {
     display: flex;
@@ -41,6 +53,31 @@ body{
     color: rgb(255, 255, 255);
 }
 
+.history__title {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* vertical */
+    padding: 10px; 
+}
+.clean__history {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.recent__country__flag {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
+    grid-gap: 10px; /* Espacio entre los elementos */
+}
+
+.recent__country__container {
+    text-align: center; /* Opcional: centrar el contenido dentro de cada artículo */
+}
+.recent__country__container img {
+    width: 70px; /* Tamaño deseado en píxeles */
+    height: auto; /* Esto mantiene la relación de aspecto original */
+}
 /** =======================================================================================================================================================*/
 /** Desktop Design */
 
