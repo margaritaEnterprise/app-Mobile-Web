@@ -1,10 +1,11 @@
 import Stats from '../components/stats.js';
 import { getHistory } from '../storage/storageHistory.js';
 import {getCountriesByCodes} from '../services/countries.js';
+import Recent from '../components/recent.js';
 
 const renderHistory = async () => { 
     let section = $("#all").empty();
-    let history = getHistory(); //local storage {"cod": 5}
+    let history = getHistory(); //local storage [{"cod": {views: 2, date:123}}]
     let codes = Object.keys(history);
     let values = Object.values(history); //{views: 1, date: x}
     let total = 0;
@@ -14,12 +15,14 @@ const renderHistory = async () => {
     console.log(values);
     console.log(codes);
     
+    let main = $("#main");
     if(codes.length == 0){
-        $(section).html("Historial vacio");
+        $(".history__title").hide();
+        $(main).html(`<p class="clean__history__text" >Historial vacio</p>`);
     } 
     else {
+        $(".history__title").show();
         let countries = await getCountriesByCodes(codes);
-        console.log(countries);
         for (let i =0 ; i < countries.length; i++) {
             let code = countries[i].cca3;
             //console.log(history[code])
@@ -31,10 +34,27 @@ const renderHistory = async () => {
             let valueB = $(b).data("value");
             return valueB - valueA;
         })
-        section.empty().append(stats);
+        section.append(stats);
 
+        //ordenar por date //HORRIBLE---------------------------------------------------
+        let sectionLast = $(".last");
+        const lista = Object.entries(history).map(([key, value]) => ({
+            [key]: value
+            }));
+        // Ordenar la lista por el valor 'date' en orden descendente
+        lista.sort((a, b) => b[Object.keys(b)[0]].date - a[Object.keys(a)[0]].date);
+        
+        if(lista.length > 5) {
+            lista.splice(6)
+        }
+        let lastCodes =[];
+        for (let i = 0; i < lista.length; i++) {
+            const element = lista[i];
+            lastCodes.push(Object.keys(element)[0])
+        }
+        let recentCountries = await getCountriesByCodes(lastCodes);
+        sectionLast.append(Recent(recentCountries))
     }
-    
 }
 
 export default renderHistory; 
