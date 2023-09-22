@@ -25,12 +25,6 @@ const Header = (page) =>{
                     <p>Historial</p>
                 </a>
             </li>
-            <li class="header__navItem ${page === "games"? "header__navItem--selected" : ""}" title="Juegos" id="game">
-                <a  class="header__Navlink" href="./../pages/games.html">
-                    <i class="material-icons">sports_esports</i>
-                    <p>Juegos</p>
-                </a>
-            </li>
             <li class="header__navItem ${page === "aboutUs"? "header__navItem--selected" : ""}" title="Nosotros" id="game">
                 <a class="header__Navlink" href="./../pages/aboutUs.html">
                     <i class="material-icons">diversity_3</i>
