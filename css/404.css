@@ -1,0 +1,18 @@
+.main__error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img__404{
+    width: 100vw;
+    max-width: 1000px;
+}
+
+.error_title{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+

@@ -45,7 +45,10 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
     let coatOfArms = country.coatOfArms.png;
 
     let HTMLBordersArray = borders.map(border => `
-        <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
+        <div class="country__borderContainer"> 
+            <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
+            <h2 class="country_borderName">${border.name}</h2>
+        </div>
     `);
 
     return  `
