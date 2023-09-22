@@ -3,7 +3,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     let name = country.translations.spa.common;
     let officialName = country.translations.spa.official;
-
+    console.log(country);
     let currenciesArray = [];
     let HTMLCurrenciesArray ;
     if(country.currencies){
@@ -16,7 +16,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
         });
 
         HTMLCurrenciesArray = currenciesArray.map(currency => `
-        <p>⚫ ${currency.name} ${currency.symbol} (${currency.code})</p>`)
+        <p>${currency.name} ${currency.symbol} (${currency.code})</p>`)
     }else{
         currenciesArray.push("No tiene");
         HTMLCurrenciesArray = currenciesArray.map(currency => `
@@ -53,96 +53,64 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     return  `
         <section class="country">
-            <section class="country__details">
-                <div class="country__name" >
+                <div class="country__details country__name" >
                     <h1 class="" >${name}</h1>
+                    <article class="country__flag">
+                        <img class="country__img" src="${flag}" alt="Bandera de ${name}">
+                    </article>
+                    <article class="country-nameOfficial">
+                        <h2>Nombre Oficial:</h2>
+                        <p>${officialName}</p>
+                    </article>
                 </div>
-                <article class="country__flag">
-                    <img class="country__img" src="${flag}" alt="Bandera de ${name}">
-                </article>
-                <article class="country-nameOfficial">
-                    <h2>Nombre Oficial:</h2>
-                    <p>${officialName}</p>
-                </article>
-            </section>
-
-            <section class="country__details">
-                <article class="country__currencies">
+                <div class="country__details country__currencies">
                     <h2>${HTMLCurrenciesArray.length  > 1 ? "Monedas:" : "Moneda:"}</h2>
                     
                     ${HTMLCurrenciesArray.join("\n")}
                     
-                </article>
-
-            </section>
-
-            <section class="country__details">
-                <article class="country__capital">
+                </div>
+                <div class="country__details country__capital">
                     <h2>Capital:</h2>
                     <p>${capitals.join(", ")}</p>
-                </article>
-            </section>
-
-            <section class="country__details">
-                <article class="country__region">
+                </div>
+                <div class="country__details country__region">
                     <h2>Continente:</h2>
                     <p>${continent}</p>
-                </article>
-                <article class="country__region">
+                </div>
+                <div class="country__details country__subregion">
                     <h2>Región:</h2>
                     <p>${region}</p>
-                </article>
-            </section>
-
-            <section class="country__details">
-                <article class="country__language">
+                </div>
+                <div class="country__details country__language">
                     <h2>Idioma:</h2>
                     <p>${languagesArray.map(language => language.name).join(", ")}</p>
-                </article>
-            </section>
-
-            <section class="country__details">
-                <h2>Área y Población</h2>
-                <article class="country__area">
+                </div>
+                <div class="country__details country__area">
                     <h2>Área:</h2>
                     <p>${area.toLocaleString()} km²</p>
-                </article>
-                <article class="country__population">
+                </div>
+                <div class="country__details country__population">
                     <h2>Población:</h2>
                     <p>${population.toLocaleString()}</p>
-                </article>
-            </section>
-
-            <section class="country__details">
-                <article class="country__timezones">
+                </div>
+                <div class="country__details country__timezones">
                     <h2>Husos Horarios:</h2>
                     <p>${timezones.join(', ')}</p>
-                </article>
-            </section>
-
-            <section class="country__details">
-            <h2>Escudo de Armas:</h2>
-                <article class="country__coat">
+                </div>
+                <div class="country__details country__coat" style="${!coatOfArms ? "display:none" : ""}">
+                    <h2>Escudo de Armas:</h2>
                     <img class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
-                </article>
-            </section>
-
-            <section class="country__details">
-                <article class="country__map">
+                </div>
+                <div class="country__details country__map">
                     <h2>Mapa</h2>
                     <div id="map" class="country__bordersFlag"></div>
-                </article>
-            </section>
-
-            <section class="country__details">
-                <article class="country__borders">
+                </div>
+                <div class="country__details country__borders">
                     <h2>Países Limítrofes:</h2>
                     <div class="country__bordersFlag">
                     ${HTMLBordersArray.length > 0 ?  HTMLBordersArray.join(''): "<p>No tiene</p>"}
                     </div>
-                </article>
-            </section>
-
+                </div>
         </section>
     `
 }
