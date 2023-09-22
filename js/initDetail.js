@@ -18,6 +18,10 @@ const initDetail = async () => {
 
     let response = await getCountriesByCodes([code]);
     
+    if(response.length == 0){
+        window.location.href = "../pages/404.html"
+    }
+
     setHistory(response[0].cca3);
 
     await renderDetail(response);
