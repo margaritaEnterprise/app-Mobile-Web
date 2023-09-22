@@ -288,11 +288,19 @@ body > footer {
     
         grid-template-columns: 1fr;
     }
+    .searcher{
+        padding: 20px 2rem;
+    }
+    .searcher__filters{
+        max-width: 90%;
+        width: 100%;
+    }
     
     .adversiting{
         padding: 0 20px 20px;
         display: block;
         max-height: 250px;
+        max-width: 100vw;
     }
 
     .adversiting > .adversiting__vertical{

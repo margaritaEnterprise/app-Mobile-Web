@@ -2,8 +2,7 @@
 const Header = (page) =>{
     return `
     <div class="header__logo">
-        <i class="material-icons header__logoIcon">language</i>
-        <h1>WebApp</h1>
+        <a href="../pages/index.html" ><img class="header__logoImg" src="../assets/logo2.png" alt="logo"></a>
     </div>  
     <nav class="header__nav">
         <ul class="header__navList" id="navList">
