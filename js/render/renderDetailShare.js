@@ -19,7 +19,7 @@ const renderDetailShare = async () => {
     let response = await getCountriesByCodes([code]);
 
     if(response.length == 0) {
-        alert("ACAaaaaaaaaaaaaaaa")
+        window.location.href = "../../pages/404.html"
         //$(section).html(NotFound());
     }
 
