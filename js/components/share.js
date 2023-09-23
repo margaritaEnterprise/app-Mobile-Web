@@ -5,36 +5,41 @@ const Share = () => {
         <div>
             <label for="email" class="email-form__label">Email:</label>
             <input 
+                data-type="email"
                 type="text" 
                 id="share__emailMe" 
                 class="email-form__input" 
-                placeholder="Ingrese su email . . ."/>
-                <p id="info__emailMe" style="color: red">*Ingrese un mail valido</p>
+                placeholder="Ingrese su email . . ."
+            />
+            <p class="info-text" id="info__emailMe" ></p>
         </div>
         <div>
             <label for="share__name" class="email-form__label">Nombre del destinatario:</label>
             <input 
+                data-type="text" 
                 type="text" 
                 id="share__name" 
                 class="email-form__input" 
                 placeholder="Nombre del destinatario . . ."
-                minlength="1" 
-                maxlength="50" />
-                <p id="info__name" style="color: red">*Ingrese un nombre valido</p>
+            />
+            <p class="info-text" id="info__name" ></p>
 
         </div>
         <div>
             <label for="share__email" class="email-form__label">Correo del destinatario:</label>
-            <input 
+            <input
+                data-type="email" 
                 type="text" 
                 id="share__emailYou" 
                 class="email-form__input" 
-                placeholder="Correo del destinatario . . ."/>
-                <p id="info__emailYou" style="color: red">*Ingrese un mail valido</p>
+                placeholder="Correo del destinatario . . ."
+            />
+            <p class="info-text" id="info__emailYou" ></p>
         </div>
         <div>
             <label for="message" class="email-form__label">Mensaje (opcional):</label>
-            <textarea 
+            <textarea
+                data-type="text" 
                 id="share__message" 
                 class="email-form__textarea" 
                 placeholder="Mensaje"></textarea>

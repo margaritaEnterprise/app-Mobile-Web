@@ -9,10 +9,14 @@ const initShare = async () => {
     renderHeader("");
     renderFooter();
     renderLoader($("#loader-container"));
+    $("#detailCountry").hide();
+    $("#share").hide();
     $("#loader-container").show();
     await renderDetailShare();
     $("#loader-container").hide();
 
+    $("#detailCountry").show();
+    $("#share").show();
     submitShare();
 }
 await initShare(); 
