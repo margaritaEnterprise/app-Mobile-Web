@@ -6,7 +6,7 @@ const Footer = () => {
 
         <div class="footer__aboutUs">
             <p>
-                Somos Veronica y Nicolas, estudiantes de Ingeniería en Informática en la UNAJ, apasionados por la creación de aplicaciones móviles. En constante búsqueda de soluciones innovadoras y experiencias únicas en el mundo digital. 
+            Web App es un proyecto que surgio en 2023 durante la cursada de Aplicaciones Moviles. 
                 <br><a href="./../pages/aboutUs.html">Leer mas..</a>
             </p>       
         </div>

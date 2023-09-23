@@ -19,7 +19,6 @@ const renderDetailShare = async () => {
 
     if(response.length == 0) {
         window.location.href = "../../pages/404.html"
-        //$(section).html(NotFound());
     }
 
     response.map(country => {
