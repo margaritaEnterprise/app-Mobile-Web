@@ -1,4 +1,4 @@
-
+import { isFav } from "../storage/storageFavs.js";
 const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     let name = country.translations.spa.common;
@@ -43,6 +43,10 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
     let flag = country.flags.png;
     let coatOfArms = country.coatOfArms.png;
 
+    let isAFav = isFav(country.cca3);
+
+    console.log(isAFav);
+
     let HTMLBordersArray = borders.map(border => `
         <div class="country__borderContainer"> 
             <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
@@ -52,21 +56,19 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     return  `
         <section class="country">
-                <div class="country__details country__name" >
+                <div class="country__details country__name ${!coatOfArms ? "country__name--extended" : ""}">
                     <h1 class="" >${name}</h1>
                     <article class="country__flag">
                         <img class="country__img" src="${flag}" alt="Bandera de ${name}">
                     </article>
                     <article class="country-nameOfficial">
-                        <h2>Nombre Oficial:</h2>
+                        <h2>Nombre Oficial: </h2>
                         <p>${officialName}</p>
                     </article>
                 </div>
                 <div class="country__details country__currencies">
-                    <h2>${HTMLCurrenciesArray.length  > 1 ? "Monedas:" : "Moneda:"}</h2>
-                    
+                    <h2> ${HTMLCurrenciesArray.length  > 1 ? "Monedas:" : "Moneda:"}</h2>
                     ${HTMLCurrenciesArray.join("\n")}
-                    
                 </div>
                 <div class="country__details country__capital">
                     <h2>Capital:</h2>
@@ -98,7 +100,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
                 </div>
                 <div class="country__details country__coat" style="${!coatOfArms ? "display:none" : ""}">
                     <h2>Escudo de Armas:</h2>
-                    <img class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
+                    <img lazy class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
                 </div>
                 <div class="country__details country__map">
                     <h2>Mapa</h2>
@@ -110,6 +112,18 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
                     ${HTMLBordersArray.length > 0 ?  HTMLBordersArray.join(''): "<p>No tiene</p>"}
                     </div>
                 </div>
+                <div id='${country.cca3}'  class="addFavorites country__details country__favorite ${isAFav ? "country__favorite--quit" : "country__favorite--add"}">
+                    ${isAFav ? 
+                        `<p> Quitar de favoritos <i class="material-icons">star_rate</i> </p>`
+                        :
+                        `<p>Agregar a favoritos <i class="  material-icons">star_rate</i> </p>`
+                    }
+                </div>
+                <div onclick="shareCountry('${country.cca3}')" class="country__details country__share">
+                    <p>Compartilo con tus amigos <i  class=" material-icons">share</i></p>
+                </div>
+               
+                
         </section>
     `
 }
@@ -118,6 +132,11 @@ const viewDetail = (code) =>{
     window.location.href = `../../pages/detail.html?code=${code}`
 }
 
+const shareCountry = (code) =>{
+    window.location.href = `../../pages/share.html?code=${code}`
+}
+
+window.shareCountry = shareCountry;
 window.viewDetail = viewDetail;
         
 export default Detail; 

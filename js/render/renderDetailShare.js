@@ -1,6 +1,5 @@
 import detailShare from "../components/detailShare.js";
 import { getCountriesByCodes } from "../services/countries.js";
-import NotFound from "../components/notFound.js";
 import Share from "../components/share.js";
 import { cleanHistory } from "../storage/storageHistory.js";
 

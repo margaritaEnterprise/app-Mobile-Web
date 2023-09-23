@@ -38,6 +38,7 @@ body > footer {
 }
 .search__body {
     display: none;
+    transition: all 1s;
 }
 .search__header{
     padding: .25rem;

@@ -46,7 +46,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    transition: all 1s;
 }
 
 body::-webkit-scrollbar {
