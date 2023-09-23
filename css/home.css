@@ -36,7 +36,9 @@ body > footer {
     background-color: #e3e2e2;
     padding: 10px;
 }
-
+.search__body {
+display: none;
+}
 .search__header{
     padding: .25rem;
     display: flex;
