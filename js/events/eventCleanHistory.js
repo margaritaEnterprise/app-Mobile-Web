@@ -6,6 +6,7 @@ export const eventCleanHistory = async () => {
         $("#loader-container").show();
         console.log();
         cleanHistory();
+        $("#last").empty();
         await renderHistory();
         $("#loader-container").hide();
     });

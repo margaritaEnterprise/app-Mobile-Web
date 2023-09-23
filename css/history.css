@@ -5,8 +5,9 @@
 body{
     min-height: 100vh;
 }
-.clean__history__text {
-    width: 50%; /* Ancho deseado para la sección */
+.clean__noItems {
+    width: 50%; 
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     text-align: center; 
@@ -16,6 +17,16 @@ body{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
     margin-bottom:10px;
+}
+.back__button{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 1rem;
 }
 
 .stats {
@@ -67,7 +78,7 @@ body{
 }
 .recent__country__flag {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
     grid-gap: 10px; /* Espacio entre los elementos */
 }
 
@@ -75,9 +86,48 @@ body{
     text-align: center; /* Opcional: centrar el contenido dentro de cada artículo */
 }
 .recent__country__container img {
-    width: 70px; /* Tamaño deseado en píxeles */
+    width: 100px; /* Tamaño deseado en píxeles */
     height: auto; /* Esto mantiene la relación de aspecto original */
 }
+.ads__bottom {
+    width: 100%;
+
+    height: 30vh;
+    background-image: url("../assets/Travel-Agency-ads1.png");
+    background-size: cover;
+    background-position: center;
+    display: block;
+    margin: 0;
+    margin-top: 1rem;
+    padding: 0;
+}
+
 /** =======================================================================================================================================================*/
 /** Desktop Design */
+@media ( 500px <=  width <= 824px) {
+    .recent__country__flag {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
+        grid-gap: 10px; /* Espacio entre los elementos */
+    }
+}
+@media ( 824px <=  width <= 1023px) {
+    .recent__country__flag {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
+        grid-gap: 10px; /* Espacio entre los elementos */
+    }
+    .recent__country__container img {
+        width: 120px; /* Tamaño deseado en píxeles */
+        height: auto; /* Esto mantiene la relación de aspecto original */
+    }
+    
+}
+/** Desktop Design */
+
+@media ( width  > 1023px) {
+
+}
+
+
 

@@ -4,9 +4,9 @@ import { renderLoader }  from "./render/renderLoader.js";
 import renderCountries from "./render/renderCountries.js";
 import { isFav, getFavs, setFavs } from "./storage/storageFavs.js";
 import { getCountriesByCodes } from "./services/countries.js";
-import noFavorites from "./components/noFavorites.js";
 import renderPaginator from "./render/renderPaginator.js";
 import Card from './components/card.js';
+import noItems from "./components/noItems.js";
 
 let countriesCode = [];
 
@@ -18,9 +18,10 @@ const initFavorites = async () => {
     countriesCode = getFavs();
     let section = $("#all");
     console.log(countriesCode);
+    let text = "Ya puedes agregar paises favoritos."
     if(countriesCode.length == 0){
         $("#loader-container").hide();
-        $(section).html(noFavorites()); 
+        $(".main").append(noItems(text));
     } 
     else {   
         let countries = await getCountriesByCodes(countriesCode.slice(0,10));
@@ -85,8 +86,7 @@ function quitFavorites(){
         newRenders = $(".card").length;
 
         if(newRenders == 0){
-            $("#all").html(noFavorites());
-            
+            $(".main").append(noItems(text));
         }
 
         pagination();

@@ -2,6 +2,7 @@ import Stats from '../components/stats.js';
 import { getHistory } from '../storage/storageHistory.js';
 import {getCountriesByCodes} from '../services/countries.js';
 import Recent from '../components/recent.js';
+import noItems from '../components/noItems.js';
 
 const renderHistory = async () => { 
     let section = $("#all").empty();
@@ -18,7 +19,8 @@ const renderHistory = async () => {
     let main = $("#main");
     if(codes.length == 0){
         $(".history__title").hide();
-        $(main).html(`<p class="clean__history__text" >Historial vacio</p>`);
+        let text = "Historial vacio."
+        $(main).append(noItems(text));
     } 
     else {
         $(".history__title").show();
@@ -42,7 +44,11 @@ const renderHistory = async () => {
             [key]: value
             }));
         // Ordenar la lista por el valor 'date' en orden descendente
-        lista.sort((a, b) => b[Object.keys(b)[0]].date - a[Object.keys(a)[0]].date);
+        lista.sort((a, b) => {
+            let valueA = a[Object.keys(a)[0]].date;
+            let valueB = b[Object.keys(b)[0]].date;
+            return valueB - valueA;
+        })
         
         if(lista.length > 5) {
             lista.splice(6)
@@ -56,5 +62,6 @@ const renderHistory = async () => {
         sectionLast.append(Recent(recentCountries))
     }
 }
+
 
 export default renderHistory; 

@@ -1,17 +1,11 @@
 import { getCountriesByCodes } from "../services/countries.js";
 import Detail from "../components/detail.js";
-import NotFound from "../components/notFound.js";
 import initMap from "../render/initMap.js";
-
 
 const renderDetail = async (response) => {  
 
     let section = $("#detailCountry").empty();
-
-    if(response.length == 0) {
-        $(section).html(NotFound());
-    }
-
+    //not found
     let borders = [];
 
     if(response[0].borders){
