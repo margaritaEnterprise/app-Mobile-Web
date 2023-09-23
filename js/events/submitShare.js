@@ -43,7 +43,6 @@ const submitShare = () => {
                 $(button).click(async (e) => { 
                     e.preventDefault();
 
-                    
                     const urlActual = window.location.href;
                     const params = new URLSearchParams(new URL(urlActual).search);
                     const code = params.get('code');

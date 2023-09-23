@@ -1,4 +1,4 @@
-
+/*
 const NotFound = () => {  
 
     return  `
@@ -8,4 +8,4 @@ const NotFound = () => {
     `
 }
         
-export default NotFound; 
+export default NotFound; */

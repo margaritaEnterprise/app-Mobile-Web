@@ -29,7 +29,6 @@ const Searcher = () => {
             </button>
         </div>
         
-        
         <div class="search__body">
             <label for="region" class="searcher__label">Continente:</label>
             <article class="searcher__filters">${HTMLcontinentsArray.join("")}</article>
