@@ -4,7 +4,7 @@ import initMap from "../render/initMap.js";
 
 const renderDetail = async (response) => {  
 
-    let section = $("#detailCountry").empty();
+    let section = $("#detailCountry").show().empty();
     //not found
     let borders = [];
 

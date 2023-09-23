@@ -2,7 +2,10 @@
 body{
     min-height: 100vh;
 }
-
+#detailCountry{
+    width: 100%;
+    display: none;
+}
 .country__flag{
     width: 100%;
     display: flex;
@@ -137,9 +140,12 @@ h2 {
 
 @media ( 480px <=  width <= 1023px) { 
 
-    /* #main{
-        width: 97vw;
-    } */
+    #main{
+       min-height: 50vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
 
     .adversiting{
         padding: 0 20px 20px;
@@ -286,6 +292,10 @@ h2 {
     #main{
         grid-area: main;
         width: 100%;
+        min-height: 50vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
     }
 
     .footer{
@@ -308,9 +318,6 @@ h2 {
         place-content: space-between;
     }
 
-    #detailCountry{
-        max-width: 100%;
-    }
 
     .adversiting{
         display: flex;
@@ -465,6 +472,10 @@ h2 {
     #main{
         grid-area: main;
         width: 100%;
+        min-height: 50vh;
+         display: flex;
+         justify-content: center;
+        align-items: center;
     }
 
     .footer{
@@ -487,9 +498,7 @@ h2 {
         place-content: space-between;
     }
 
-    #detailCountry{
-        max-width: 100%;
-    }
+
 
     .adversiting{
         display: flex;
