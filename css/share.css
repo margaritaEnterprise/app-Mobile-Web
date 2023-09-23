@@ -111,6 +111,12 @@
     cursor: pointer;
     font-size: 18px;
 }
+.disabled {
+    background-color: grey
+}
+.disabled:hover {
+    cursor: auto;
+}
 
 .country__coat{
     display: flex;

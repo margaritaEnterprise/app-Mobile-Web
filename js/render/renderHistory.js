@@ -23,6 +23,7 @@ const renderHistory = async () => {
         $(main).append(noItems(text));
     } 
     else {
+        
         $(".history__title").show();
         let countries = await getCountriesByCodes(codes);
         for (let i =0 ; i < countries.length; i++) {
@@ -36,7 +37,8 @@ const renderHistory = async () => {
             let valueB = $(b).data("value");
             return valueB - valueA;
         })
-        section.append(stats);
+        console.log(stats.slice(0,2));
+        section.empty().append(stats.slice(0,10));
 
         //ordenar por date //HORRIBLE---------------------------------------------------
         let sectionLast = $(".last");

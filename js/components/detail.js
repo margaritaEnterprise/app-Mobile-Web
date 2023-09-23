@@ -98,10 +98,14 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
                     <h2>Husos Horarios:</h2>
                     <p>${timezones.join(', ')}</p>
                 </div>
-                <div class="country__details country__coat" style="${!coatOfArms ? "display:none" : ""}">
+
+                ${coatOfArms ? `<div class="country__details country__coat" style="${!coatOfArms ? "display:none" : ""}">
                     <h2>Escudo de Armas:</h2>
                     <img lazy class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
-                </div>
+                </div>`
+                :
+                ""
+            }
                 <div class="country__details country__map">
                     <h2>Mapa</h2>
                     <div id="map" class="country__bordersFlag"></div>

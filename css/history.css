@@ -84,33 +84,49 @@ body{
 
 .recent__country__container {
     text-align: center; /* Opcional: centrar el contenido dentro de cada artículo */
+    cursor: pointer;
 }
 .recent__country__container img {
     width: 100px; /* Tamaño deseado en píxeles */
     height: auto; /* Esto mantiene la relación de aspecto original */
-}
+}/*
 .ads__bottom {
     width: 100%;
-
     height: 30vh;
-    background-image: url("../assets/Travel-Agency-ads1.png");
     background-size: cover;
     background-position: center;
     display: block;
     margin: 0;
     margin-top: 1rem;
     padding: 0;
+}*/
+
+.adversiting{
+    display: none
 }
 
+
 /** =======================================================================================================================================================*/
-/** Desktop Design */
+/** tablet Design */
 @media ( 500px <=  width <= 824px) {
     .recent__country__flag {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
         grid-gap: 10px; /* Espacio entre los elementos */
     }
+    .adversiting {
+        display: block;
+    }
+    .adversiting__vertical{
+        display: none;
+    }
+    .adversiting__horizontal{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
 }
+
 @media ( 824px <=  width <= 1023px) {
     .recent__country__flag {
         display: grid;
@@ -121,11 +137,63 @@ body{
         width: 120px; /* Tamaño deseado en píxeles */
         height: auto; /* Esto mantiene la relación de aspecto original */
     }
-    
+    .adversiting {
+        display: block;
+    }
+    .adversiting__vertical{
+        display: none;
+
+    }
+    .adversiting__horizontal{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+
 }
+
 /** Desktop Design */
 
 @media ( width  > 1023px) {
+    body > header {
+        grid-area: head;
+    }
+    
+    body > aside.adversiting{
+        grid-area: ads;
+        
+    }
+    
+    body > main {
+        grid-area: main;
+        flex-direction: column-reverse;
+    }
+    
+    body > footer {
+        grid-area: footer;
+    }
+
+    body{
+        display: grid;
+        grid-template-areas:  "head head"
+                              "main ads"
+                              "footer footer";
+    
+        grid-template-columns: 1fr;
+    }
+    .adversiting {
+        display: block;
+    }
+    .adversiting__vertical{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .adversiting__horizontal{
+        display: none
+    }
 
 }
 

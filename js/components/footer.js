@@ -5,11 +5,9 @@ const Footer = () => {
     <div class="footer__body">
 
         <div class="footer__aboutUs">
-            <h3>Nosotros</h3>
             <p>
-                Somos lalala lalala lalala lalala lalala lalala lalala lalala lalala lalala 
-                lalala lalala. 
-                <a href="./../pages/aboutUs.html">Leer mas..</a>
+                Somos Veronica y Nicolas, estudiantes de Ingeniería en Informática en la UNAJ, apasionados por la creación de aplicaciones móviles. En constante búsqueda de soluciones innovadoras y experiencias únicas en el mundo digital. 
+                <br><a href="./../pages/aboutUs.html">Leer mas..</a>
             </p>       
         </div>
     

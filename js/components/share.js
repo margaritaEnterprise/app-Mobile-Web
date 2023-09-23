@@ -40,7 +40,7 @@ const Share = () => {
                 placeholder="Mensaje"></textarea>
         </div>
         <div class="email-form__field">
-            <button id="submit__form__button" type="submit" class="email-form__submit" disabled>Compartir</button>
+            <button id="submit__form__button" type="submit" class="email-form__submit disabled" disabled>Compartir</button>
         </div>
     </form>
     `;

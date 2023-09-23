@@ -1,7 +1,7 @@
 import {validateEmail, validateText} from "../utils/validate.js"
-
+/*
 const showInfo = (formSection, infoSection, validate) => {
-    return new Promise((resolve) => {
+//    return new Promise((resolve) => {
         $(formSection).keyup((e) => {
             let boo = validate(e.target.value);
             if (boo) {
@@ -11,12 +11,20 @@ const showInfo = (formSection, infoSection, validate) => {
                 $(formSection).prop("isValid", false);
                 $(infoSection).show();
             }
-            resolve(); // Resuelve la promesa cuando se complete la validación
-        });
+    //        resolve(); // Resuelve la promesa cuando se complete la validación
+  //      });
     });
 }
-
+*/
 const submitShare = () => {
+    let form = $("#form__share")
+    $(form).keyup((e) => {
+        console.log(e)
+        console.log(e.target.value);
+           
+    })
+
+/*
     let emailMe = $("#share__emailMe");
     let infoEmailMe = $("#info__emailMe");
     let emailYou = $("#share__emailYou");
@@ -25,12 +33,13 @@ const submitShare = () => {
     let infoName = $("#info__name");
     let message = $("#share__message");
 
-    Promise.all([
+  //  Promise.all([
         showInfo(emailMe, infoEmailMe, validateEmail),
         showInfo(emailYou, infoEmailYou, validateEmail),
         showInfo(name, infoName, validateText)
-    ]).then(() => {
 
+    //]).then(() => {
+console.log("ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             let isValidMailMe = $(emailMe).prop("isValid");
             let isValidMailYou = $(emailYou).prop("isValid");
             let isValidMailName = $(name).prop("isValid");
@@ -38,8 +47,10 @@ const submitShare = () => {
             let boo = isValidMailMe && isValidMailYou && isValidMailName
 
             if(boo) {
+                console.log("boo: "+ boo)
                 let button = $("#submit__form__button")
                 $(button).prop("disabled", false);
+                $(button).removeClass("disabled");
                 $(button).click(async (e) => { 
                     e.preventDefault();
 
@@ -52,8 +63,15 @@ const submitShare = () => {
                     window.location.href = send;                   
                 });
             }
-        })
+            else {
+                $(button).prop("disabled", true);
+                $(button).addClass("disabled");
 
+            }
+   //     })
+
+
+*/
 }
 
 export default submitShare;
