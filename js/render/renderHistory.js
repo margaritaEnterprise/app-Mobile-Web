@@ -37,31 +37,33 @@ const renderHistory = async () => {
             let valueB = $(b).data("value");
             return valueB - valueA;
         })
-        console.log(stats.slice(0,2));
         section.empty().append(stats.slice(0,10));
 
         //ordenar por date //HORRIBLE---------------------------------------------------
         let sectionLast = $(".last");
-        const lista = Object.entries(history).map(([key, value]) => ({
+        const listaO = Object.entries(history).map(([key, value]) => ({
             [key]: value
             }));
-        // Ordenar la lista por el valor 'date' en orden descendente
-        lista.sort((a, b) => {
+        // Ordenar la listaO por el valor 'date' en orden descendente
+        listaO.sort((a, b) => {
             let valueA = a[Object.keys(a)[0]].date;
             let valueB = b[Object.keys(b)[0]].date;
             return valueB - valueA;
         })
         
-        if(lista.length > 5) {
-            lista.splice(6)
+        if(listaO.length > 5) {
+            listaO.splice(6)
         }
+        console.log(listaO)
         let lastCodes =[];
-        for (let i = 0; i < lista.length; i++) {
-            const element = lista[i];
+        for (let i = 0; i < listaO.length; i++) {
+            const element = listaO[i];
             lastCodes.push(Object.keys(element)[0])
         }
         let recentCountries = await getCountriesByCodes(lastCodes);
-        sectionLast.append(Recent(recentCountries))
+        sectionLast.append(Recent(recentCountries, listaO))
+
+        //recent__country__container
     }
 }
 
