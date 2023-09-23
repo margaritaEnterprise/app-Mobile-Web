@@ -12,8 +12,8 @@ const validateEmail = (value) => {
 }  
 const validateText = (text) =>{
     const regex = /^[A-Za-zÁÉÍÓÚáéíóúñÑ' ]+$/g;
-    if(text == "") {
-        return true;
+    if(!text.trimStart().trimEnd()) {
+        return false;
     }    
     return regex.test(text);
 }

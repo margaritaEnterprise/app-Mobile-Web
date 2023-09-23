@@ -11,7 +11,7 @@
 
 
 #detailCountry{
-    width: 75%;
+    width: 100%;
     max-width: 100%;
 }
 
@@ -31,7 +31,7 @@
 
 .card__image {
     max-width: 90%;
-    max-height: 200px;
+    max-height: 170px;
     margin-bottom: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
@@ -57,6 +57,10 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+#share{
+    width: 100%;
 }
 .share-header {
     margin-bottom: 10px;
@@ -114,6 +118,9 @@
 .disabled {
     background-color: grey
 }
+.disabled:active {
+    background-color: grey
+}
 .disabled:hover {
     cursor: auto;
 }
@@ -129,35 +136,270 @@
     max-height: 300px;
 }
 
+.info-text{
+    color: rgb(255, 0, 0);
+    height: 1.5ch;
+    margin-bottom: .7rem;
+}
 
-/** =======================================================================================================================================================*/
-/*
-@media (width >= 780px) {
- 
+.adversiting{
+    display: none;
+}
 
-    .share {
-        padding: 1rem;
+.card__continent{
+    display: none;
+}
+
+@media ( 480px <=  width <= 1023px) {
+
+    body > header {
+        grid-area: head;
+    }
+    
+    body > aside.adversiting{
+        grid-area: ads;
+        
+    }
+    
+    body > main.share {
+        grid-area: main;
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
+
     }
 
-
-    
-    #detailCountry{
-        width: 30%;
-        max-width: 100%;
+    #detailCountry {
+        height: 100%;
+        
     }
 
     .card{
-        max-width: 400px;
+        height: 100%;
+        align-items: center;
+        max-height: 500px;
+    }
+
+    .card{
+        max-width: 100%;
+    } 
+    
+    #share{
+        width: 100%;
+        height: 100%;
+    }
+
+    #form__share{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 500px;
+        width: 100%;
+    }
+
+    .email-form__field {
+        margin-bottom: 0;
+    }
+
+    .card__continent{
+        display: block;
+    }
+
+    .card__continent > img{
+        width: 100%;
+        max-width: 230px;
+    }
+    
+    body > footer {
+        grid-area: footer;
+    }
+
+    body{
+        display: grid;
+        grid-template-areas:  "head"
+                              "main"
+                              "ads" 
+                              "footer";
+    
+        grid-template-columns: 1fr;
+    }
+
+    .adversiting{
+        
+        padding: 0 20px 20px;
+        display: block;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: none
+    }
+
+    .adversiting > .adversiting__horizontal{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
+/** =======================================================================================================================================================*/
+
+
+@media (  1023px < width <= 1200px) {
+
+    body > header {
+        grid-area: head;
+    }
+    
+    body > aside.adversiting{
+        grid-area: ads;
+        
+    }
+    
+    body > main {
+        grid-area: main;
+    }
+
+    #detailCountry{
+        width: 60%;
     }
 
     #share{
-        width: 30%;
-        max-width: 100%;
+        width: 60%;
+    }
+    
+    body > footer {
+        grid-area: footer;
+    }
+
+    body{
+        display: grid;
+        grid-template-areas:  "head head"
+                              "main ads"
+                              "footer footer";
+    
+        grid-template-columns: 1fr;
+    }
+
+    .adversiting{
+        
+        padding: 20px 20px;
+        display: block;
+    }
+
+    .main{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #loader-container {
+        height: 100%;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: block;
+        position: sticky;
+        top: 16%;
+
+    }
+
+    .adversiting > .adversiting__horizontal{
+        display: none;
+    }
+}
+
+
+@media (  1200px < width) {
+    
+    body > header {
+        grid-area: head;
+    }
+    
+    body > aside.adversiting{
+        grid-area: ads;
+        
+    }
+    
+    body > main {
+        grid-area: main;
+    }
+    
+    body > footer {
+        grid-area: footer;
+    }
+
+    body{
+        display: grid;
+        grid-template-areas:  "head head"
+                              "main ads"
+                              "footer footer";
+    
+        grid-template-columns: 1fr;
+    }
+
+    .adversiting{
+        
+        padding: 20px 20px;
+        display: block;
+        max-height: 60vh;
+    }
+
+    .share{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        max-height: 60vh;
+        align-self: center;
+        justify-content: center;
+        height: 60vh;
+    }
+
+    #loader-container {
+        height: 100%;
+        width: 100%;
+    }
+
+    .adversiting > .adversiting__vertical{
+        display: block;
+        position: sticky;
+        top: 16%;
+        max-height: 100%;
+    }
+
+    .adversiting > .adversiting__horizontal{
+        display: none;
+    }
+
+    #share{
+        height: 100%;
+        max-width: 500px;
+    }
+    
+    #form__share{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.2rem;
+    }
+
+    .card{
+        height: 100%;
+    }
+
+    #detailCountry{
+        height: 100%;
+        max-width: 500px;
+    }
+
+    .card__continent{
+        display: block;
+    }
+
+    .card__continent > img{
+        width: 100%;
+        max-width: 190px;
+    }
+    .email-form__field {
+        margin-bottom: 0;
     }
 
 }
