@@ -150,12 +150,11 @@ body > footer {
 
 .searcher__info {
     text-align: center;
-    margin-top: 20px;
-    height: 1ch;
 }
   
 .searcher__info-text {
-    font-size: 16px;
+    font-size: 1rem;
+    font-weight: bold;
     color: #ff0000; 
 }
 
@@ -297,6 +296,41 @@ body > footer {
     display: none;
 }
 
+.toggle-searcher {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    
+}
+
+.search__body {
+    display: block;
+    height: auto;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+.search__body.show {
+    opacity: 1;
+    max-height: 1000px; 
+    transition: all .5s ease;
+    overflow: hidden;
+}
+
+.toggle-searcher i {
+    font-size: 2rem;
+    transition: transform 0.3s;
+    cursor: pointer; 
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
 /** =======================================================================================================================================================*/
 /** Desktop Design */
 @media ( 480px <=  width <= 1023px) {
@@ -430,6 +464,21 @@ body > footer {
     .searcher__filters{
         max-width: 20vw;
     }
-}
 
+    .toggle-searcher i {
+        display: none;
+    }
+
+    .search__body {
+        display: block;
+        max-height: 1000px;
+        opacity: 1;
+    }
+
+    .searcher__info-text {
+
+        margin-left: 1rem;
+    }
+    
+}
 

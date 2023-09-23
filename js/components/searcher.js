@@ -28,7 +28,11 @@ const Searcher = () => {
                 <i class="material-icons">search</i>
             </button>
         </div>
-        
+        <h2 class="toggle-searcher" >Filtros <i id="expand" class="material-icons">
+        expand_more
+        </i>  <section class="searcher__info">
+        <p class="searcher__info-text" id="filtersNotApplied"></p>
+    </section></h2>
         <div class="search__body">
             <label for="region" class="searcher__label">Continente:</label>
             <article class="searcher__filters">${HTMLcontinentsArray.join("")}</article>
@@ -41,7 +45,7 @@ const Searcher = () => {
                 min="1"
                 max="1399999999"
                 placeholder="Mínimo"/>
-            
+            <br>
             <label for="maxPopulation" class="searcher__label">Cantidad máxima de habitantes:</label>
             <input
                 type="number"
@@ -54,9 +58,7 @@ const Searcher = () => {
                 <button type="submit" class="searcher__search-button" id="searchButton">Buscar</button>
             </div>
         </div>
-        <section class="searcher__info">
-            <p class="searcher__info-text" id="filtersNotApplied"></p>
-        </section>
+        
         <section class="searcher__applied-filters"></section>
     </form>
       `;

@@ -37,4 +37,20 @@ $(document).ready(function () {
     pag();
     changeFilters();
     search();
+    const toggleButton = $(".toggle-searcher").find("i");
+    const searcherBody = $(".search__body");
+
+    toggleButton.click(function() {
+
+        toggleButton.toggleClass("rotated");
+        if (searcherBody.hasClass("show")) {
+            searcherBody.css("max-height", "0");
+            searcherBody.removeClass("show");
+        } else {
+            searcherBody.addClass("show");
+            // Establecer una altura grande para asegurar que todo el contenido se muestre
+            searcherBody.css("max-height", "1000px");
+        }
+    });
 });
+
