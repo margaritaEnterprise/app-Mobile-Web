@@ -25,7 +25,7 @@ const initDetail = async () => {
     setHistory(response[0].cca3);
 
     await renderDetail(response);
-
+    $("#detailCountry").show()
     $("#loader-container").hide();
 }
 
