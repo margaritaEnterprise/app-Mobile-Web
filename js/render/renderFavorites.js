@@ -1,4 +1,4 @@
-import { getCountriesByCodes } from '../services/countries.js';
+/*import { getCountriesByCodes } from '../services/countries.js';
 import { initFavs, getFavs } from './storageFavs.js';
 
 const renderFavorites = async (section) => {
@@ -12,3 +12,4 @@ const renderFavorites = async (section) => {
 export default renderFavorites; 
 
 
+*/
