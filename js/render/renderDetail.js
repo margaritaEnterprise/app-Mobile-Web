@@ -28,7 +28,11 @@ const renderDetail = async (response) => {
         $(section).append(Detail(country, borders))
     });
 
-    initMap(response[0].latlng[0],response[0].latlng[1], response[0].area);
+    initMap(
+            response[0].latlng[0],
+            response[0].latlng[1],
+            response[0].area
+    );
 }
 
 export default renderDetail;

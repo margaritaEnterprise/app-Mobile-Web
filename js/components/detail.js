@@ -23,7 +23,6 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
         <p>${currency}</p>`)
     }
 
-  
     let capitals = country.capital ? country.capital : ["No tiene"];
     let continent = country.region;
     let region = country.subregion ? country.subregion : "No pertenece a ninguna";

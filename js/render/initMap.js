@@ -1,16 +1,21 @@
-const initMap = (lat,long,area) => {
+async function initMap(lat, long, area ) {
+  const { Map } = await google.maps.importLibrary("maps");
 
-    var mymap = L.map('map').setView([lat, long], 10);
+  let map = new Map(document.getElementById("map"), {
+    center: { lat: lat, lng: long },
+    zoom: 5,
+  });
 
-  // Agrega una capa de mapa base
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap',
-    maxZoom: 18,
-}).addTo(mymap);
+    let centerMarker = new google.maps.Marker({
+    position: { lat: lat, lng: long },
+    map: map,
+    title: 'Centro'
+  });
 
-  var marker = L.marker([lat, long]).addTo(mymap);
-
-  L.control.scale().addTo(mymap);
+  let countryAreaKm2 = area; 
+  let scaleFactor = 40000; 
+  let initialZoom = Math.max(2, Math.floor(Math.log2(scaleFactor / Math.sqrt(countryAreaKm2))));
+  map.setZoom(initialZoom);
 }
 
 export default initMap;
