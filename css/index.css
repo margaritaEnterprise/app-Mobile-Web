@@ -155,6 +155,7 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--color-blanco-azulado);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 .footer > .footer__body {
     grid-area: footer__body;

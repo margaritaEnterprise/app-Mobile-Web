@@ -1,6 +1,7 @@
 import renderCountries from "../render/renderCountries.js";
 import { getCountriesByCodes, getCountry } from "../services/countries.js";
 import renderPaginator from "../render/renderPaginator.js";
+import { noItemsSearch } from "../components/noItems.js";
 
 let countriesCode;
 
@@ -37,7 +38,6 @@ export function changeFilters(){
 export function search(){
     $(".searcher__form").submit(async function (event) {
         event.preventDefault();
-
         $("#filtersNotApplied").empty();
 
        $(".paginator").empty();
@@ -51,7 +51,6 @@ export function search(){
 
         let valueInput = $("#searcher_input").val();
         let countries  = await getCountry(valueInput);
-
         let continentFilters = $(".searcher__buttonFilter--selected");
 
         let selectedValues = continentFilters.map(function() {
@@ -91,10 +90,16 @@ export function search(){
             filteredCountries = filteredCountries.filter(country => country.population <= maxPopulation);
         }
 
+        filteredCountries = filteredCountries.filter(country => country.translations.spa.common.toLowerCase().includes(valueInput));
+
         countriesCode = filteredCountries.map(country => {return {"cca3" : country.cca3}});
 
         renderCountries(section, filteredCountries.slice(0, 10));
         renderPaginator(countriesCode.length,1);
+        
+        if(filteredCountries.length == 0){
+            $("#all").append(noItemsSearch());
+        }
 
         $("#loader-container").hide();
 

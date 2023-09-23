@@ -9,6 +9,7 @@ import Card from './components/card.js';
 import noItems from "./components/noItems.js";
 
 let countriesCode = [];
+let text = "Ya puedes agregar paises favoritos."
 
 const initFavorites = async () => {
     renderHeader("favorites");
@@ -18,7 +19,6 @@ const initFavorites = async () => {
     countriesCode = getFavs();
     let section = $("#all");
     console.log(countriesCode);
-    let text = "Ya puedes agregar paises favoritos."
     if(countriesCode.length == 0){
         $("#loader-container").hide();
         $(".main").append(noItems(text));
@@ -86,6 +86,7 @@ function quitFavorites(){
         newRenders = $(".card").length;
 
         if(newRenders == 0){
+            $(".paginator").hide();
             $(".main").append(noItems(text));
         }
 

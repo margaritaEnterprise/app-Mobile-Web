@@ -225,3 +225,9 @@ body{
         display: none;
     }
 }
+
+.clean__noItemsContainer{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}

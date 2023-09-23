@@ -13,7 +13,7 @@ const getCountries = async () => {
 const getCountry = async (name) => { 
     let result = []
     let fields = "?fields=cca3,name,region,subregion,population,flags,translations"
-    let fetchUrl = name ? `${URL}/name/${name}${fields}` : 
+    let fetchUrl = name ? `${URL}/translation/${name}${fields}` : 
                           `${URL}/all${fields}`
     let response = await fetch(fetchUrl)
     if(response.ok){
