@@ -41,7 +41,6 @@ const Searcher = () => {
             <input
                 type="number"
                 id="minPopulation"
-                step="1000"
                 class="searcher__input searcher__input__population"
                 min="1"
                 max="1399999999"
@@ -51,7 +50,6 @@ const Searcher = () => {
             <input
                 type="number"
                 id="maxPopulation"
-                step="1000"
                 class="searcher__input searcher__input__population"
                 min="1"
                 max="1400000000"
@@ -61,7 +59,8 @@ const Searcher = () => {
             </div>
         </div>
         
-        <section class="searcher__applied-filters"></section>
+        <section class="searcher__applied-filters">
+        </section>
     </form>
       `;
 };

@@ -191,11 +191,14 @@ body > footer {
     color: white;
     font-size: 14px;
     margin-left: 5px;
-    cursor: pointer;
     padding: .25rem .25rem;
     border-radius: .5rem;
 }
 
+.clean-filter{
+    cursor: pointer;
+    transform: rotate(45deg);
+}
 
 .main{
     display: flex;

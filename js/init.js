@@ -5,7 +5,7 @@ import renderFooter from "./render/renderFooter.js";
 import { getAllCountryCodes, getCountriesByCodes } from "./services/countries.js";
 import { renderLoader } from "./render/renderLoader.js";
 import renderPaginator from "./render/renderPaginator.js";
-import { pag, search, changeFilters, sendCountriesCodes, toggleMenu, addFavorites} from "./events/eventsIndex.js";
+import { pag, search, changeFilters, sendCountriesCodes, toggleMenu, addFavorites, cleanFilters} from "./events/eventsIndex.js";
 
 let countriesCode;
 
@@ -32,5 +32,6 @@ $(document).ready(function () {
     search();
     toggleMenu();
     addFavorites();
+    cleanFilters();
 });
 

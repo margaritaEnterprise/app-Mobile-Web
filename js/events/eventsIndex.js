@@ -80,6 +80,10 @@ export function search(){
                     filterPill.push(`<p>${value}</p>`);
                 });
             }
+            appliedFilters.append(`
+                <span  id="cleanFilters" class="clean-filter clean-filter--none material-symbols-outlined">
+                    mop
+                </span>`);
             filterPill.forEach( pill => appliedFilters.append(pill));
         }
         
@@ -105,10 +109,10 @@ export function search(){
         $("#loader-container").hide();
 
         pag();
-        addFavorites()
+        addFavorites();
+        cleanFilters();
     });
 
-    console.log(countriesCode);
 }
 
 export function pag(){
@@ -153,5 +157,30 @@ export function addFavorites(){
             $(this).addClass("card__link");
             $(this).removeClass("card__link__selected");
         }
+    })
+}
+
+export function cleanFilters(){
+    $("#cleanFilters").click(async function() {
+        $("#loader-container").show();
+        $("#minPopulation").val("");
+        $("#maxPopulation").val("");
+        $(".searcher__buttonFilter--selected").removeClass("searcher__buttonFilter--selected");
+        $(".searcher__applied-filters").empty();
+        $(".paginator").empty();
+        let section = $("#all").empty();
+        let valueInput = $("#searcher_input").val().toLowerCase();
+        let countries  = await getCountry(valueInput);
+        let filteredCountries = countries.filter(country => country.translations.spa.common.toLowerCase().includes(valueInput));
+        countriesCode = filteredCountries.map(country => {return {"cca3" : country.cca3}});
+        renderCountries(section, filteredCountries.slice(0, 10));
+        renderPaginator(countriesCode.length,1);
+        if(filteredCountries.length == 0){
+            $("#all").append(noItemsSearch());
+        }
+        $("#loader-container").hide();
+        pag();
+        addFavorites();
+        cleanFilters();
     })
 }
