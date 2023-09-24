@@ -43,6 +43,7 @@ body{
     justify-self: center;
     align-self: center;
     width: 100%;
+    height: 100%;
 }
 .card:hover{
     transform: scale(0.99);
@@ -125,6 +126,13 @@ body{
     cursor: pointer;
     font-size: 16px;
     margin-top: 1rem;
+}
+
+@media( width < 270px){
+    .country__name  > h1{
+        overflow: hidden;
+        overflow-x: scroll;
+    }
 }
 /** =======================================================================================================================================================*/
 /** Desktop Design */

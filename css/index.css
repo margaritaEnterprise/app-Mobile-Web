@@ -101,7 +101,7 @@ body::-webkit-scrollbar-thumb {
 .header__logo{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
 }
 
 .header__logoImg{
@@ -268,7 +268,7 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
-@media ( width <= 270px  ) { /*480px <=width< 768px*/
+@media ( width <= 400px  ) { /*480px <=width< 768px*/
 
     .material-icons.close-icon{
         display: none;
@@ -319,7 +319,7 @@ body::-webkit-scrollbar-thumb {
 
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/
-@media (270px < width <= 510px ) { /*480px <=width< 768px*/
+@media (400px < width <= 510px ) { /*480px <=width< 768px*/
 
     .paginator{
         overflow: hidden;
