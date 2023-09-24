@@ -39,7 +39,7 @@ const Share = () => {
         <div>
             <label for="message" class="email-form__label">Mensaje (opcional):</label>
             <textarea
-                data-type="text" 
+                data-type="none"
                 id="share__message" 
                 class="email-form__textarea" 
                 placeholder="Mensaje"></textarea>
