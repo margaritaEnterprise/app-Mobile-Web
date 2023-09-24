@@ -49,7 +49,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
     let HTMLBordersArray = borders.map(border => `
         <div class="country__borderContainer"> 
-            <img onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
+            <img loading="lazy" onclick="viewDetail('${border.code}')" class="country__img" src="${border.flag}" alt="${border.name}"></img>
             <h2 class="country_borderName">${border.name}</h2>
         </div>
     `);
@@ -59,7 +59,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
                 <div class="country__details country__name ${!coatOfArms ? "country__name--extended" : ""}">
                     <h1 class="" >${name}</h1>
                     <article class="country__flag">
-                        <img class="country__img" src="${flag}" alt="Bandera de ${name}">
+                        <img loading="lazy" class="country__img" src="${flag}" alt="Bandera de ${name}">
                     </article>
                     <article class="country-nameOfficial">
                         <h2>Nombre Oficial: </h2>
@@ -101,7 +101,7 @@ const Detail =  (country, borders) => {  //ccn3 es el codigo numerico del pais
 
                 ${coatOfArms ? `<div class="country__details country__coat" style="${!coatOfArms ? "display:none" : ""}">
                     <h2>Escudo de Armas:</h2>
-                    <img lazy class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
+                    <img loading="lazy" class="country__flag" src="${coatOfArms}" alt="Escudo de Armas de Mauritania">
                 </div>`
                 :
                 ""
