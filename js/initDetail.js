@@ -4,8 +4,7 @@ import renderDetail from "./render/renderDetail.js";
 import { renderLoader } from "./render/renderLoader.js";
 import { getCountriesByCodes } from "./services/countries.js";
 import { setHistory }  from './storage/storageHistory.js';
-
-import {setFavs, getFavs, isFav} from './storage/storageFavs.js'
+import { favs } from "./events/eventsDetails.js";
 
 const initDetail = async () => {
     renderHeader("");
@@ -33,28 +32,6 @@ const initDetail = async () => {
 
 await initDetail();
 
-
-
 $(document).ready(function () {
    favs();
 });
-
-
-function favs(){
-    $(".addFavorites").off("click").on("click", function() {
-        setFavs(this.id);
-        let favStorage = getFavs();
-        console.log(favStorage);
-        if(isFav(this.id)) {
-
-            $(this).addClass("country__favorite--quit");
-            $(this).removeClass("country__favorite--add");
-            $(this).empty().html(`<p> Quitar de favoritos <i class="material-icons">star_rate</i> </p>`)
-        } else {
-            $(this).addClass("country__favorite--add");
-            $(this).removeClass("country__favorite--quit");
-            $(this).empty().html(`<p> Agregar a favoritos <i class="material-icons">star_rate</i> </p>`)
-        }
-        favs();
-    })
-}

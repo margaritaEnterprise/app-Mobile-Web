@@ -17,6 +17,12 @@ const initShare = async () => {
 
     $("#detailCountry").show();
     $("#share").show();
-    submitShare();
+     
+    
 }
 await initShare(); 
+
+
+$(document).ready(function () {
+    submitShare();
+});

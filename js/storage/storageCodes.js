@@ -1,6 +1,7 @@
 const setCodes = async (arrayCodes) => { 
     localStorage.setItem('codes', JSON.stringify(arrayCodes));
 }
+
 const getCodes = async () => { 
     if(localStorage.getItem('codes')) {
         let codes = localStorage.getItem('codes');

@@ -8,8 +8,7 @@ const initAboutUs = async () => {
     renderHeader("aboutUs");
     renderFooter();
     $("#main").html(Us());
-    initMap(UNAJ.lat,UNAJ.lng, UNAJ.sup);
-
+    await initMap(UNAJ.lat,UNAJ.lng, UNAJ.sup);
 }
 
-window.onload = initAboutUs; 
+await initAboutUs(); 

@@ -2,6 +2,7 @@ import renderCountries from "../render/renderCountries.js";
 import { getCountriesByCodes, getCountry } from "../services/countries.js";
 import renderPaginator from "../render/renderPaginator.js";
 import { noItemsSearch } from "../components/noItems.js";
+import { setFavs, getFavs, isFav } from "../storage/storageFavs.js";
 
 let countriesCode;
 
@@ -104,6 +105,7 @@ export function search(){
         $("#loader-container").hide();
 
         pag();
+        addFavorites()
     });
 
     console.log(countriesCode);
@@ -119,5 +121,37 @@ export function pag(){
         $("#loader-container").hide();
         renderPaginator(countriesCode.length, page+1);
         pag();
+        addFavorites()
     });
+}
+
+export function toggleMenu(){
+    const toggleButton = $(".toggle-searcher").find("i");
+    const searcherBody = $(".search__body");
+
+    toggleButton.click(function() {
+        toggleButton.toggleClass("rotated");
+        if (searcherBody.hasClass("show")) {
+            searcherBody.css("max-height", "0");
+            searcherBody.removeClass("show");
+        } else {
+            searcherBody.addClass("show");
+            searcherBody.css("max-height", "1000px");
+        }
+    });
+}
+
+export function addFavorites(){
+    $(".addFavorites").click(function() {
+        setFavs(this.id);
+        let favStorage = getFavs();
+        console.log(favStorage);
+        if(isFav(this.id)) {
+            $(this).addClass("card__link__selected");
+            $(this).removeClass("card__link");
+        } else {
+            $(this).addClass("card__link");
+            $(this).removeClass("card__link__selected");
+        }
+    })
 }
