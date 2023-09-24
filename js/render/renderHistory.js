@@ -23,22 +23,6 @@ const renderHistory = async () => {
         $(main).append(noItems(text));
     } 
     else {
-        
-        $(".history__title").show();
-        let countries = await getCountriesByCodes(codes);
-        for (let i =0 ; i < countries.length; i++) {
-            let code = countries[i].cca3;
-            //console.log(history[code])
-            $(section).append(Stats(countries[i], history[code], total));
-        }
-        let stats = $(section).find(".stats");
-        stats.sort((a,b) => {
-            let valueA = $(a).data("value");
-            let valueB = $(b).data("value");
-            return valueB - valueA;
-        })
-        section.empty().append(stats.slice(0,10));
-
         //ordenar por date //HORRIBLE---------------------------------------------------
         let sectionLast = $(".last");
         const listaO = Object.entries(history).map(([key, value]) => ({
@@ -64,6 +48,25 @@ const renderHistory = async () => {
         sectionLast.append(Recent(recentCountries, listaO))
 
         //recent__country__container
+        
+        $(".history__title").show();
+        let countries = await getCountriesByCodes(codes);
+        for (let i =0 ; i < countries.length; i++) {
+            let code = countries[i].cca3;
+            //console.log(history[code])
+            
+            $(section).append(Stats(countries[i], history[code], total));
+        }
+        let stats = $(section).find(".stats");
+        stats.sort((a,b) => {
+            let valueA = $(a).data("value");
+            let valueB = $(b).data("value");
+            return valueB - valueA;
+        })
+
+
+        section.empty().append(stats.slice(0,10));
+
     }
 }
 
