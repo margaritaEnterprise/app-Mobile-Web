@@ -177,9 +177,6 @@
         height: 100%;
         align-items: center;
         max-height: 500px;
-    }
-
-    .card{
         max-width: 100%;
     } 
     
@@ -332,14 +329,14 @@
                               "main ads"
                               "footer footer";
     
-        grid-template-columns: 1fr;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto 1fr auto;
+/*        min-height: 100vh;        */
     }
 
     .adversiting{
-        
         padding: 20px 20px;
-        display: block;
-        max-height: 60vh;
+        display: flex;
     }
 
     .share{
@@ -357,11 +354,16 @@
         width: 100%;
     }
 
+
     .adversiting > .adversiting__vertical{
         display: block;
-        position: sticky;
         top: 16%;
-        max-height: 100%;
+        display: block;
+        
+        /*
+        max-height: 500px;
+        width: auto;
+        */
     }
 
     .adversiting > .adversiting__horizontal{
@@ -374,7 +376,7 @@
     }
     
     #form__share{
-        height: 100%;
+        /*height: 100%;*/
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -382,9 +384,10 @@
     }
 
     .card{
-        height: 100%;
+        height: auto; 
+        margin-bottom: 20px;
     }
-
+    
     #detailCountry{
         height: 100%;
         max-width: 500px;
@@ -400,6 +403,9 @@
     }
     .email-form__field {
         margin-bottom: 0;
+    }
+    section {
+        padding-left: 20px;
     }
 
 }
