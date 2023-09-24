@@ -5,6 +5,12 @@
 body{
     min-height: 100vh;
 }
+
+.main{
+    width: 100%;
+    padding: 0.5rem;
+}
+
 .clean__noItems {
     width: 50%; 
     margin-top: 1rem;
@@ -29,10 +35,16 @@ body{
     margin-top: 1rem;
 }
 
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
 .stats {
     display: flex;
-    align-items: center;
-    margin: 10px;
+    align-items: space-between;
+    margin: 0;
 }
 
 .stats__flag {
@@ -68,7 +80,12 @@ body{
     display: flex;
     justify-content: space-between; 
     align-items: center; /* vertical */
-    padding: 10px; 
+}
+
+.history__title > h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
 }
 .clean__history {
     background: none;
@@ -79,31 +96,46 @@ body{
 .recent__country__flag {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
-    grid-gap: 10px; /* Espacio entre los elementos */
+    grid-gap: .25rem; /* Espacio entre los elementos */
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .recent__country__container {
     text-align: center; /* Opcional: centrar el contenido dentro de cada artículo */
     cursor: pointer;
+    overflow: hidden;
 }
-.recent__country__container img {
-    width: 100px; /* Tamaño deseado en píxeles */
-    height: auto; /* Esto mantiene la relación de aspecto original */
-}/*
-.ads__bottom {
-    width: 100%;
-    height: 30vh;
-    background-size: cover;
-    background-position: center;
-    display: block;
-    margin: 0;
-    margin-top: 1rem;
-    padding: 0;
-}*/
+.recent__country__container > img {
+    width: auto; /* Tamaño deseado en píxeles */
+    height: 4rem; /* Esto mantiene la relación de aspecto original */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+}
 
 .adversiting{
     display: none
 }
+
+.last{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.last > div{
+
+    width: 100%;
+    max-width : 95vw;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.last > div > h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
 
 
 /** =======================================================================================================================================================*/
@@ -114,8 +146,10 @@ body{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
         grid-gap: 10px; /* Espacio entre los elementos */
     }
+
     .adversiting {
         display: block;
+        padding: 10px 10px;
     }
     .adversiting__vertical{
         display: none;
@@ -124,21 +158,28 @@ body{
         display: block;
         height: 100%;
         width: 100%;
+        
+    }
+    .recent__country__container > img {
+        width: auto; /* Tamaño deseado en píxeles */
+        height: 7rem; /* Esto mantiene la relación de aspecto original */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
     }
 }
 
 @media ( 824px <=  width <= 1023px) {
     .recent__country__flag {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
         grid-gap: 10px; /* Espacio entre los elementos */
     }
-    .recent__country__container img {
-        width: 120px; /* Tamaño deseado en píxeles */
-        height: auto; /* Esto mantiene la relación de aspecto original */
+    .recent__country__container > img {
+        width: auto; /* Tamaño deseado en píxeles */
+        height: 7rem; /* Esto mantiene la relación de aspecto original */
     }
     .adversiting {
         display: block;
+        padding: 10px 10px;
     }
     .adversiting__vertical{
         display: none;
@@ -150,12 +191,41 @@ body{
         width: 100%;
     }
 
+    .last {
+        display: grid;
+    }
+
+    .last > div {
+        min-width: 100%;
+
+    }
 
 }
 
 /** Desktop Design */
 
-@media ( width  > 1023px) {
+@media (1023px < width) {
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .main {
+        width: 100%;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     body > header {
         grid-area: head;
     }
@@ -180,22 +250,46 @@ body{
                               "main ads"
                               "footer footer";
     
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr .3fr;
     }
     .adversiting {
         display: block;
+        padding: 10px 10px;
     }
     .adversiting__vertical{
         display: block;
         height: 100%;
         width: 100%;
+
     }
     
     .adversiting__horizontal{
         display: none
     }
 
+    .recent__country__flag {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
+        grid-gap: 10px; /* Espacio entre los elementos */
+    }
+    .recent__country__container > img {
+        width: auto; /* Tamaño deseado en píxeles */
+        height: 9rem; /* Esto mantiene la relación de aspecto original */
+    }
+
+    .last {
+        display: grid;
+    }
+
+    .last > div {
+        min-width: 100%;
+
+    }
+
+    .clean__noItemsContainer{
+        height: 51vh;
+    display: flex;
+    align-items: center;
+    }
+
 }
-
-
-

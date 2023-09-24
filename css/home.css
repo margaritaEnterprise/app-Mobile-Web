@@ -340,7 +340,7 @@ body > footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100vw;
+        width: 95vw
 }
 .no-results-container > p{
     font-size: 1.25rem;
