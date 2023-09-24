@@ -95,6 +95,7 @@ body > footer {
     background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 .searcher__buttonFilter > p{
     font-weight: bold;
@@ -223,7 +224,9 @@ body > footer {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
-
+    justify-self: center;
+    width: 100%;
+    max-width: 325px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
     border-radius: 8px;
     transition: transform 0.1s;

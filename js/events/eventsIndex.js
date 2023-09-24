@@ -49,7 +49,7 @@ export function search(){
 
         $("#loader-container").show();
 
-        let valueInput = $("#searcher_input").val();
+        let valueInput = $("#searcher_input").val().toLowerCase();
         let countries  = await getCountry(valueInput);
         let continentFilters = $(".searcher__buttonFilter--selected");
 

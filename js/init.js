@@ -10,7 +10,6 @@ import { pag, search, changeFilters, sendCountriesCodes} from "./events/eventsIn
 let countriesCode;
 
 const init = async () => {
-
     renderHeader("home");
     renderSearcher();
     renderFooter();
