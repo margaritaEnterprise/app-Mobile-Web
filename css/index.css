@@ -101,7 +101,7 @@ body::-webkit-scrollbar-thumb {
 .header__logo{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
 }
 
 .header__logoImg{
@@ -236,7 +236,7 @@ body::-webkit-scrollbar-thumb {
 
 .paginator__button {
     display: inline-block;
-    padding: 0.5rem 0.5rem;
+    padding: 0.25rem 0.25rem;
     margin: 0 4px;
     font-size: 14px;
     text-decoration: none;
@@ -264,9 +264,98 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
 }
 
+.header__navItem--menu{
+    display: none;
+}
+
+@media ( width <= 400px  ) { /*480px <=width< 768px*/
+
+    .material-icons.close-icon{
+        display: none;
+    }
+
+    .header__navItem--menu {
+        display: block;
+    }
+
+    .paginator {
+        overflow: hidden;
+        overflow-x: scroll;
+        max-width: 90vw;
+    }
+
+    .header__nav {
+        width:100%;
+		height:200px;
+		left:-100%;
+		margin:0;
+		position: fixed;
+        background-color: var(--color-blanco-azulado);
+        top: 10%;
+        display: flex;
+        justify-content: center;
+        z-index: -1000;
+    }
+
+    .header__navList {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header__navItem--ocult{
+        width: 100%;
+    }
+
+
+    .header__Navlink > i {
+        display: none;
+    }
+
+    .header__Navlink > p {
+        display: block;
+    }
+}
+
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/
-@media (510px <= width ) { /*480px <=width< 768px*/
+@media (400px < width <= 510px ) { /*480px <=width< 768px*/
+
+    .paginator{
+        overflow: hidden;
+        overflow-x: scroll;
+        max-width: 90vw;
+    }
+
+    .paginator__button {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .header__navItem--ocult{
+        display: block;
+    }
+
+    .header__navItem--menu{
+        display: none;
+    }
+
+   
+}
+/*#endregion*/
+
+/** =======================================================================================================================================================*/
+/*#region TABLET*/
+@media (510px < width) { /* < 1024px*/
+
+
+    .paginator__button {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .header__Navlink > p{
+        display: block ;
+    }
+
     .header__logo h1 {
         font-size: 1rem;
     }
@@ -276,15 +365,6 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
 
-    .header__Navlink > p{
-        display: block ;
-    }
-}
-/*#endregion*/
-
-/** =======================================================================================================================================================*/
-/*#region TABLET*/
-@media (768px <= width) { /* < 1024px*/
     .header__Navlink > p{
         display: block ;
     }
@@ -322,6 +402,7 @@ body::-webkit-scrollbar-thumb {
     
     /*#endregion FOOTER*/
 }
+
 
 /*#endregion*/
 

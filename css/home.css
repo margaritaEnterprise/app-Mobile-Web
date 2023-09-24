@@ -213,7 +213,7 @@ body > footer {
 .section {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
+    grid-template-columns: repeat(auto-fill, minmax(80vw, 1fr));  
     gap: 20px;
     padding: 0 10px;
 }
@@ -349,10 +349,21 @@ body > footer {
     font-size: 1.25rem;
 }
 
+
+@media ( width <= 270px){
+
+}
+
+
 /** =======================================================================================================================================================*/
 /** Desktop Design */
-@media ( 480px <=  width <= 1023px) {
+@media ( 480px<=  width <= 1023px) {
 
+
+    .section {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
+    }
+    
 
     .no-results-container > p{
         font-size: 1.5rem;
@@ -396,6 +407,10 @@ body > footer {
 /** Desktop Design */
 
 @media ( width  > 1023px) {
+
+    .section {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  
+    }
 
     body{
         max-width: 100vw;
