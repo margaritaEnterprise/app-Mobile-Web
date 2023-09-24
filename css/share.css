@@ -115,6 +115,18 @@
     cursor: pointer;
     font-size: 18px;
 }
+
+.email-form__cancel {
+    width: 100%;
+    background-color: rgba(173, 16, 16, 0.747);
+
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
 .disabled {
     background-color: grey
 }

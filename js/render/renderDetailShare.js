@@ -25,6 +25,7 @@ const renderDetailShare = async () => {
         $(section).html(detailShare(country));
         let share = $("#share");
         share.html(Share());
+        
         });
 
     

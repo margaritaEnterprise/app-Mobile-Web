@@ -46,10 +46,16 @@ const Share = () => {
         </div>
         <div class="email-form__field">
             <button id="submit__form__button" type="submit" class="email-form__submit disabled" disabled>Compartir</button>
+            <button type="button" class="email-form__cancel" onclick="backHome()" >Cancelar</button>
         </div>
     </form>
     `;
 };
 
+const backHome = () =>{
+    window.location.href = "../../pages/index.html"
+}
+
+window.backHome = backHome;
 
 export default Share;
