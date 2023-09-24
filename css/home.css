@@ -197,9 +197,9 @@ body > footer {
 
 .clean-filter{
     cursor: pointer;
-    transform: rotate(45deg);
+    transform: rotate(45deg);  
 }
-
+  
 .main{
     display: flex;
     flex-direction: column;
