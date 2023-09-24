@@ -330,24 +330,34 @@
                               "footer footer";
     
         grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto auto auto;
 /*        min-height: 100vh;        */
     }
 
-    .adversiting{
+    .adversiting {
         padding: 20px 20px;
         display: flex;
+        height: 575px;
+        width: auto;
+        justify-self: end;
     }
 
-    .share{
+    .share {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        max-height: 60vh;
-        align-self: center;
-        justify-content: center;
-        height: 60vh;
+        /* max-height: 60vh; */
+        align-self: start;
+        /* justify-content: center; */
+        /* height: 60vh; */
+        align-items: center;
+        align-content: center;
+        justify-content: end;
+        justify-content: right;
+        gap: 3vw;
+        padding-right: 3rem;;
     }
+    
 
     #loader-container {
         height: 100%;
@@ -370,29 +380,29 @@
         display: none;
     }
 
-    #share{
-        height: 100%;
+    #share {
+        /* height: 100%; */
         max-width: 500px;
     }
     
-    #form__share{
-        /*height: 100%;*/
+    #form__share {
+        height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 0.2rem;
     }
 
-    .card{
-        height: auto; 
+    .card {
+        height: auto;
         margin-bottom: 20px;
+        height: 100%;
     }
     
-    #detailCountry{
-        height: 100%;
+    #detailCountry {
+        height: 500px;
         max-width: 500px;
     }
-
     .card__continent{
         display: block;
     }
