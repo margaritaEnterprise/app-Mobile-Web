@@ -11,7 +11,7 @@ const Searcher = () => {
   
     let HTMLcontinentsArray =  continents.map(continent => `
         <button class="searcher__buttonFilter" id="continent--${continent.value}" data-value="${continent.value}">
-            <img class="searcher__img" src="../../assets/${continent.value}-outline.png">
+            <img loading="lazy" class="searcher__img" src="../../assets/${continent.value}-outline.png">
             <p>${continent.name}</p>
         </button>
     `);
