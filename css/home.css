@@ -197,24 +197,9 @@ body > footer {
 
 .clean-filter{
     cursor: pointer;
-/*    transform: rotate(45deg);*/
-   
-    animation: rotar 2s linear ;
+    transform: rotate(45deg);  
 }
   
-@keyframes rotar {
-    0% {
-      transform: rotate(5deg);
-    }
-    50% {
-      transform: rotate(-5deg);
-    }
-    100% {
-        transform: rotate(5deg);
-    }
-}
-
-
 .main{
     display: flex;
     flex-direction: column;
