@@ -255,7 +255,7 @@ body > footer {
     transition: box-shadow 0.1s;
 }
 .card:hover{
-    transform: scale(0.99);
+   
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.1s;
@@ -304,9 +304,7 @@ body > footer {
 
 .card__link:hover {
     cursor: pointer;
-    color: var(--fav);
-    
-    animation: rotar 5s linear infinite;
+
 }
   
 @keyframes rotar {
@@ -318,7 +316,7 @@ body > footer {
     }
 }
 .card__link__selected {
-    color: var(--fav);
+    color: var(--fav) !important;
     cursor: pointer;
 }
 
@@ -371,6 +369,8 @@ body > footer {
 .no-results-container > p{
     font-size: 1.25rem;
 }
+
+
 
 
 @media ( width <= 270px){

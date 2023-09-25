@@ -147,15 +147,17 @@ export function toggleMenu(){
 
 export function addFavorites(){
     $(".addFavorites").click(function() {
+        console.log("hola");
         setFavs(this.id);
         let favStorage = getFavs();
         console.log(favStorage);
         if(isFav(this.id)) {
-            $(this).addClass("card__link__selected");
             $(this).removeClass("card__link");
+            $(this).addClass("card__link__selected");
         } else {
-            $(this).addClass("card__link");
             $(this).removeClass("card__link__selected");
+            $(this).addClass("card__link");
+
         }
     })
 }
