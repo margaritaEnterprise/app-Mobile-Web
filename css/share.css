@@ -117,10 +117,11 @@
 }
 .email-form__submit:active {
     background-color: var(--button-ok-press);
-
+    transform: scale(0.99);
 }
 .email-form__cancel:active {
     background-color: var(--button-cancel-press);
+    transform: scale(0.99);
 
 }
 .email-form__cancel {

@@ -51,6 +51,13 @@
     font-weight: 200;
     color:var(--color-font);
 }
+.header__navList > .material-icons:active {
+    transform: scale(0.99);
+    color:var(--button-cancel-press);
+}
+.material-icons:hover {
+    color:var(--button-cancel);
+}
 
 body{
     min-height: 100vh;
