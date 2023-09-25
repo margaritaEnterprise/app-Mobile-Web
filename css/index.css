@@ -25,6 +25,17 @@
 
     --color-font: var(--color-grey);
     --success: var(--color-ok);
+
+    --button-ok: #9797ff;
+    --button-text:#fff;
+    --button-ok-press:#7c7ce6;
+    --button-cancel:rgba(0, 0, 0, 0.747);
+    --button-cancel-press:rgba(0, 0, 0, 0.8);
+    --button-disabled:rgb(175, 175, 175);
+/*    --violeta:#897487;*/
+--continent:#9797ff40;
+--continent-press:#9797ff69;
+--fav:#ff7011;
 }
 
 /** =======================================================================================================================================================*/
@@ -255,14 +266,21 @@ body::-webkit-scrollbar-thumb {
 }
 
 .paginator__button.active {
-    background-color: #007bff;
+    background-color: var(--button-ok-press);
     color: #fff;
 }
 
 .paginator__button:hover {
-    background-color: #007bff;
+    background-color: var(--button-ok);
     color: #fff;
 }
+.paginator__button:active {
+    background-color: var(--button-ok-press);
+}
+.paginator__button.active:active {
+    background-color: var(--button-ok-press);
+}
+
 
 /** =======================================================================================================================================================*/
 /*#region MOBILE HORIZONTAL*/

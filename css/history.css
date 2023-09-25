@@ -11,6 +11,7 @@ body{
     padding: 0.5rem;
 }
 
+
 .clean__noItems {
     width: 50%; 
     margin-top: 1rem;
@@ -24,8 +25,16 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
     margin-bottom:10px;
 }
+.back__button:hover{
+    background-color:var(--button-ok-press);
+}
+.back__button:active{
+    transform: scale(0.99);
+    background-color:var(--button-ok-press);
+}
 .back__button{
-    background-color: #007bff;
+    transition: transform 0.1s, background-color 0.2s;
+    background-color:var(--button-ok);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -79,20 +88,25 @@ body{
 .history__title {
     display: flex;
     justify-content: space-between; 
-    align-items: center; /* vertical */
+    align-items: center;
 }
 
 .history__title > h1 {
-    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 0;
+    padding-left: 3rem;
 }
-.clean__history {
+
+.clean__history{
+    cursor: pointer;
+    transform: rotate(45deg);
     background: none;
     border: none;
-    cursor: pointer;
-    font-size: 24px;
 }
+
+
 .recent__country__flag {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas según tus preferencias */
@@ -102,13 +116,13 @@ body{
 }
 
 .recent__country__container {
-    text-align: center; /* Opcional: centrar el contenido dentro de cada artículo */
+    text-align: center; 
     cursor: pointer;
     overflow: hidden;
 }
 .recent__country__container > img {
-    width: auto; /* Tamaño deseado en píxeles */
-    height: 4rem; /* Esto mantiene la relación de aspecto original */
+    width: auto; 
+    height: 4rem; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
 }
 
@@ -131,8 +145,10 @@ body{
 }
 
 .last > div > h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    padding: 1rem;
+    text-align: center;
 }
 
 

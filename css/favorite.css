@@ -89,10 +89,10 @@ body{
 
 .card__link:hover {
     cursor: pointer;
-    color: #ff7011;
+    color: var(--fav);
 }
 .card__link__selected {
-    color: #ff7011;
+    color: var(--fav);
     cursor: pointer;
 }
 
@@ -110,10 +110,17 @@ body{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
     margin:10px;
-    
+}
+.back__button:hover{
+    background-color:var(--button-ok-press);
+}
+.back__button:active{
+    transform: scale(0.99);
+    background-color:var(--button-ok-press);
 }
 .back__button{
-    background-color: #007bff;
+    transition: transform 0.1s, background-color 0.2s;
+    background-color:var(--button-ok);
     color: #fff;
     padding: 10px 20px;
     border: none;

@@ -24,7 +24,7 @@ const Recent =  (countries, listaO) => {
     `);
 */
     return  `<div>
-    <h2>Ultimos Visitados:</h2>
+    <h2>Ultimos Visitados</h2>
     <section class="recent__country__flag">
     ${lastVisited.join('')}
     </section>

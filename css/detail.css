@@ -164,9 +164,13 @@ h2 {
 }
 
 
+.country__favorite--quit > p > i{
+    color: var(--fav);
+    
+}
 
 .country__favorite--quit:hover{
-    background-color: rgba(173, 16, 16, 0.747);
+    background-color: var(--button-disabled);
     
 }
 
@@ -176,17 +180,20 @@ h2 {
 }
 
 .country__favorite--quit:hover > p > i{
-    color: white;
+    color: var(--fav);
     transition: color 0.5s;
 }
 
 .country__favorite--add:hover{
-    background-color: #0074d9;
-    
+    background-color: var(--button-ok-press);
 }
 
 .country__favorite--add:hover > p{
     color: white;
+    transition: color 0.5s;
+}
+.country__favorite--add:active {
+    color: var(--button-ok);
     transition: color 0.5s;
 }
 
@@ -194,12 +201,22 @@ h2 {
     color: white;
     transition: color 0.5s;
 }
-
-.country__share:hover{
-    background-color: #0074d9;
-    
+.country__favorite--add:active{
+    transform: scale(0.99);
+    background-color:var(--button-ok-press);
+}
+.country__favorite--quit:active{
+    transform: scale(0.99);
+    background-color:var(--button-ok-press);
 }
 
+.country__share:hover{
+    background-color: var(--button-ok-press);    
+}
+.country__share:active{
+    transform: scale(0.99);
+    background-color:var(--button-ok-press);
+}
 .country__share:hover > p{
     color: white;
     transition: color 0.5s;
@@ -209,8 +226,6 @@ h2 {
     color: white;
     transition: color 0.5s;
 }
-
-
 
 .country__share > p{
     display: flex;
