@@ -11,6 +11,8 @@ const submitShare = () => {
         }else if(type === "text"){
             isValid = validateText(e.target.value);
             textInfo = "*Ingrese un nombre valido";
+        }else if(type === "none"){
+            isValid = true;
         }
         if(!isValid){
             $(e.target).siblings('p').text(textInfo);

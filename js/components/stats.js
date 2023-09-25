@@ -10,7 +10,7 @@ const Stats = (country, view, total) => {
     //title="${name} ha recibido ${views} de ${total} visitas."
     return  `
     <article data-value="${view.views}" title="${name} ha recibido ${view.views} de ${total} visitas." class="stats" id="stats${code}">
-        <img src="${flag}" alt="${name}" class="stats__flag" />
+        <img loading="lazy" src="${flag}" alt="${name}" class="stats__flag" />
         <div class="stats__bar">
             <div class="stats__views" style="width: ${width}%;">
                 <p class="stats__percent">${width}%</p>
