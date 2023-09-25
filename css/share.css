@@ -139,6 +139,7 @@
 
 .disabled:active, .disabled {
     background-color:var(--button-disabled);
+    transform: scale(1);
 }
 .disabled:hover {
     cursor: auto;

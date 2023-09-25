@@ -7,6 +7,7 @@ const Share = () => {
             <input 
                 data-type="email"
                 type="text" 
+                maxlength="50"
                 id="share__emailMe" 
                 class="email-form__input" 
                 placeholder="Ingrese su email . . ."
@@ -18,6 +19,7 @@ const Share = () => {
             <input 
                 data-type="text" 
                 type="text" 
+                maxlength="25"
                 id="share__name" 
                 class="email-form__input" 
                 placeholder="Nombre del destinatario . . ."
@@ -30,6 +32,7 @@ const Share = () => {
             <input
                 data-type="email" 
                 type="text" 
+                maxlength="50"
                 id="share__emailYou" 
                 class="email-form__input" 
                 placeholder="Correo del destinatario . . ."
@@ -40,6 +43,7 @@ const Share = () => {
             <label for="message" class="email-form__label">Mensaje (opcional):</label>
             <textarea
                 data-type="none"
+                maxlength="100"
                 id="share__message" 
                 class="email-form__textarea" 
                 placeholder="Mensaje"></textarea>
